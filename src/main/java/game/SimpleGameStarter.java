@@ -2,13 +2,13 @@ package game;
 
 import java.io.IOException;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class SimpleGameStarter {
 	public static void main(String[] args) throws ClassNotFoundException, IOException{
-		SimpleBoard board = new SimpleBoard();
-		SimpleGameView view = new SimpleGameView(board);
-		BrutalAI ai = new BrutalAI(board);
-		SimpleGameDAO dao = new SimpleGameDAO(board);
-		GameApp simpleGameApp = new GameApp(view, board, ai, dao);
+		ApplicationContext context = new ClassPathXmlApplicationContext("simpleContext.xml");
+		GameApp simpleGameApp = context.getBean("gameApp", game.GameApp.class);
 		simpleGameApp.playGame();
 	}
 }

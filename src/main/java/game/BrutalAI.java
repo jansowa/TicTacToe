@@ -31,7 +31,7 @@ public class BrutalAI implements AI {
 			brutalState="C3";
 			return "C3";
 		}
-		else { //player at C3
+		else { //player at C3 or A1
 			brutalState="A3";
 			return "A3";
 		}
@@ -79,9 +79,13 @@ public class BrutalAI implements AI {
 				return "C1";
 				//endgame
 			}
-			else{//player at C3 and C1
+			else if(this.board.getBoard()[8]==1){//player at C3 and C1
 				brutalState = "A3C2";
 				return "C2";
+			}
+			else{
+				brutalState = "A3B1";
+				return "B1";
 			}
 		} //full block
 		return "";
@@ -97,6 +101,14 @@ public class BrutalAI implements AI {
 				return "B3";
 			}
 		} //full block
+		else if(brutalState.equals("A3B1")){
+			if(this.board.getBoard()[5]==-1){
+				return "B3";
+			}
+			else{
+				return "A2";
+			}
+		}
 		else if(brutalState.equals("C3C2")){
 			if(this.board.getBoard()[1]==-1){
 				return "A2";
