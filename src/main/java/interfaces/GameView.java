@@ -5,6 +5,8 @@ public interface GameView {
 	
 	public void printBoard();
 	
+	public void aiMove();
+	
 	public void endGame(int result);
 	//0 player O wins, 1 player X wins, 2 draw game
 	

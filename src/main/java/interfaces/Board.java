@@ -9,4 +9,5 @@ public interface Board {
 	public int getCurrentPlayer(); //0 for O player, 1 for X player
 	public int[] getBoard();
 	public int getEmptyFields();
+	public String intFieldToStringField(int field);
 }

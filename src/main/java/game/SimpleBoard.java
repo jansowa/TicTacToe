@@ -5,6 +5,9 @@ import java.io.Serializable;
 import interfaces.Board;
 
 public class SimpleBoard implements Board, Serializable {
+	/**
+	 * 
+	 */
 	private int[] fields = new int[9];
 	private int numberOfPlayers; //1 for singleplayer, 2 for multiplayer
 	public int emptyFields;
@@ -81,7 +84,7 @@ public class SimpleBoard implements Board, Serializable {
 		return (((int) field.charAt(0))-65)*3 + ((int) field.charAt(1))-49;
 	}
 	
-	private static String intFieldToStringField(int field){
+	public String intFieldToStringField(int field){
 		return ""+(char) (field/3+65)+(char) (field%3 + 49);
 	}
 	

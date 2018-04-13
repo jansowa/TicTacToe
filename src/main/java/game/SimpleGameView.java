@@ -91,4 +91,9 @@ public class SimpleGameView implements GameView {
 		System.out.println("Write name of game to load:");
 		return scan.next();
 	}
+
+	@Override
+	public void aiMove() {
+		System.out.println("AI move:");		
+	}
 }

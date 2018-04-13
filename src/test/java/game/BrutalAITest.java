@@ -1,15 +1,47 @@
 package game;
 
 import static org.junit.Assert.*;
+import interfaces.AI;
+import interfaces.Board;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class BrutalAITest {
-
+	Board board;
+	String field;
+	AI ai;
+	
+	@Before
+	public final void setUp(){
+		board = new SimpleBoard();
+		ai = new BrutalAI(board);
+	}
+	
 	@Test
-	public final void nextAIMovetest() {
-		//TODO test of method nextAIMove()
-		fail("Not yet implemented");
+	public final void nextAIMoveTest1() {
+		board.singleMove(ai.nextAImove(), 0);
+		board.singleMove("B1", 1);
+		board.singleMove(ai.nextAImove(), 0);
+		board.singleMove("C3", 1);
+		board.singleMove(ai.nextAImove(), 0);
+		board.singleMove("C2", 1);
+		board.singleMove(ai.nextAImove(), 0);
+		assertEquals(0, board.isGameOver());
+	}
+	
+	@Test
+	public final void nextAIMoveTest2(){
+		board.singleMove(ai.nextAImove(), 0);
+		board.singleMove("C1", 1);
+		board.singleMove(ai.nextAImove(), 0);
+		board.singleMove("C3", 1);
+		board.singleMove(ai.nextAImove(), 0);
+		board.singleMove("A2", 1);
+		board.singleMove(ai.nextAImove(), 0);
+		board.singleMove("B3", 1);
+		board.singleMove(ai.nextAImove(), 0);
+		assertEquals(2, board.isGameOver());
 	}
 
 }
