@@ -12,6 +12,11 @@ public class BrutalAI implements AI {
 		brutalState="";
 	}
 	
+	@Override
+	public void setBoard(Board board){
+		this.board = board;
+	}
+	
 	private String firstMove(){
 		return "B2";
 	} //ready func

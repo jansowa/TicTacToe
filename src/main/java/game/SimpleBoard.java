@@ -11,7 +11,7 @@ public class SimpleBoard implements Board, Serializable {
 	private int[] fields = new int[9];
 	private int numberOfPlayers; //1 for singleplayer, 2 for multiplayer
 	public int emptyFields;
-	private int player = 0;
+	private int player;
 	public int gameStatus;
 	//gameStatus -2 impossible move, -1 game in progress,
 	//0 O wins, 1 X wins, 2 draw game
@@ -42,6 +42,7 @@ public class SimpleBoard implements Board, Serializable {
 			fields[i] = -1;
 		}
 		emptyFields=9;
+		this.player=0;
 	}
 	
 	public int isGameOver(){

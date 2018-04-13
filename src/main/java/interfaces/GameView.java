@@ -1,6 +1,8 @@
 package interfaces;
 
 public interface GameView {
+	public void setBoard(Board board);
+	
 	public int startMenu(); //1 for multiplayer, 2 for singleplayer, 3 for load game
 	
 	public void printBoard();

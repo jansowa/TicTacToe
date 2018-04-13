@@ -14,6 +14,11 @@ public class SimpleGameView implements GameView {
 	}
 	
 	@Override
+	public void setBoard(Board board){
+		this.board = board;
+	}
+	
+	@Override
 	public int startMenu(){
 		int result;
 		do{

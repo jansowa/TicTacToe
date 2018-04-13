@@ -68,6 +68,9 @@ public class GameApp {
 	private void loadGame() throws ClassNotFoundException, IOException{
 		String name = view.loadGame();
 		this.board = dao.loadGame(name);
+		view.setBoard(board);
+		dao.setBoard(board);
+		ai.setBoard(board);
 		if(board.getPlayersNumber()==1){
 			singlePlayer();
 		}
@@ -84,9 +87,11 @@ public class GameApp {
 	public void playGame() throws ClassNotFoundException, IOException{
 		int mode = view.startMenu();
 		if(mode==1){
+			board.restartBoard();
 			multiPlayer();
 		}
 		else if (mode==2){
+			board.restartBoard();
 			singlePlayer();
 		}
 		else{
