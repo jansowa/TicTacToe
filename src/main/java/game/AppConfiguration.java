@@ -6,11 +6,13 @@ import interfaces.GameDAO;
 import interfaces.GameView;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan
 public class AppConfiguration {
-	@Bean
+	/*@Bean
 	public Board board(){
 		return new SimpleBoard();
 	}
@@ -33,5 +35,5 @@ public class AppConfiguration {
 	@Bean
 	public GameApp gameApp(){
 		return new GameApp(view(), board(), ai(), gameDAO());
-	}
+	}*/
 }
