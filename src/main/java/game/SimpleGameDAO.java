@@ -6,14 +6,18 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.util.SerializationUtils;
 
 import interfaces.Board;
 import interfaces.GameDAO;
 
+@Component
 public class SimpleGameDAO implements GameDAO {
 	private Board board;
 	
+	@Autowired
 	public SimpleGameDAO(Board board){
 		this.board = board;
 	}

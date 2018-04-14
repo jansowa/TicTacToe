@@ -2,12 +2,18 @@ package game;
 
 import interfaces.Board;
 import interfaces.GameView;
+
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class SimpleGameView implements GameView {
 	Board board;
 	Scanner scan;
 	
+	@Autowired
 	public SimpleGameView(Board board){
 		this.board = board;
 		scan = new Scanner(System.in);

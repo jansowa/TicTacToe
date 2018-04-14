@@ -1,12 +1,17 @@
 package game;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import interfaces.AI;
 import interfaces.Board;
 
+@Component
 public class BrutalAI implements AI {
 	Board board;
 	String brutalState;
 	
+	@Autowired
 	public BrutalAI(Board board){
 		this.board = board;
 		brutalState="";

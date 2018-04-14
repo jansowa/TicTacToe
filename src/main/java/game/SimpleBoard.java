@@ -2,12 +2,13 @@ package game;
 
 import java.io.Serializable;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import interfaces.Board;
 
+@Component
 public class SimpleBoard implements Board, Serializable {
-	/**
-	 * 
-	 */
 	private int[] fields = new int[9];
 	private int numberOfPlayers; //1 for singleplayer, 2 for multiplayer
 	public int emptyFields;
