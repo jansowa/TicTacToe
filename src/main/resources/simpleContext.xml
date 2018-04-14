@@ -5,22 +5,15 @@
 
 	<bean id="board" class="game.SimpleBoard"></bean>
 	
-	<bean id="view" class="game.SimpleGameView">
-		<constructor-arg ref="board"></constructor-arg>
+	<bean id="view" class="game.SimpleGameView" autowire="constructor">
 	</bean>
 	
-	<bean id="ai" class="game.BrutalAI">
-		<constructor-arg ref="board"></constructor-arg>
+	<bean id="ai" class="game.BrutalAI" autowire="constructor">
 	</bean>
 	
-	<bean id="dao" class="game.SimpleGameDAO">
-		<constructor-arg ref="board"></constructor-arg>
+	<bean id="dao" class="game.SimpleGameDAO" autowire="constructor">
 	</bean>
 	
-	<bean id="gameApp" class="game.GameApp">
-		<constructor-arg ref="view"></constructor-arg>
-		<constructor-arg ref="board"></constructor-arg>
-		<constructor-arg ref="ai"></constructor-arg>
-		<constructor-arg ref="dao"></constructor-arg>
+	<bean id="gameApp" class="game.GameApp" autowire="constructor">
 	</bean>
 </beans>

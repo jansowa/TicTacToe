@@ -27,21 +27,15 @@ public class SimpleGameDAOTest {
 	private ArrayList<String> testList;
 	@Before
 	public void setUp(){
-		simpleDAO = new SimpleGameDAO();
+		simpleDAO = new SimpleGameDAO(board);
 	}
 	
 	@Test
-	public final void testSaveGame() throws IOException {
-		//SimpleGameDAO simpleDAO = new SimpleGameDAO();
+	public final void testDAO() throws IOException, ClassNotFoundException {
 		simpleDAO.setBoard(board);
 		simpleDAO.saveGame("testSave");
 		File file = new File("testSave.bin");
 		assertTrue(file.exists());
-	}
-
-	@Test
-	public final void testLoadGame() throws ClassNotFoundException, IOException {
-		//SimpleGameDAO simpleDAO = new SimpleGameDAO();
 		SimpleBoard board2;
 		board2 = (SimpleBoard) simpleDAO.loadGame("testSave");
 		Assert.assertNotNull(board2);

@@ -92,7 +92,6 @@ public class BrutalAI implements AI {
 	} //ready func
 	
 	private String fourthMove(){
-		//TODO third move
 		if(brutalState.equals("A3C2")){
 			if(this.board.getBoard()[1]==-1){
 				return "A2";
