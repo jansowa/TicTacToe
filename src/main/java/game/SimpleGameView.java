@@ -1,6 +1,6 @@
 package game;
 
-import interfaces.Board;
+import interfaces.OldBoard;
 import interfaces.GameView;
 
 import java.util.Scanner;
@@ -10,17 +10,17 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SimpleGameView implements GameView {
-	Board board;
+	OldBoard board;
 	Scanner scan;
 	
 	@Autowired
-	public SimpleGameView(Board board){
+	public SimpleGameView(OldBoard board){
 		this.board = board;
 		scan = new Scanner(System.in);
 	}
 	
 	@Override
-	public void setBoard(Board board){
+	public void setBoard(OldBoard board){
 		this.board = board;
 	}
 	

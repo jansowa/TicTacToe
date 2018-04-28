@@ -6,19 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import interfaces.AI;
-import interfaces.Board;
+import interfaces.OldBoard;
 import interfaces.GameDAO;
 import interfaces.GameView;
 
 @Component
 public class GameApp {
 	GameView view;
-	Board board;
+	OldBoard board;
 	AI ai;
 	GameDAO dao;
 	
 	@Autowired
-	GameApp(GameView view, Board board, AI ai, GameDAO dao){
+	GameApp(GameView view, OldBoard board, AI ai, GameDAO dao){
 		this.view = view;
 		this.board = board;
 		this.ai = ai;

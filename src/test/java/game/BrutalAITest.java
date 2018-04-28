@@ -2,19 +2,19 @@ package game;
 
 import static org.junit.Assert.*;
 import interfaces.AI;
-import interfaces.Board;
+import interfaces.OldBoard;
 
 import org.junit.Before;
 import org.junit.Test;
 
 public class BrutalAITest {
-	Board board;
+	OldBoard board;
 	String field;
 	AI ai;
 	
 	@Before
 	public final void setUp(){
-		board = new SimpleBoard();
+		board = new OldSimpleBoard();
 		ai = new BrutalAI(board);
 	}
 	

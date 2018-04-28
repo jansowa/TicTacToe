@@ -1,6 +1,6 @@
 package interfaces;
 
 public interface AI {
-	public void setBoard(Board board);
+	public void setBoard(OldBoard board);
 	public String nextAImove();
 }

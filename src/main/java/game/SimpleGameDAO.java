@@ -10,24 +10,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.SerializationUtils;
 
-import interfaces.Board;
+import interfaces.OldBoard;
 import interfaces.GameDAO;
 
 @Component
 public class SimpleGameDAO implements GameDAO {
-	private Board board;
+	private OldBoard board;
 	
 	@Autowired
-	public SimpleGameDAO(Board board){
+	public SimpleGameDAO(OldBoard board){
 		this.board = board;
 	}
 	
 	@Override
-	public void setBoard(Board board){
+	public void setBoard(OldBoard board){
 		this.board = board;
 	}
 	
-	public Board getBoard(){
+	public OldBoard getBoard(){
 		return board;
 	}
 	
@@ -43,12 +43,12 @@ public class SimpleGameDAO implements GameDAO {
 
 	@SuppressWarnings("resource")
 	@Override
-	public Board loadGame(String name) throws IOException, ClassNotFoundException {
+	public OldBoard loadGame(String name) throws IOException, ClassNotFoundException {
 		ObjectInputStream objectIn;
 		FileInputStream fileIn;
 		fileIn = new FileInputStream(name+".bin");
 		objectIn = new ObjectInputStream(fileIn);
-		return (Board) objectIn.readObject();
+		return (OldBoard) objectIn.readObject();
 	}
 
 }

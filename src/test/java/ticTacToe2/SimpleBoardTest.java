@@ -1,18 +1,18 @@
 package ticTacToe2;
 
 import static org.junit.Assert.*;
-import game.SimpleBoard;
+import game.OldSimpleBoard;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class SimpleBoardTest {
-	SimpleBoard board;
+	OldSimpleBoard board;
 	
 	@Before
 	public void setUp(){
-		board = new SimpleBoard();
+		board = new OldSimpleBoard();
 	}
 	
 	@Test
@@ -26,7 +26,7 @@ public class SimpleBoardTest {
 		board.singleMove("C2", 0);
 		board.singleMove("C3", 0);
 		Assert.assertEquals(0, board.isGameOver());
-		board = new SimpleBoard();
+		board = new OldSimpleBoard();
 		board.singleMove("A1", 1);
 		board.singleMove("A2", 0);
 		board.singleMove("A3", 1);
@@ -37,7 +37,7 @@ public class SimpleBoardTest {
 		board.singleMove("C2", 1);
 		board.singleMove("C3", 0);
 		Assert.assertEquals(1, board.isGameOver());
-		board = new SimpleBoard();
+		board = new OldSimpleBoard();
 		board.singleMove("A1", 1);
 		board.singleMove("A2", 0);
 		board.singleMove("A3", 0);

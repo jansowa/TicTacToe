@@ -1,7 +1,7 @@
 package game;
 
 import interfaces.AI;
-import interfaces.Board;
+import interfaces.OldBoard;
 import interfaces.GameDAO;
 import interfaces.GameView;
 

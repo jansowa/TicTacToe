@@ -4,21 +4,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import interfaces.AI;
-import interfaces.Board;
+import interfaces.OldBoard;
 
 @Component
 public class BrutalAI implements AI {
-	Board board;
+	OldBoard board;
 	String brutalState;
 	
 	@Autowired
-	public BrutalAI(Board board){
+	public BrutalAI(OldBoard board){
 		this.board = board;
 		brutalState="";
 	}
 	
 	@Override
-	public void setBoard(Board board){
+	public void setBoard(OldBoard board){
 		this.board = board;
 	}
 	

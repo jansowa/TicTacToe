@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import game.SimpleBoard;
+import game.OldSimpleBoard;
 import game.SimpleGameDAO;
 
 import org.junit.Assert;
@@ -22,7 +22,7 @@ public class SimpleGameDAOTest {
 	SimpleGameDAO simpleDAO;
 	
 	@Mock
-	SimpleBoard board;
+	OldSimpleBoard board;
 
 	private ArrayList<String> testList;
 	@Before
@@ -36,8 +36,8 @@ public class SimpleGameDAOTest {
 		simpleDAO.saveGame("testSave");
 		File file = new File("testSave.bin");
 		assertTrue(file.exists());
-		SimpleBoard board2;
-		board2 = (SimpleBoard) simpleDAO.loadGame("testSave");
+		OldSimpleBoard board2;
+		board2 = (OldSimpleBoard) simpleDAO.loadGame("testSave");
 		Assert.assertNotNull(board2);
 	}
 

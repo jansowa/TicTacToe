@@ -5,10 +5,10 @@ import java.io.Serializable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import interfaces.Board;
+import interfaces.OldBoard;
 
 @Component
-public class SimpleBoard implements Board, Serializable {
+public class OldSimpleBoard implements OldBoard, Serializable {
 	private int[] fields = new int[9];
 	private int numberOfPlayers; //1 for singleplayer, 2 for multiplayer
 	public int emptyFields;
@@ -17,12 +17,12 @@ public class SimpleBoard implements Board, Serializable {
 	//gameStatus -2 impossible move, -1 game in progress,
 	//0 O wins, 1 X wins, 2 draw game
 	
-	public SimpleBoard(){
+	public OldSimpleBoard(){
 		restartBoard();
 		this.numberOfPlayers=0;
 	}
 	
-	public SimpleBoard(int players){
+	public OldSimpleBoard(int players){
 		restartBoard();
 		this.numberOfPlayers = players;
 	}
@@ -31,7 +31,7 @@ public class SimpleBoard implements Board, Serializable {
 	public int getEmptyFields(){
 		return emptyFields;
 	}
-		
+	
 	@Override
 	public void setPlayers(int players){
 		this.numberOfPlayers = players;
