@@ -11,14 +11,14 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.SerializationUtils;
 
 import interfaces.OldBoard;
-import interfaces.GameDAO;
+import interfaces.OldGameDAO;
 
 @Component
-public class SimpleGameDAO implements GameDAO {
+public class OldSimpleGameDAO implements OldGameDAO {
 	private OldBoard board;
 	
 	@Autowired
-	public SimpleGameDAO(OldBoard board){
+	public OldSimpleGameDAO(OldBoard board){
 		this.board = board;
 	}
 	

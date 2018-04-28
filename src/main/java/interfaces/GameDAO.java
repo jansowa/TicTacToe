@@ -1,9 +1,7 @@
 package interfaces;
 
-import java.io.IOException;
-
 public interface GameDAO {
-	public void setBoard(OldBoard board);
-	public void saveGame(String name) throws IOException;
-	public OldBoard loadGame(String name) throws IOException, ClassNotFoundException;
+	public void setBoard(Board board);
+	public void saveBoard(String name);
+	public Board loadBoard(String name);
 }

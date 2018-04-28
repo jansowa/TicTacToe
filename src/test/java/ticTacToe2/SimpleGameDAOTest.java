@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import game.OldSimpleBoard;
-import game.SimpleGameDAO;
+import game.OldSimpleGameDAO;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -19,7 +19,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 public class SimpleGameDAOTest {
 
-	SimpleGameDAO simpleDAO;
+	OldSimpleGameDAO simpleDAO;
 	
 	@Mock
 	OldSimpleBoard board;
@@ -27,7 +27,7 @@ public class SimpleGameDAOTest {
 	private ArrayList<String> testList;
 	@Before
 	public void setUp(){
-		simpleDAO = new SimpleGameDAO(board);
+		simpleDAO = new OldSimpleGameDAO(board);
 	}
 	
 	@Test

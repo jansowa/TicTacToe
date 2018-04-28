@@ -3,8 +3,11 @@ package domain;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.springframework.stereotype.Component;
+
 import interfaces.Board;
 
+@Component
 @Entity
 public class SimpleBoard implements Board {
 	@Id

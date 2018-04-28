@@ -2,7 +2,7 @@ package game;
 
 import interfaces.AI;
 import interfaces.OldBoard;
-import interfaces.GameDAO;
+import interfaces.OldGameDAO;
 import interfaces.GameView;
 
 import org.springframework.context.annotation.Bean;

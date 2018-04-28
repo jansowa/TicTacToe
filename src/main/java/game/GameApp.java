@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import interfaces.AI;
 import interfaces.OldBoard;
-import interfaces.GameDAO;
+import interfaces.OldGameDAO;
 import interfaces.GameView;
 
 @Component
@@ -15,10 +15,10 @@ public class GameApp {
 	GameView view;
 	OldBoard board;
 	AI ai;
-	GameDAO dao;
+	OldGameDAO dao;
 	
 	@Autowired
-	GameApp(GameView view, OldBoard board, AI ai, GameDAO dao){
+	GameApp(GameView view, OldBoard board, AI ai, OldGameDAO dao){
 		this.view = view;
 		this.board = board;
 		this.ai = ai;
