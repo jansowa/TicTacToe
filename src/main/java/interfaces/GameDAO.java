@@ -1,7 +1,8 @@
 package interfaces;
 
+import domain.GameBoard;
+
 public interface GameDAO {
-	public void setBoard(Board board);
-	public void saveBoard(String name);
-	public Board loadBoard(String name);
+	public void saveBoard(GameBoard board);
+	public GameBoard loadBoard(String name);
 }

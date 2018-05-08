@@ -1,36 +1,40 @@
 package game;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import interfaces.Board;
+import domain.GameBoard;
+import domain.TicTacToeBoard;
 import interfaces.GameDAO;
 
-@Component
+//@Component
 public class HibernateGameDAO implements GameDAO {
-	private Board board;
+	private EntityManagerFactory entityManagerFactory;
+	private EntityManager entityManager;
 	
 	@Autowired
-	public HibernateGameDAO(Board board){
-		// TODO constructor
+	public HibernateGameDAO(){
+		this.entityManagerFactory = Persistence.createEntityManagerFactory("myDatabase");
+		this.entityManager = entityManagerFactory.createEntityManager();
 	}
 	
 	@Override
-	public void setBoard(Board board) {
-		// TODO Auto-generated method stub
-
+	public void saveBoard(GameBoard board) {
+		entityManager.getTransaction().begin();
+		entityManager.persist(board);
+		entityManager.getTransaction().commit();
 	}
 
 	@Override
-	public void saveBoard(String name) {
-		// TODO Auto-generated method stub
-
+	public GameBoard loadBoard(String name) {
+		GameBoard board;
+		entityManager.getTransaction().begin();
+		board = entityManager.find(GameBoard.class, name);
+		entityManager.getTransaction().commit();
+		return board;
 	}
-
-	@Override
-	public Board loadBoard(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

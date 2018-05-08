@@ -3,61 +3,58 @@ package domain;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import org.springframework.stereotype.Component;
-
-import interfaces.Board;
-
-@Component
 @Entity
-public class SimpleBoard implements Board {
+public abstract class GameBoard {
 	@Id
 	private String name;
 	private int[] fields;
 	private int numberOfPlayers;
-	private int player;
+	private int player; //actual player
 	
-	public SimpleBoard(){
-		
+	public GameBoard(){
+		this.name = "";
+		this.numberOfPlayers = 2;
+		this.player = 0;
+		this.fields = null;
 	}
 	
-	@Override
-	public int[] getFields() {
-		return this.fields;
-	}
-
-	@Override
-	public void setFields(int[] fields) {
-		this.fields = fields;
-	}
-
-	@Override
-	public int getNumberOfPlayers() {
-		return this.numberOfPlayers;
-	}
-
-	@Override
-	public void setNumberOfPlayers(int numberOfPlayers) {
+	public GameBoard(String name, int numberOfPlayers, int player){
+		this.name = name;
 		this.numberOfPlayers = numberOfPlayers;
-	}
-
-	@Override
-	public int getPlayer() {
-		return this.player;
-	}
-
-	@Override
-	public void setPlayer(int player) {
 		this.player = player;
+		this.fields = null;
 	}
-
-	@Override
+	
 	public String getName() {
 		return this.name;
 	}
 
-	@Override
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public int[] getFields() {
+		return fields;
+	}
+
+	public void setFields(int[] fields) {
+		this.fields = fields;
+	}
+
+	public int getNumberOfPlayers() {
+		return this.numberOfPlayers;
+	}
+
+	public void setNumberOfPlayers(int numberOfPlayers) {
+		this.numberOfPlayers = numberOfPlayers;
+	}
+
+	public int getPlayer() {
+		return this.player;
+	}
+
+	public void setPlayer(int player) {
+		this.player = player;
 	}
 
 }
