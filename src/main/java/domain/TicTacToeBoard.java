@@ -1,9 +1,9 @@
 package domain;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
-
 import org.springframework.stereotype.Component;
+
+import com.github.jansowa.boardGame.domain.GameBoard;
 
 @Component
 @Entity
