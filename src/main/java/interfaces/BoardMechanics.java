@@ -1,7 +1,9 @@
 package interfaces;
 
+import com.github.jansowa.boardGame.domain.GameBoard;
+
 public interface BoardMechanics {
-	public void setBoard(Board board);
+	public void setBoard(GameBoard board);
 	public int[] getEmptyFields(); //returns array represents empty fields
 	public void restartBoard();
 	public void singleMove(String field, int player);

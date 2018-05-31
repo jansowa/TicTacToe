@@ -1,17 +1,17 @@
 package game;
 
-import interfaces.Board;
+import com.github.jansowa.boardGame.domain.GameBoard;
 import interfaces.BoardMechanics;
 
 public class SimpleBoardMechanics implements BoardMechanics {
-	private Board board;
+	private GameBoard board;
 	
-	public SimpleBoardMechanics(Board board){
+	public SimpleBoardMechanics(GameBoard board){
 		this.board = board;
 	}
 	
 	@Override
-	public void setBoard(Board board) {
+	public void setBoard(GameBoard board) {
 		this.board = board;
 
 	}

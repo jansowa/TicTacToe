@@ -1,6 +1,6 @@
 package interfaces;
 
-import domain.GameBoard;
+import com.github.jansowa.boardGame.domain.GameBoard;
 
 public interface GameDAO {
 	public void saveBoard(GameBoard board);

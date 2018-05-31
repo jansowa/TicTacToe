@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import domain.GameBoard;
+import com.github.jansowa.boardGame.domain.GameBoard;
 import domain.TicTacToeBoard;
 import interfaces.GameDAO;
 

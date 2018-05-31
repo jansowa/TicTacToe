@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import domain.TicTacToeBoard;
-import interfaces.Board;
+import com.github.jansowa.boardGame.domain.GameBoard;
 
 public class HibernateGameDaoTest {
 	private HibernateGameDAO dao;
