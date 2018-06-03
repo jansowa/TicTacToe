@@ -37,6 +37,7 @@ public class OldSimpleBoard implements OldBoard, Serializable {
 		this.numberOfPlayers = players;
 	}
 	
+	//ready in new class
 	@Override
 	public void restartBoard() {
 		for(int i=0; i<9; i++){
@@ -46,6 +47,8 @@ public class OldSimpleBoard implements OldBoard, Serializable {
 		this.player=0;
 	}
 	
+	
+	//ready in new class
 	public int isGameOver(){
 		//-1 not over, 0 player O wins, 1 player X wins, 2 player draw game
 		if(fields[0]!=-1){
@@ -82,6 +85,7 @@ public class OldSimpleBoard implements OldBoard, Serializable {
 		return -1;
 	}
 
+	//ready in new class
 	private static int strFieldToIntField(String field){
 		return (((int) field.charAt(0))-65)*3 + ((int) field.charAt(1))-49;
 	}
@@ -90,6 +94,7 @@ public class OldSimpleBoard implements OldBoard, Serializable {
 		return ""+(char) (field/3+65)+(char) (field%3 + 49);
 	}
 	
+	//ready in new class
 	public boolean isMovePossible(String field){
 		if(fields[strFieldToIntField(field)]!=-1){
 			return false;
@@ -97,6 +102,7 @@ public class OldSimpleBoard implements OldBoard, Serializable {
 		return true;
 	}
 	
+	//ready in new class
 	@Override
 	public void singleMove(String field, int player) {
 		if(isMovePossible(field)){
@@ -110,6 +116,7 @@ public class OldSimpleBoard implements OldBoard, Serializable {
 		}
 	}
 
+	
 	@Override
 	public int getPlayersNumber() {
 		//1 for singleplayer, 2 for multiplayer

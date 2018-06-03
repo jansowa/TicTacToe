@@ -15,7 +15,7 @@ public class BrutalAITest {
 	@Before
 	public final void setUp(){
 		board = new OldSimpleBoard();
-		ai = new BrutalAI(board);
+		ai = new OldBrutalAI(board);
 	}
 	
 	@Test
