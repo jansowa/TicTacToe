@@ -2,11 +2,20 @@ package game;
 import com.github.jansowa.boardGame.mechanics.BoardMechanics;
 import com.github.jansowa.boardGame.domain.GameBoard;
 
-public class TicTacToeMechanics extends BoardMechanics {
+import domain.TicTacToeBoard;
 
+public class TicTacToeMechanics extends BoardMechanics {
+	public TicTacToeMechanics(){
+		super();
+	}
+	
+	public TicTacToeMechanics(TicTacToeBoard board){
+		super(board);
+	}
+	
 	@Override
 	public int isGameOver() {
-		//-1 not over, 0 player O wins, 1 player X wins, 2 player draw game
+		//-1 not over, 0 player O wins, 1 player X wins, 2 draw game
 		int[] fields = this.getBoard().getFields();
 		if(fields[0]!=-1){
 			if(fields[0]==fields[1] && fields[1]==fields[2]){
@@ -82,7 +91,7 @@ public class TicTacToeMechanics extends BoardMechanics {
 		return true;
 	}
 	
-	private int strFieldToIntField(String field){
+	public static int strFieldToIntField(String field){
 		return (((int) field.charAt(0))-65)*3 + ((int) field.charAt(1))-49;
 	}
 	

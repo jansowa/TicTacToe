@@ -8,6 +8,7 @@ import com.github.jansowa.boardGame.domain.GameBoard;
 @Component
 @Entity
 public class TicTacToeBoard extends GameBoard {
+	//0 for player 0, 1 for player X, -1 for empty field
 	public TicTacToeBoard(){
 		super();
 		int[] empty = {-1, -1, -1, -1, -1, -1, -1, -1, -1};

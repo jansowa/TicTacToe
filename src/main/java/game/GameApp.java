@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import interfaces.AI;
+import interfaces.OldAI;
 import interfaces.OldBoard;
 import interfaces.OldGameDAO;
 import interfaces.GameView;
@@ -14,11 +14,11 @@ import interfaces.GameView;
 public class GameApp {
 	GameView view;
 	OldBoard board;
-	AI ai;
+	OldAI ai;
 	OldGameDAO dao;
 	
 	@Autowired
-	GameApp(GameView view, OldBoard board, AI ai, OldGameDAO dao){
+	GameApp(GameView view, OldBoard board, OldAI ai, OldGameDAO dao){
 		this.view = view;
 		this.board = board;
 		this.ai = ai;

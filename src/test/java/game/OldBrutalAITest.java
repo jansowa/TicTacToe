@@ -1,16 +1,16 @@
 package game;
 
 import static org.junit.Assert.*;
-import interfaces.AI;
+import interfaces.OldAI;
 import interfaces.OldBoard;
 
 import org.junit.Before;
 import org.junit.Test;
 
-public class BrutalAITest {
+public class OldBrutalAITest {
 	OldBoard board;
 	String field;
-	AI ai;
+	OldAI ai;
 	
 	@Before
 	public final void setUp(){

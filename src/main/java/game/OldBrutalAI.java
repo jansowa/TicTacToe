@@ -3,11 +3,11 @@ package game;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import interfaces.AI;
+import interfaces.OldAI;
 import interfaces.OldBoard;
 
 @Component
-public class OldBrutalAI implements AI {
+public class OldBrutalAI implements OldAI {
 	OldBoard board;
 	String brutalState;
 	
