@@ -4,8 +4,13 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import domain.TicTacToeBoard;
+import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
+import com.github.jansowa.tictactoe.game.AppConfiguration;
+import com.github.jansowa.tictactoe.game.BrutalAI;
+import com.github.jansowa.tictactoe.game.TicTacToeMechanics;
 
 public class BrutalAITest {
 	BrutalAI ai;
@@ -13,9 +18,14 @@ public class BrutalAITest {
 	
 	@Before
 	public final void setUp(){
-		TicTacToeBoard board = new TicTacToeBoard("", 1, 0);
+		/*TicTacToeBoard board = new TicTacToeBoard("", 1, 0);
 		ai = new BrutalAI(board);
-		mechanics = new TicTacToeMechanics(board);
+		mechanics = new TicTacToeMechanics(board);*/
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
+		ai = context.getBean("brutalAI", com.github.jansowa.tictactoe.game.BrutalAI.class);
+		mechanics = context.getBean("ticTacToeMechanics", com.github.jansowa.tictactoe.game.TicTacToeMechanics.class);
+		mechanics.getBoard().setNumberOfPlayers(1);
+		mechanics.getBoard().setPlayer(0);
 	}
 	
 	@Test

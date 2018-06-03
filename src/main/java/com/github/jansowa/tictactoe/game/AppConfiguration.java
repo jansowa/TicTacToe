@@ -1,17 +1,15 @@
-package game;
+package com.github.jansowa.tictactoe.game;
 
-import interfaces.OldAI;
-import interfaces.OldBoard;
-import interfaces.OldGameDAO;
-import interfaces.GameView;
-
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan
+@ComponentScan("com.github.jansowa.tictactoe")
 public class AppConfiguration {
+	/*@Bean
+	public TicTacToeBoard board(){
+		return new TicTacToeBoard();
+	}*/
 	/*@Bean
 	public Board board(){
 		return new SimpleBoard();

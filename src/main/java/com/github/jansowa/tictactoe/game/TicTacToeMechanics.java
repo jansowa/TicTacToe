@@ -1,14 +1,18 @@
-package game;
+package com.github.jansowa.tictactoe.game;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.github.jansowa.boardGame.mechanics.BoardMechanics;
 import com.github.jansowa.boardGame.domain.GameBoard;
+import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 
-import domain.TicTacToeBoard;
-
+@Component
 public class TicTacToeMechanics extends BoardMechanics {
 	public TicTacToeMechanics(){
 		super();
 	}
 	
+	@Autowired
 	public TicTacToeMechanics(TicTacToeBoard board){
 		super(board);
 	}

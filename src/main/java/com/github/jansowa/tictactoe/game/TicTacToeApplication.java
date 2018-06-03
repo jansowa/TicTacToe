@@ -1,4 +1,4 @@
-package game;
+package com.github.jansowa.tictactoe.game;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

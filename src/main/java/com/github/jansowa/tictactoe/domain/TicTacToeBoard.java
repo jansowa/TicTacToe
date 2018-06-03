@@ -1,4 +1,4 @@
-package domain;
+package com.github.jansowa.tictactoe.domain;
 
 import javax.persistence.Entity;
 import org.springframework.stereotype.Component;

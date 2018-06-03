@@ -1,25 +1,22 @@
-package game;
+package com.github.jansowa.tictactoe.game;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import interfaces.OldAI;
-import interfaces.OldBoard;
+import com.github.jansowa.boardGame.mechanics.AI;
+import com.github.jansowa.boardGame.domain.GameBoard;
+import com.github.jansowa.boardGame.mechanics.BoardMechanics;
 
 @Component
-public class OldBrutalAI implements OldAI {
-	OldBoard board;
-	String brutalState;
+public class BrutalAI extends AI{
+	private String brutalState;
+	private int[] fields;
 	
 	@Autowired
-	public OldBrutalAI(OldBoard board){
-		this.board = board;
-		brutalState="";
-	}
-	
-	@Override
-	public void setBoard(OldBoard board){
-		this.board = board;
+	public BrutalAI(GameBoard board){
+		super(board);
+		brutalState = "";
+		fields = this.getBoard().getFields();
 	}
 	
 	private String firstMove(){
@@ -27,12 +24,12 @@ public class OldBrutalAI implements OldAI {
 	} //ready func
 	
 	private String secondMove(){
-		if(this.board.getBoard()[1]==1 || this.board.getBoard()[3]==1
-				||this.board.getBoard()[2]==1 || this.board.getBoard()[6]==1){
+		if(fields[1]==1 || fields[3]==1
+				||fields[2]==1 || fields[6]==1){
 			brutalState="A1";
 			return "A1";
 		}
-		else if(this.board.getBoard()[5]==1 || this.board.getBoard()[7]==1){
+		else if(fields[5]==1 || fields[7]==1){
 			brutalState="C3";
 			return "C3";
 		}
@@ -45,46 +42,46 @@ public class OldBrutalAI implements OldAI {
 	private String thirdMove(){
 		if(brutalState.equals("A1"))
 		{
-			if(this.board.getBoard()[8]==-1){
+			if(fields[8]==-1){
 				return "C1";
 				//endgame
 			}
-			else if(this.board.getBoard()[1]==1){
+			else if(fields[1]==1){
 				brutalState = "A1B1";
 				return "B1";
 			}
-			else if(this.board.getBoard()[2]==1){
+			else if(fields[2]==1){
 				brutalState = "A1B3";
 				return "B3";
 			}
-			else if(this.board.getBoard()[3]==1){
+			else if(fields[3]==1){
 				brutalState = "A1A2";
 				return "A2";
 			}
-			else if(this.board.getBoard()[6]==1){
+			else if(fields[6]==1){
 				brutalState = "A1C2";
 				return "C2";
 			}
 		} //full block
 		else if(brutalState.equals("C3")){
-			if(this.board.getBoard()[0]==-1){
+			if(fields[0]==-1){
 				return "A1";
 				//endgame
 			}
-			else if(this.board.getBoard()[5]==1){
+			else if(fields[5]==1){
 				brutalState = "C3C2";
 				return "C2";
 			}
-			else if(this.board.getBoard()[7]==1){
+			else if(fields[7]==1){
 				brutalState = "C3B3";
 			}
 		} //full block
 		else if(brutalState.equals("A3")){
-			if(this.board.getBoard()[6]==-1){
+			if(fields[6]==-1){
 				return "C1";
 				//endgame
 			}
-			else if(this.board.getBoard()[8]==1){//player at C3 and C1
+			else if(fields[8]==1){//player at C3 and C1
 				brutalState = "A3C2";
 				return "C2";
 			}
@@ -98,7 +95,7 @@ public class OldBrutalAI implements OldAI {
 	
 	private String fourthMove(){
 		if(brutalState.equals("A3C2")){
-			if(this.board.getBoard()[1]==-1){
+			if(fields[1]==-1){
 				return "A2";
 			} //endgame
 			else{
@@ -106,7 +103,7 @@ public class OldBrutalAI implements OldAI {
 			}
 		} //full block
 		else if(brutalState.equals("A3B1")){
-			if(this.board.getBoard()[5]==-1){
+			if(fields[5]==-1){
 				return "B3";
 			}
 			else{
@@ -114,7 +111,7 @@ public class OldBrutalAI implements OldAI {
 			}
 		}
 		else if(brutalState.equals("C3C2")){
-			if(this.board.getBoard()[1]==-1){
+			if(fields[1]==-1){
 				return "A2";
 			}//end game
 			else{
@@ -122,7 +119,7 @@ public class OldBrutalAI implements OldAI {
 			}//end game
 		} //full block
 		else if(brutalState.equals("C3B3")){
-			if(this.board.getBoard()[2]==-1){
+			if(fields[2]==-1){
 				return "A3";
 			}//end game
 			else{
@@ -130,7 +127,7 @@ public class OldBrutalAI implements OldAI {
 			}//end game
 		} //full block
 		else if(brutalState.equals("A1B1")){
-			if(this.board.getBoard()[5]==-1){
+			if(fields[5]==-1){
 				return "B3";
 			}//end game
 			else{
@@ -138,7 +135,7 @@ public class OldBrutalAI implements OldAI {
 			}//end game
 		} //full block
 		else if(brutalState.equals("A1B3")){
-			if(this.board.getBoard()[3]==-1){
+			if(fields[3]==-1){
 				return "B1";
 			}//end game
 			else{
@@ -146,7 +143,7 @@ public class OldBrutalAI implements OldAI {
 			}
 		} //full block
 		else if(brutalState.equals("A1A2")){
-			if(this.board.getBoard()[2]==-1){
+			if(fields[2]==-1){
 				return "A3";
 			}//end game
 			else{
@@ -154,7 +151,7 @@ public class OldBrutalAI implements OldAI {
 			}//end game
 		}//full block
 		else if(brutalState.equals("A1C2")){
-			if(this.board.getBoard()[1]==-1){
+			if(fields[1]==-1){
 				return "A2";
 			}//end game
 			else{
@@ -166,29 +163,31 @@ public class OldBrutalAI implements OldAI {
 	
 	private String fifthMove(){
 		for(int i=0; i<9; i++){
-			if(board.getBoard()[i]==-1){
-				return board.intFieldToStringField(i);
+			if(fields[i]==-1){
+				return TicTacToeMechanics.intFieldToStringField(i);
 			}
 		}
 		return "";
 	} //ready func
 	
 	@Override
-	public String nextAImove(){
+	public String nextAIMove(){
 		//very brutal AI move
-		if(board.getEmptyFields()==9){
+		int emptyFields = TicTacToeMechanics.emptyFields(this.getBoard());
+		
+		if(emptyFields==9){
 			return firstMove();
 		}
-		if(board.getEmptyFields()==7){
+		if(emptyFields==7){
 			return secondMove();
 		}
-		if(board.getEmptyFields()==5){
+		if(emptyFields==5){
 			return thirdMove();
 		}
-		if(board.getEmptyFields()==3){
+		if(emptyFields==3){
 			return fourthMove();
 		}
-		if(board.getEmptyFields()==1){
+		if(emptyFields==1){
 			return fifthMove();
 		}
 		return "";

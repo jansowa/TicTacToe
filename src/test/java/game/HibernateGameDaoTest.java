@@ -5,8 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import domain.TicTacToeBoard;
 import com.github.jansowa.boardGame.domain.GameBoard;
+import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
+import com.github.jansowa.tictactoe.game.HibernateGameDAO;
 
 public class HibernateGameDaoTest {
 	private HibernateGameDAO dao;

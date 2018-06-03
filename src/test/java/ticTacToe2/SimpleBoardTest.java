@@ -1,11 +1,12 @@
 package ticTacToe2;
 
 import static org.junit.Assert.*;
-import game.OldSimpleBoard;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.github.jansowa.tictactoe.game.OldSimpleBoard;
 
 public class SimpleBoardTest {
 	OldSimpleBoard board;

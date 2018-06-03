@@ -7,6 +7,9 @@ import interfaces.OldBoard;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.github.jansowa.tictactoe.game.OldBrutalAI;
+import com.github.jansowa.tictactoe.game.OldSimpleBoard;
+
 public class OldBrutalAITest {
 	OldBoard board;
 	String field;

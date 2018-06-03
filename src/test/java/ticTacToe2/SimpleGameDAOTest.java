@@ -6,15 +6,15 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import game.OldSimpleBoard;
-import game.OldSimpleGameDAO;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import com.github.jansowa.tictactoe.game.OldSimpleBoard;
+import com.github.jansowa.tictactoe.game.OldSimpleGameDAO;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SimpleGameDAOTest {

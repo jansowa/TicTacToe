@@ -1,4 +1,4 @@
-package game;
+package com.github.jansowa.tictactoe.game;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

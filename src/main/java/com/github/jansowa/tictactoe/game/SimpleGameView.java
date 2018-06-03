@@ -1,4 +1,4 @@
-package game;
+package com.github.jansowa.tictactoe.game;
 
 import interfaces.OldBoard;
 import interfaces.GameView;
