@@ -1,0 +1,25 @@
+.boardWrapper{
+	height: 150px;
+	width: 150px;
+}
+.field{
+	display: inline-block;
+	border: 1px solid black;
+	height: 48px;
+	width: 48px;
+	float: left;
+}
+
+.field:hover{
+	background-color: grey;
+}
+
+.active{
+	background-color: grey;
+}
+
+.restart{
+	height: 40px;
+	width: 100px;
+	border: 1px solid black;
+}
