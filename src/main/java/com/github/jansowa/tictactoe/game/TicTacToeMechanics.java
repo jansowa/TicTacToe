@@ -59,6 +59,7 @@ public class TicTacToeMechanics extends BoardMechanics {
 	public void restartBoard() {
 		for(int i=0; i<9; i++){
 			this.getBoard().getFields()[i]=-1;
+			this.getBoard().setPlayer(0);
 		}
 	}
 
