@@ -13,6 +13,16 @@ import com.github.jansowa.tictactoe.game.TicTacToeMechanics;
 @RestController
 @Component
 public class TicTacToeController {
+	private class BoardState{
+		public int state;
+		public TicTacToeBoard board;
+		
+		BoardState(int state, TicTacToeBoard board){
+			this.state = state;
+			this.board = board;
+		}
+	}
+	
 	@Autowired
 	TicTacToeBoard board;
 	@Autowired
@@ -30,10 +40,11 @@ public class TicTacToeController {
 	}
 	
 	@PostMapping("/singleMove")
-	TicTacToeBoard singleMove(
+	BoardState singleMove(
 		@RequestParam String field
 		){
-		mechanics.singleMove(field);
-		return this.board;
+		int state = mechanics.singleMove(field);
+		BoardState boardState = new BoardState(state, this.board);
+		return boardState;
 	}
 }

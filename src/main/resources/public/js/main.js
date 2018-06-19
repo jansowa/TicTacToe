@@ -1,7 +1,8 @@
 function singleMove(singleField){
 	$.post("http://localhost:8080/singleMove", {field: singleField})
-		.done(function(boardJSON){
-			printBoard(boardJSON);
+		.done(function(boardStateJSON){
+			printBoard(boardStateJSON.board);
+			printResult(boardStateJSON.state);
 		});
 }
 
@@ -52,6 +53,12 @@ function multiPlayer(){
 
 function printResult(result){
 	//TODO
+	if(result==0){
+		alert("O wins!");
+	}
+	else if(result==1){
+		alert("X wins!");
+	}
 }
 
 function saveGame(){
