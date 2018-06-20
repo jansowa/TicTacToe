@@ -2,7 +2,7 @@ function singleMove(singleField){
 	$.post("http://localhost:8080/singleMove", {field: singleField})
 		.done(function(boardStateJSON){
 			printBoard(boardStateJSON.board);
-			printResult(boardStateJSON.state);
+			printResult(boardStateJSON.state, boardStateJSON.board.player);
 		});
 }
 
@@ -51,13 +51,27 @@ function multiPlayer(){
 	alert("Multi player");
 }
 
-function printResult(result){
+function printResult(result, player){
 	//TODO
+	$gameState = $('.gameState');
 	if(result==0){
-		alert("O wins!");
+		//alert("O wins!");
+		$gameState.text("Player O wins!");
 	}
 	else if(result==1){
-		alert("X wins!");
+		//alert("X wins!");
+		$gameState.text("Player X wins!");
+	}
+	else if(result==2){
+		$gameState.text("Draw game");
+	}
+	else{
+		if(player==0){
+			$gameState.text("Player O move:");
+		}
+		else{
+			$gameState.text("Player X move:");
+		}
 	}
 }
 
@@ -97,4 +111,5 @@ $(document).ready(()=>{
 	});
 
 	getBoard();
+	printResult(-1, 0);
 })
