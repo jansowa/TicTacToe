@@ -47,4 +47,20 @@ public class TicTacToeController {
 		BoardState boardState = new BoardState(state, this.board);
 		return boardState;
 	}
+	
+	@GetMapping("/singlePlayer")
+	TicTacToeBoard singlePlayer(){
+		//TODO
+
+		return this.board;
+	}
+	
+	@GetMapping("/multiPlayer")
+	TicTacToeBoard multiPlayer(){
+		//TODO
+		mechanics.restartBoard();
+		this.board.setNumberOfPlayers(2);
+		this.board.setPlayer(0);
+		return this.board;
+	}
 }

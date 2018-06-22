@@ -42,13 +42,20 @@ function printBoard(boardJSON){
 }
 
 function singlePlayer(){
-	//TODO
-	alert("Single player");
+	$.ajax({
+		url: "/singlePlayer"
+	}).then(function(){
+		//TODO
+	});
 }
 
 function multiPlayer(){
-	//TODO
-	alert("Multi player");
+	$.ajax({
+		url: "/multiPlayer"
+	}).then(function(boardJSON){
+		printBoard(boardJSON);
+		printResult(-1, 0);
+	})
 }
 
 function printResult(result, player){
