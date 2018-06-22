@@ -12,6 +12,13 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>jansowa BoardGame Library</id>
+			<url>https://github.com/jansowa/BoardGame/raw/repository</url>	
+		</repository>
+	</repositories>
+
 	<dependencies>
 
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
@@ -43,6 +50,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<version>2.0.2.RELEASE</version>
 			<scope>test</scope>
+		</dependency>
+		
+		<!--  own BoardGame library -->
+		<dependency>
+			<groupId>com.github.jansowa</groupId>
+			<artifactId>BoardGame</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<name>Tic Tac Toe</name>
