@@ -10,7 +10,7 @@ import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.game.HibernateGameDAO;
 
 public class HibernateGameDaoTest {
-	private HibernateGameDAO dao;
+/*	private HibernateGameDAO dao;
 	
 	@Before
 	public void setUp(){
@@ -29,5 +29,5 @@ public class HibernateGameDaoTest {
 		assertEquals(0, loadGame.getPlayer());
 	}
 	
-
+*/
 }

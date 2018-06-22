@@ -1,5 +1,5 @@
 function singleMove(singleField){
-	$.post("http://localhost:8080/singleMove", {field: singleField})
+	$.post("/singleMove", {field: singleField})
 		.done(function(boardStateJSON){
 			printBoard(boardStateJSON.board);
 			printResult(boardStateJSON.state, boardStateJSON.board.player);
@@ -21,7 +21,7 @@ function drawSign(sign, field){
 
 function restart(){
 	$.ajax({
-		url: "http://localhost:8080/restartBoard"
+		url: "/restartBoard"
 	}).then(function(boardJSON) {
 		printBoard(boardJSON);
 	});
@@ -29,7 +29,7 @@ function restart(){
 
 function getBoard(){
 	$.ajax({
-		url: "http://localhost:8080/getBoard"
+		url: "/getBoard"
 	}).then(function(boardJSON) {
 		printBoard(boardJSON);
 	});
