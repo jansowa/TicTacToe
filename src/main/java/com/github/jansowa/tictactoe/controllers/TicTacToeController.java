@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.github.jansowa.boardGame.mechanics.AI;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.game.TicTacToeMechanics;
 
@@ -27,6 +28,8 @@ public class TicTacToeController {
 	TicTacToeBoard board;
 	@Autowired
 	TicTacToeMechanics mechanics;
+	@Autowired
+	AI ai;
 	
 	@GetMapping("/getBoard")
 	TicTacToeBoard getBoard(){
@@ -36,6 +39,11 @@ public class TicTacToeController {
 	@GetMapping("/restartBoard")
 	TicTacToeBoard restartBoard(){
 		mechanics.restartBoard();
+		
+		//If mode is single player, AI makes first move there:
+		if(this.board.getNumberOfPlayers()==1){
+			singleMove(ai.nextAIMove());
+		}
 		return this.board;
 	}
 	
@@ -43,7 +51,13 @@ public class TicTacToeController {
 	BoardState singleMove(
 		@RequestParam String field
 		){
+		
 		int state = mechanics.singleMove(field);
+
+		//If mode is single player, AI makes his move there:
+		if(this.board.getNumberOfPlayers()==1 && state==-1){
+			state = mechanics.singleMove(ai.nextAIMove());
+		}
 		BoardState boardState = new BoardState(state, this.board);
 		return boardState;
 	}
@@ -51,7 +65,9 @@ public class TicTacToeController {
 	@GetMapping("/singlePlayer")
 	TicTacToeBoard singlePlayer(){
 		//TODO
-
+		mechanics.restartBoard();
+		this.board.setNumberOfPlayers(1);
+		mechanics.singleMove(ai.nextAIMove());
 		return this.board;
 	}
 	

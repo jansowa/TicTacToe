@@ -48,10 +48,11 @@ function printBoard(boardJSON){
 function singlePlayer(){
 	$.ajax({
 		url: "/singlePlayer"
-	}).then(function(){
-		//TODO
+	}).then(function(boardJSON){
+		printBoard(boardJSON);
 		$('.field').click( event => {
 			singleMove($(event.currentTarget).attr('id'));
+
 		})
 	});
 }
@@ -69,7 +70,7 @@ function multiPlayer(){
 }
 
 function printResult(result, player){
-	//TODO
+
 	$gameState = $('.gameState');
 	if(result==0){
 		//alert("O wins!");
