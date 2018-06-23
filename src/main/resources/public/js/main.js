@@ -25,6 +25,9 @@ function restart(){
 	}).then(function(boardJSON) {
 		printBoard(boardJSON);
 		$('.gameState').text("Player O move:")
+		$('.field').click( event => {
+			singleMove($(event.currentTarget).attr('id'));
+		})
 	});
 }
 
@@ -47,6 +50,9 @@ function singlePlayer(){
 		url: "/singlePlayer"
 	}).then(function(){
 		//TODO
+		$('.field').click( event => {
+			singleMove($(event.currentTarget).attr('id'));
+		})
 	});
 }
 
@@ -56,6 +62,9 @@ function multiPlayer(){
 	}).then(function(boardJSON){
 		printBoard(boardJSON);
 		printResult(-1, 0);
+		$('.field').click( event => {
+			singleMove($(event.currentTarget).attr('id'));
+		})
 	})
 }
 
@@ -73,13 +82,17 @@ function printResult(result, player){
 	else if(result==2){
 		$gameState.text("Draw game");
 	}
-	else{
+	else{ //if result==-1
 		if(player==0){
 			$gameState.text("Player O move:");
 		}
 		else{
 			$gameState.text("Player X move:");
 		}
+	}
+
+	if(result!=-1){
+		$('.field').off('click');
 	}
 }
 
@@ -94,30 +107,27 @@ function loadGame(){
 }
 
 $(document).ready(()=>{
-	$('.field').on('click', event => {
-		singleMove($(event.currentTarget).attr('id'));
-	});
-
-	$('.restart').on('click', event => {
+	$('.restart').click( () => {
 		restart();
-	});
+	})
 
-	$('.loadGame').on('click', event => {
+	$('.loadGame').click( () => {
 		loadGame();
-	});
+	})
 
-	$('.saveGame').on('click', event => {
+	$('.saveGame').click( () => {
 		saveGame();
 	});
 
-	$('.singlePlayer').on('click', event => {
+	$('.singlePlayer').click( () => {
 		singlePlayer();
-	});
+	})
 
-	$('.multiPlayer').on('click', event => {
+	$('.multiPlayer').click( () => {
 		multiPlayer();
-	});
+	})
 
-	getBoard();
-	printResult(-1, 0);
+	//getBoard();
+	//printResult(-1, 0);
+	multiPlayer();
 })
