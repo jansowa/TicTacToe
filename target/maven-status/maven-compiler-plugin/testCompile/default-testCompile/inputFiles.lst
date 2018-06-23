@@ -1,6 +1,6 @@
-/home/sufka/workspace/TicTacToeGitLib/src/test/java/game/OldBrutalAITest.java
-/home/sufka/workspace/TicTacToeGitLib/src/test/java/game/BrutalAITest.java
-/home/sufka/workspace/TicTacToeGitLib/src/test/java/game/HibernateGameDaoTest.java
-/home/sufka/workspace/TicTacToeGitLib/src/test/java/ticTacToe2/SimpleBoardTest.java
-/home/sufka/workspace/TicTacToeGitLib/src/test/java/game/TicTacToeMechanicsTest.java
-/home/sufka/workspace/TicTacToeGitLib/src/test/java/ticTacToe2/SimpleGameDAOTest.java
+/home/sufka/workspace/TicTacToe/src/test/java/game/TicTacToeMechanicsTest.java
+/home/sufka/workspace/TicTacToe/src/test/java/game/HibernateGameDaoTest.java
+/home/sufka/workspace/TicTacToe/src/test/java/ticTacToe2/SimpleBoardTest.java
+/home/sufka/workspace/TicTacToe/src/test/java/game/OldBrutalAITest.java
+/home/sufka/workspace/TicTacToe/src/test/java/game/BrutalAITest.java
+/home/sufka/workspace/TicTacToe/src/test/java/ticTacToe2/SimpleGameDAOTest.java

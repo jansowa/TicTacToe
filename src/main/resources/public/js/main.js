@@ -24,6 +24,7 @@ function restart(){
 		url: "/restartBoard"
 	}).then(function(boardJSON) {
 		printBoard(boardJSON);
+		$('.gameState').text("Player O move:")
 	});
 }
 
