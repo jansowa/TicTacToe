@@ -117,15 +117,27 @@ public class TicTacToeMechanicsTest {
 
 	@Test
 	public final void testStrFieldToIntField() {
+		assertEquals(0, TicTacToeMechanics.strFieldToIntField("A1"));
+		assertEquals(1, TicTacToeMechanics.strFieldToIntField("A2"));
 		assertEquals(2, TicTacToeMechanics.strFieldToIntField("A3"));
+		assertEquals(3, TicTacToeMechanics.strFieldToIntField("B1"));
 		assertEquals(4, TicTacToeMechanics.strFieldToIntField("B2"));
+		assertEquals(5, TicTacToeMechanics.strFieldToIntField("B3"));
 		assertEquals(6, TicTacToeMechanics.strFieldToIntField("C1"));
+		assertEquals(7, TicTacToeMechanics.strFieldToIntField("C2"));
+		assertEquals(8, TicTacToeMechanics.strFieldToIntField("C3"));
 	}
 	
 	@Test
 	public final void testIntFieldToStringField() {
 		assertEquals("A1", TicTacToeMechanics.intFieldToStringField(0));
+		assertEquals("A2", TicTacToeMechanics.intFieldToStringField(1));
+		assertEquals("A3", TicTacToeMechanics.intFieldToStringField(2));
+		assertEquals("B1", TicTacToeMechanics.intFieldToStringField(3));
 		assertEquals("B2", TicTacToeMechanics.intFieldToStringField(4));
+		assertEquals("B3", TicTacToeMechanics.intFieldToStringField(5));
+		assertEquals("C1", TicTacToeMechanics.intFieldToStringField(6));
+		assertEquals("C2", TicTacToeMechanics.intFieldToStringField(7));
 		assertEquals("C3", TicTacToeMechanics.intFieldToStringField(8));
 	}
 

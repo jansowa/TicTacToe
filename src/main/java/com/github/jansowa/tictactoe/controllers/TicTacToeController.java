@@ -51,9 +51,7 @@ public class TicTacToeController {
 	BoardState singleMove(
 		@RequestParam String field
 		){
-		
 		int state = mechanics.singleMove(field);
-
 		//If mode is single player, AI makes his move there:
 		if(this.board.getNumberOfPlayers()==1 && state==-1){
 			state = mechanics.singleMove(ai.nextAIMove());
@@ -64,7 +62,6 @@ public class TicTacToeController {
 	
 	@GetMapping("/singlePlayer")
 	TicTacToeBoard singlePlayer(){
-		//TODO
 		mechanics.restartBoard();
 		this.board.setNumberOfPlayers(1);
 		mechanics.singleMove(ai.nextAIMove());

@@ -53,7 +53,7 @@ function singlePlayer(){
 		$('.field').click( event => {
 			singleMove($(event.currentTarget).attr('id'));
 
-		})
+		});
 	});
 }
 
@@ -73,11 +73,9 @@ function printResult(result, player){
 
 	$gameState = $('.gameState');
 	if(result==0){
-		//alert("O wins!");
 		$gameState.text("Player O wins!");
 	}
 	else if(result==1){
-		//alert("X wins!");
 		$gameState.text("Player X wins!");
 	}
 	else if(result==2){
@@ -108,6 +106,7 @@ function loadGame(){
 }
 
 $(document).ready(()=>{
+	alert("Fuck police3");
 	$('.restart').click( () => {
 		restart();
 	})
@@ -128,7 +127,5 @@ $(document).ready(()=>{
 		multiPlayer();
 	})
 
-	//getBoard();
-	//printResult(-1, 0);
 	multiPlayer();
 })

@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 import com.github.jansowa.boardGame.mechanics.AI;
 import com.github.jansowa.boardGame.domain.GameBoard;
-import com.github.jansowa.boardGame.mechanics.BoardMechanics;
 
 @Component
 public class BrutalAI extends AI{
@@ -24,8 +23,8 @@ public class BrutalAI extends AI{
 	} //ready func
 	
 	private String secondMove(){
-		if(fields[1]==1 || fields[3]==1
-				||fields[2]==1 || fields[6]==1){
+		if(fields[1]==1 || fields[2]==1
+				||fields[3]==1 || fields[6]==1){
 			brutalState="A1";
 			return "A1";
 		}
@@ -43,7 +42,7 @@ public class BrutalAI extends AI{
 		if(brutalState.equals("A1"))
 		{
 			if(fields[8]==-1){
-				return "C1";
+				return "C3";
 				//endgame
 			}
 			else if(fields[1]==1){
@@ -74,6 +73,7 @@ public class BrutalAI extends AI{
 			}
 			else if(fields[7]==1){
 				brutalState = "C3B3";
+				return "B3";
 			}
 		} //full block
 		else if(brutalState.equals("A3")){
