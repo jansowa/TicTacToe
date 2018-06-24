@@ -106,7 +106,6 @@ function loadGame(){
 }
 
 $(document).ready(()=>{
-	alert("Fuck police3");
 	$('.restart').click( () => {
 		restart();
 	})

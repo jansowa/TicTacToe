@@ -42,7 +42,7 @@ public class TicTacToeController {
 		
 		//If mode is single player, AI makes first move there:
 		if(this.board.getNumberOfPlayers()==1){
-			singleMove(ai.nextAIMove());
+			mechanics.singleMove(ai.nextAIMove());
 		}
 		return this.board;
 	}
