@@ -95,14 +95,14 @@ function printResult(result, player){
 	}
 }
 
-function saveGame(){
-	//TODO
-	alert("Save game");
+function saveGame(name){
+	$.post("/saveGame", {gameName: name});
+	//TODO info game saved
 }
 
-function loadGame(){
-	//TODO
-	alert("Load game");
+function loadGame(name){
+	$.get("/loadGame", {gameName: name});
+	//TODO print loaded board
 }
 
 $(document).ready(()=>{
@@ -111,12 +111,24 @@ $(document).ready(()=>{
 	})
 
 	$('.loadGame').click( () => {
-		loadGame();
+		$('.loadInput').toggle();
+		$('.loadButton').toggle();
+	});
+
+	$(".loadButton").click( () => {
+		var gameName = $('.loadInput').val();
+		loadGame(gameName);
 	})
 
 	$('.saveGame').click( () => {
-		saveGame();
+		$('.saveInput').toggle();
+		$('.saveButton').toggle();
 	});
+
+	$(".saveButton").click( event => {
+		var gameName = $('.saveInput').val();
+		saveGame(gameName);
+	})
 
 	$('.singlePlayer').click( () => {
 		singlePlayer();

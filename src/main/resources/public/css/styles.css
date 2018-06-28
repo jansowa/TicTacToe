@@ -36,6 +36,22 @@ body {
 	display: block;
 }
 
+.saveInput {
+	display:none;
+}
+
+.loadInput {
+	display:none;
+}
+
+.saveButton{
+	display: none;
+}
+
+.loadButton{
+	display: none;
+}
+
 footer{
 	position: absolute;
 	bottom: 0;

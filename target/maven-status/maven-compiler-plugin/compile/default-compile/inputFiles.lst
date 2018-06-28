@@ -13,6 +13,7 @@
 /home/sufka/workspace/TicTacToe/src/main/java/com/github/jansowa/tictactoe/game/HibernateGameDAO.java
 /home/sufka/workspace/TicTacToe/src/main/java/com/github/jansowa/tictactoe/game/TestClass.java
 /home/sufka/workspace/TicTacToe/src/main/java/com/github/jansowa/tictactoe/game/OldSimpleGameDAO.java
+/home/sufka/workspace/TicTacToe/src/main/java/com/github/jansowa/tictactoe/controllers/DAOController.java
 /home/sufka/workspace/TicTacToe/src/main/java/com/github/jansowa/tictactoe/game/GameApp.java
 /home/sufka/workspace/TicTacToe/src/main/java/interfaces/GameView.java
 /home/sufka/workspace/TicTacToe/src/main/java/com/github/jansowa/tictactoe/game/AppConfiguration.java
