@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.github.jansowa.boardGame.domain.GameBoard;
+import com.github.jansowa.boardGame.mechanics.GameDAO;
 
-import interfaces.GameDAO;
 
-//@Component
-public class HibernateGameDAO implements GameDAO {
+@Component
+public class HibernateGameDAO extends GameDAO {
 	private EntityManagerFactory entityManagerFactory;
 	private EntityManager entityManager;
 	
@@ -23,14 +23,14 @@ public class HibernateGameDAO implements GameDAO {
 	}
 	
 	@Override
-	public void saveBoard(GameBoard board) {
+	public void saveGame(GameBoard board) {
 		entityManager.getTransaction().begin();
 		entityManager.persist(board);
 		entityManager.getTransaction().commit();
 	}
 
 	@Override
-	public GameBoard loadBoard(String name) {
+	public GameBoard loadGame(String name) {
 		GameBoard board;
 		entityManager.getTransaction().begin();
 		board = entityManager.find(GameBoard.class, name);
