@@ -20,4 +20,5 @@ public class TicTacToeBoard extends GameBoard {
 		int[] empty = {-1, -1, -1, -1, -1, -1, -1, -1, -1};
 		this.setFields(empty);
 	}
+	
 }

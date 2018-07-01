@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="8" failures="0" name="game.TicTacToeMechanicsTest" time="5.777" errors="0" skipped="0">
+<testsuite tests="8" failures="0" name="game.TicTacToeMechanicsTest" time="17.021" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -61,12 +61,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testIntFieldToStringField" time="3.269"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testIsMovePossible" time="0.467"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testSingleMoveGameBoard" time="0.43"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testEmptyFields" time="0.4"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testRestartBoard" time="0.309"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testStrFieldToIntField" time="0.298"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testIsGameOver" time="0.29"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testChangeBoardString" time="0.314"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testIntFieldToStringField" time="12.813"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testIsMovePossible" time="0.683"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testSingleMoveGameBoard" time="0.573"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testEmptyFields" time="0.593"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testRestartBoard" time="0.601"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testStrFieldToIntField" time="0.602"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testIsGameOver" time="0.669"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testChangeBoardString" time="0.487"/>
 </testsuite>

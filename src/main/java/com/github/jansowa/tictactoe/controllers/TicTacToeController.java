@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.github.jansowa.boardGame.mechanics.AI;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
+import com.github.jansowa.tictactoe.game.HibernateGameDAO;
 import com.github.jansowa.tictactoe.game.TicTacToeMechanics;
 
 @RestController
@@ -30,6 +31,12 @@ public class TicTacToeController {
 	TicTacToeMechanics mechanics;
 	@Autowired
 	AI ai;
+	@Autowired
+	HibernateGameDAO dao;
+
+	public void setBoard(TicTacToeBoard board) {
+		this.board = board;
+	}
 	
 	@GetMapping("/getBoard")
 	TicTacToeBoard getBoard(){

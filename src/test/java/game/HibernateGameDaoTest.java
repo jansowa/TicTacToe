@@ -10,7 +10,8 @@ import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.game.HibernateGameDAO;
 
 public class HibernateGameDaoTest {
-/*	private HibernateGameDAO dao;
+	//Works while database runs
+	/*private HibernateGameDAO dao;
 	
 	@Before
 	public void setUp(){
@@ -20,14 +21,17 @@ public class HibernateGameDaoTest {
 	@Test
 	public final void saveAdnLoadGameTest(){
 		TicTacToeBoard board = new TicTacToeBoard();
-		board.setName("TestGame");
-		dao.saveBoard(board);
+		board.setName("TestGame10");
+		int[] fields = {-1, -1, 0, -1, -1, 1, -1, -1, 0};
+		board.setFields(fields);
+		dao.saveGame(board);
 		
-		TicTacToeBoard loadGame;
-		loadGame = (TicTacToeBoard) dao.loadBoard("TestGame");
-		assertNotNull(loadGame);
-		assertEquals(0, loadGame.getPlayer());
-	}
+		TicTacToeBoard loadBoard;
+		loadBoard = (TicTacToeBoard) dao.loadGame("TestGame10");
+		assertNotNull(loadBoard);
+		//assertEquals(0, loadGame.getPlayer());
+		assertEquals(board.getFields(), loadBoard.getFields());
+	}*/
 	
-*/
+
 }

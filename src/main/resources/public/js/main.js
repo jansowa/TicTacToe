@@ -70,6 +70,8 @@ function multiPlayer(){
 }
 
 function printResult(result, player){
+	//argument result: 0 O wins, 1 X wins, 2 draw game, -1 game in progress
+	//argument "player" represents currentPlayer (important when game in progress)
 
 	$gameState = $('.gameState');
 	if(result==0){
@@ -96,13 +98,18 @@ function printResult(result, player){
 }
 
 function saveGame(name){
-	$.post("/saveGame", {gameName: name});
-	//TODO info game saved
+	$.post("/saveGame", {gameName: name})
+	.done(function(){
+		alert("Game "+name+" saved.");
+	});
 }
 
 function loadGame(name){
-	$.get("/loadGame", {gameName: name});
-	//TODO print loaded board
+	$.get("/loadGame", {gameName: name})
+	.done(function(boardJSON){
+		printBoard(boardJSON);
+		printResult(-1, boardJSON.player);
+	});
 }
 
 $(document).ready(()=>{
