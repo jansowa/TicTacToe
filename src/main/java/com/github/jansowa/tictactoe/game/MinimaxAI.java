@@ -14,10 +14,10 @@ public class MinimaxAI extends AI {
 		super(board);
 	}
 
-	public ArrayList<Integer> emptyIndexes(){
+	public ArrayList<Integer> emptyIndexes(TicTacToeBoard board){
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		for(int i=0; i<9; i++){
-			if(this.getBoard().getFields()[i]==(-1)){
+			if(board.getFields()[i]==(-1)){
 				list.add(i);
 			}
 		}
@@ -63,7 +63,7 @@ public class MinimaxAI extends AI {
 			return score;
 		}
 		
-		ArrayList<Integer> emptyFields = emptyIndexes();
+		ArrayList<Integer> emptyFields = emptyIndexes(newBoard);
 		
 		//No fields left and nobody won -> draw game
 		if(emptyFields.size()==0){
@@ -113,7 +113,7 @@ public class MinimaxAI extends AI {
 
 	//Returns best move for AI (maximizer)
 	public int findBestMove(TicTacToeBoard board){
-		//TODO
+
 		return 0;
 	}
 }

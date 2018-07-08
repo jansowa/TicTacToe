@@ -27,14 +27,14 @@ public class MinimaxAITest {
 	public final void testEmptyIndexes() {
 		int[] fields1 = {-1, 0, -1, 1, -1, 0, -1, 1, -1};
 		this.board.setFields(fields1);
-		ArrayList<Integer> arList = ai.emptyIndexes();
+		ArrayList<Integer> arList = ai.emptyIndexes(this.board);
 		ArrayList<Integer> expectedList = new ArrayList<Integer>();
 		Collections.addAll(expectedList, 0, 2, 4, 6, 8);
 		assertEquals(arList, expectedList);
 		
 		int[] fields2 = {-1, -1, -1, 0, 1, 0, -1, -1, -1};
 		this.board.setFields(fields2);
-		arList = ai.emptyIndexes();
+		arList = ai.emptyIndexes(this.board);
 		expectedList.clear();
 		Collections.addAll(expectedList, 0, 1, 2, 6, 7, 8);
 		assertEquals(arList, expectedList);
