@@ -55,5 +55,45 @@ public class MinimaxAITest {
 		this.board.setFields(fields3);
 		assertTrue(ai.winning(this.board, 1));
 	}
+	
+	@Test
+	public final void testMinimax() {
+		//First tests checks 0 (O) win, 1 (X) win and a tie
+		int[] fields1 = 
+			{1, 1, 1,
+			-1, 0, -1,
+			0, -1, 0};
+		int[] fields2 = 
+			{1, -1, 1,
+			-1, 1, -1,
+			0, 0, 0};
+		int[] fields3 =
+			{1, 0, 1,
+			 0, 1, 0,
+			 0, 1, 0
+			};
+		this.board.setFields(fields1);
+		assertEquals(-10, ai.minimax(this.board, 0, 1)); //Player 1 (X) wins
+		this.board.setFields(fields2);
+		assertEquals(10, ai.minimax(this.board, 0, 0)); //Player 0 (O) wins
+		this.board.setFields(fields3);
+		assertEquals(0, ai.minimax(this.board, 0, 1)); //A tie
+		//Now calculate scores for all posible moves in this board:
+		int[] fields4 =
+			{0, 1, 0,
+			1, 1, 0,
+			-1, -1, -1};
+		this.board.setFields(fields4);
+		this.board.getFields()[6]=0;
+		assertEquals(-10, ai.minimax(this.board, 0, 1));
+		
+		this.board.setFields(fields4);
+		this.board.getFields()[7]=0;
+		assertEquals(0, ai.minimax(this.board, 0, 1));
+		
+		this.board.setFields(fields4);
+		this.board.getFields()[8]=0;
+		assertEquals(10, ai.minimax(this.board, 0, 1));
+	}
 
 }
