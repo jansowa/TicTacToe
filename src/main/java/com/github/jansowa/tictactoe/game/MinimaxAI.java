@@ -44,8 +44,8 @@ public class MinimaxAI extends AI {
 	
 	@Override
 	public String nextAIMove() {
-		// TODO Auto-generated method stub
-		return null;
+		int bestMove = findBestMove((TicTacToeBoard) this.getBoard());
+		return TicTacToeMechanics.intFieldToStringField(bestMove);
 	}
 	
 	public int minimax(TicTacToeBoard newBoard, int depth, int player){
@@ -113,7 +113,26 @@ public class MinimaxAI extends AI {
 
 	//Returns best move for AI (maximizer)
 	public int findBestMove(TicTacToeBoard board){
-
-		return 0;
+		int bestScores = -1000;
+		int bestMove=-1;
+		ArrayList<Integer> emptyFields = emptyIndexes(board);
+		
+		//Try all possible moves
+		for(int i=0; i<emptyFields.size(); i++){
+			//Single move
+			board.getFields()[i]=0;
+			//Calculate scores for this move:
+			int moveScores = minimax(board, 0, 1);
+			
+			//Undo move
+			board.getFields()[i]=-1;
+			
+			//Check if move was better then others
+			if(moveScores>bestScores){
+				bestScores=moveScores;
+				bestMove=i;
+			}
+		}
+		return bestMove;
 	}
 }

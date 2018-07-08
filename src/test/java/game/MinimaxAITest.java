@@ -7,6 +7,8 @@ import java.util.Collections;
 import java.util.List;
 
 import org.assertj.core.util.Arrays;
+import org.hamcrest.core.AnyOf;
+import org.hamcrest.core.Is;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -96,4 +98,25 @@ public class MinimaxAITest {
 		assertEquals(10, ai.minimax(this.board, 0, 1));
 	}
 
+	public final void testFindBestMove(){
+		int[] fields1 =
+			{0, 1, 0,
+			1, 1, 0,
+			-1, -1, -1};
+		this.board.setFields(fields1);
+		assertEquals(8, ai.findBestMove(this.board));
+		int[] fields2 =
+			{-1, -1, -1,
+			-1, -1, -1,
+			-1, -1, -1
+			};
+		this.board.setFields(fields2);
+		assertEquals(4, ai.findBestMove(this.board));
+		int[] fields3 =
+			{-1, 1, -1,
+			-1, 0, -1,
+			-1, -1, -1};
+		this.board.setFields(fields3);
+		assertTrue(ai.findBestMove(this.board)==0 || ai.findBestMove(this.board)==2);
+	}
 }
