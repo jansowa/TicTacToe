@@ -5,11 +5,18 @@ import com.github.jansowa.boardGame.mechanics.AI;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+@Controller
 public class MinimaxAI extends AI {
 	static int aiPlayer = 0; //"O"
 	static int huPlayer = 1; //"X"
 	
+	@Autowired
 	public MinimaxAI(GameBoard board) {
 		super(board);
 	}
@@ -55,12 +62,12 @@ public class MinimaxAI extends AI {
 		
 		//Maximizer won game
 		if(score == 10){
-			return score;
+			return score-depth;
 		}
 		
 		//Minimizer won game
 		if(score == -10){
-			return score;
+			return score+depth;
 		}
 		
 		ArrayList<Integer> emptyFields = emptyIndexes(newBoard);
@@ -116,21 +123,24 @@ public class MinimaxAI extends AI {
 		int bestScores = -1000;
 		int bestMove=-1;
 		ArrayList<Integer> emptyFields = emptyIndexes(board);
-		
+		int size = emptyFields.size();
+		//IMPROVE OF MINIMAX
+		//returns "B2" - if opponent makes mistake, AI can win		
+		if(size==9){
+			return 4;
+		}
 		//Try all possible moves
-		for(int i=0; i<emptyFields.size(); i++){
+		for(int i=0; i<size; i++){
 			//Single move
-			board.getFields()[i]=0;
+			board.getFields()[emptyFields.get(i)]=0;
 			//Calculate scores for this move:
 			int moveScores = minimax(board, 0, 1);
-			
 			//Undo move
-			board.getFields()[i]=-1;
-			
+			board.getFields()[emptyFields.get(i)]=-1;
 			//Check if move was better then others
 			if(moveScores>bestScores){
 				bestScores=moveScores;
-				bestMove=i;
+				bestMove=emptyFields.get(i);
 			}
 		}
 		return bestMove;

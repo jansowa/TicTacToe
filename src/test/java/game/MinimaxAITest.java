@@ -87,7 +87,7 @@ public class MinimaxAITest {
 			-1, -1, -1};
 		this.board.setFields(fields4);
 		this.board.getFields()[6]=0;
-		assertEquals(-10, ai.minimax(this.board, 0, 1));
+		assertEquals(-9, ai.minimax(this.board, 0, 1));
 		
 		this.board.setFields(fields4);
 		this.board.getFields()[7]=0;
@@ -98,18 +98,18 @@ public class MinimaxAITest {
 		assertEquals(10, ai.minimax(this.board, 0, 1));
 	}
 
+	@Test
 	public final void testFindBestMove(){
 		int[] fields1 =
 			{0, 1, 0,
 			1, 1, 0,
 			-1, -1, -1};
 		this.board.setFields(fields1);
-		assertEquals(8, ai.findBestMove(this.board));
+		assertEquals(8, ai.findBestMove(this.board)); //works
 		int[] fields2 =
 			{-1, -1, -1,
 			-1, -1, -1,
-			-1, -1, -1
-			};
+			-1, -1, -1};
 		this.board.setFields(fields2);
 		assertEquals(4, ai.findBestMove(this.board));
 		int[] fields3 =
@@ -117,6 +117,25 @@ public class MinimaxAITest {
 			-1, 0, -1,
 			-1, -1, -1};
 		this.board.setFields(fields3);
-		assertTrue(ai.findBestMove(this.board)==0 || ai.findBestMove(this.board)==2);
+		assertTrue(ai.findBestMove(this.board)==0 || ai.findBestMove(this.board)==2); //works
+		int[] fields4 =
+			{0, 1, -1,
+			-1, 0, -1,
+			-1, -1, 1};
+		this.board.setFields(fields4);
+		assertEquals(3, ai.findBestMove(this.board)); //WORKS
+		int[] fields5 =
+			{-1, 1, -1,
+			-1, 0, -1,
+			-1, -1, -1};
+		this.board.setFields(fields5);
+		assertTrue(ai.findBestMove(this.board)==0 || ai.findBestMove(this.board)==2); //WORKS
+	}
+
+	@Test
+	public final void testNextAIMove(){
+		ai.getBoard().setNumberOfPlayers(1);
+		String move = ai.nextAIMove();
+		assertEquals("B2", move);
 	}
 }

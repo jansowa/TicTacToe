@@ -1,3 +1,3 @@
-/home/sufka/workspace/TicTacToe/src/test/java/game/TicTacToeMechanicsTest.java
-/home/sufka/workspace/TicTacToe/src/test/java/game/HibernateGameDaoTest.java
-/home/sufka/workspace/TicTacToe/src/test/java/game/BrutalAITest.java
+/home/sufka/workspace/TicTacToeMinimax/src/test/java/game/HibernateGameDaoTest.java
+/home/sufka/workspace/TicTacToeMinimax/src/test/java/game/TicTacToeMechanicsTest.java
+/home/sufka/workspace/TicTacToeMinimax/src/test/java/game/MinimaxAITest.java

@@ -24,7 +24,8 @@ function restart(){
 		url: "/restartBoard"
 	}).then(function(boardJSON) {
 		printBoard(boardJSON);
-		$('.gameState').text("Player O move:")
+		printResult(-1, boardJSON.player); //prints information about current player
+		$('.field').off('click');
 		$('.field').click( event => {
 			singleMove($(event.currentTarget).attr('id'));
 		})
@@ -50,6 +51,8 @@ function singlePlayer(){
 		url: "/singlePlayer"
 	}).then(function(boardJSON){
 		printBoard(boardJSON);
+		printResult(-1, 1); //prints information about actual player
+		$('.field').off('click');
 		$('.field').click( event => {
 			singleMove($(event.currentTarget).attr('id'));
 
@@ -63,6 +66,7 @@ function multiPlayer(){
 	}).then(function(boardJSON){
 		printBoard(boardJSON);
 		printResult(-1, 0);
+		$('.field').off('click');
 		$('.field').click( event => {
 			singleMove($(event.currentTarget).attr('id'));
 		})

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.github.jansowa.boardGame.mechanics.AI;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
-import com.github.jansowa.tictactoe.game.BrutalAI;
 import com.github.jansowa.tictactoe.game.HibernateGameDAO;
 import com.github.jansowa.tictactoe.game.TicTacToeMechanics;
 
@@ -25,7 +25,7 @@ public class DAOController {
 	@Autowired
 	TicTacToeMechanics mechanics;
 	@Autowired
-	BrutalAI ai;
+	AI ai;
 	
 	@GetMapping("/loadGame")
 	public TicTacToeBoard loadGame(
