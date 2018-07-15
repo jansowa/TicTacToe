@@ -25,11 +25,8 @@ function restart(){
 	}).then(function(boardJSON) {
 		printBoard(boardJSON);
 		printResult(-1, boardJSON.player); //prints information about current player
-<<<<<<< HEAD
+
 		$('.field').off('click');
-=======
-		
->>>>>>> e5a72101205ed549013bdc372000f584d61f398f
 		$('.field').click( event => {
 			singleMove($(event.currentTarget).attr('id'));
 		})
@@ -56,10 +53,7 @@ function singlePlayer(){
 	}).then(function(boardJSON){
 		printBoard(boardJSON);
 		printResult(-1, 1); //prints information about actual player
-<<<<<<< HEAD
 		$('.field').off('click');
-=======
->>>>>>> e5a72101205ed549013bdc372000f584d61f398f
 		$('.field').click( event => {
 			singleMove($(event.currentTarget).attr('id'));
 

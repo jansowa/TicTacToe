@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: game.TicTacToeMechanicsTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.257 sec
-=======
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.831 sec
->>>>>>> e5a72101205ed549013bdc372000f584d61f398f
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 35.406 sec

@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<<<<<<< HEAD
-<testsuite tests="8" failures="0" name="game.TicTacToeMechanicsTest" time="13.24" errors="0" skipped="0">
-=======
-<testsuite tests="8" failures="0" name="game.TicTacToeMechanicsTest" time="10.724" errors="0" skipped="0">
->>>>>>> e5a72101205ed549013bdc372000f584d61f398f
+<testsuite tests="8" failures="0" name="game.TicTacToeMechanicsTest" time="35.389" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
     <property name="java.vm.version" value="25.161-b12"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/sufka/workspace/TicTacToeMinimax"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/sufka/workspace/TicTacToe"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -19,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/sufka/workspace/TicTacToeMinimax"/>
+    <property name="user.dir" value="/home/sufka/workspace/TicTacToe"/>
     <property name="java.runtime.version" value="1.8.0_161-b12"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-oracle/jre/lib/endorsed"/>
@@ -65,23 +61,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-<<<<<<< HEAD
-  <testcase classname="game.TicTacToeMechanicsTest" name="testIntFieldToStringField" time="8.808"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testIsMovePossible" time="0.872"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testSingleMoveGameBoard" time="0.511"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testEmptyFields" time="0.472"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testRestartBoard" time="0.876"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testStrFieldToIntField" time="0.741"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testIsGameOver" time="0.487"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testChangeBoardString" time="0.473"/>
-=======
-  <testcase classname="game.TicTacToeMechanicsTest" name="testIntFieldToStringField" time="6.986"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testIsMovePossible" time="0.609"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testSingleMoveGameBoard" time="0.592"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testEmptyFields" time="0.461"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testRestartBoard" time="0.56"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testStrFieldToIntField" time="0.6"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testIsGameOver" time="0.496"/>
-  <testcase classname="game.TicTacToeMechanicsTest" name="testChangeBoardString" time="0.42"/>
->>>>>>> e5a72101205ed549013bdc372000f584d61f398f
+  <testcase classname="game.TicTacToeMechanicsTest" name="testIntFieldToStringField" time="27.199"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testIsMovePossible" time="2.561"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testSingleMoveGameBoard" time="0.747"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testEmptyFields" time="0.683"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testRestartBoard" time="0.872"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testStrFieldToIntField" time="0.65"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testIsGameOver" time="1.395"/>
+  <testcase classname="game.TicTacToeMechanicsTest" name="testChangeBoardString" time="1.282"/>
 </testsuite>
