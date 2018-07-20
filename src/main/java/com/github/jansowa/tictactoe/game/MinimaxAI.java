@@ -11,12 +11,12 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-@Controller
+//@Controller
 public class MinimaxAI extends AI {
 	static int aiPlayer = 0; //"O"
 	static int huPlayer = 1; //"X"
 	
-	@Autowired
+	//@Autowired
 	public MinimaxAI(GameBoard board) {
 		super(board);
 	}
