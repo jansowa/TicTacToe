@@ -9,8 +9,9 @@ import com.github.jansowa.boardGame.domain.GameBoard;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.game.HibernateGameDAO;
 
-public class HibernateGameDaoTest {
+public class OldHibernateGameDaoTest {
 	//Works while database runs
+	//It's integration test, should be implemented with different tools
 	/*private HibernateGameDAO dao;
 	
 	@Before
