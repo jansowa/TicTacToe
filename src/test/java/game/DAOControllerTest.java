@@ -19,7 +19,6 @@ import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.game.HibernateGameDAO;
 import com.github.jansowa.tictactoe.game.TicTacToeMechanics;
 
-@Component
 public class DAOControllerTest {
 	TicTacToeBoard board, testBoard1, testBoard2, testBoard3;
 	
