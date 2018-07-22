@@ -23,14 +23,11 @@ body {
 .field{
 	display: inline-block;
 	border: 1px solid black;
-	height: 48px;
-	width: 48px;
+	box-sizing: border-box;
+	height: 33%;
+	width: 33%;
 	float: left;
 	position: relative;
-}
-
-.field:hover{
-	background-color: grey;
 }
 
 .circle{
