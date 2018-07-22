@@ -22,7 +22,7 @@ function drawSign(sign, field){
 function restart(){
 	$.ajax({
 		url: "/restartBoard"
-	}).then(function(boardJSON) {
+	}).done(function(boardJSON) {
 		printBoard(boardJSON);
 		printResult(-1, boardJSON.player); //prints information about current player
 
@@ -36,7 +36,7 @@ function restart(){
 function getBoard(){
 	$.ajax({
 		url: "/getBoard"
-	}).then(function(boardJSON) {
+	}).done(function(boardJSON) {
 		printBoard(boardJSON);
 	});
 }
@@ -50,7 +50,7 @@ function printBoard(boardJSON){
 function singlePlayer(){
 	$.ajax({
 		url: "/singlePlayer"
-	}).then(function(boardJSON){
+	}).done(function(boardJSON){
 		printBoard(boardJSON);
 		printResult(-1, 1); //prints information about actual player
 		$('.field').off('click');
@@ -64,7 +64,7 @@ function singlePlayer(){
 function multiPlayer(){
 	$.ajax({
 		url: "/multiPlayer"
-	}).then(function(boardJSON){
+	}).done(function(boardJSON){
 		printBoard(boardJSON);
 		printResult(-1, 0);
 		$('.field').off('click');
