@@ -1,0 +1,5 @@
+game/TicTacToeMechanicsTest.class
+game/OldHibernateGameDaoTest.class
+game/AlphaBetaAITest.class
+controllers/DAOControllerTest.class
+game/MinimaxAITest.class

@@ -1,0 +1,10 @@
+com/github/jansowa/tictactoe/game/AppConfiguration.class
+com/github/jansowa/tictactoe/game/TicTacToeApplication.class
+com/github/jansowa/tictactoe/game/AlphaBetaAI.class
+com/github/jansowa/tictactoe/controllers/TicTacToeController$BoardState.class
+com/github/jansowa/tictactoe/game/TicTacToeMechanics.class
+com/github/jansowa/tictactoe/game/MinimaxAI.class
+com/github/jansowa/tictactoe/controllers/DAOController.class
+com/github/jansowa/tictactoe/controllers/TicTacToeController.class
+com/github/jansowa/tictactoe/domain/TicTacToeBoard.class
+com/github/jansowa/tictactoe/game/HibernateGameDAO.class
