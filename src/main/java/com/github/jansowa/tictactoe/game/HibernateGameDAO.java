@@ -17,7 +17,6 @@ public class HibernateGameDAO extends GameDAO {
 	private EntityManagerFactory entityManagerFactory;
 	private EntityManager entityManager;
 	
-	@Autowired
 	public HibernateGameDAO(){
 		this.entityManagerFactory = Persistence.createEntityManagerFactory("myDatabase");
 		this.entityManager = entityManagerFactory.createEntityManager();
@@ -25,13 +24,6 @@ public class HibernateGameDAO extends GameDAO {
 	
 	@Override
 	public void saveGame(GameBoard board) {
-		//TO DELETE
-		System.out.println("Inside HibernateGameDao saveGame:");
-		System.out.println("board.getName()"+board.getName());
-		for (int i=0; i<9; i++){
-			System.out.println("board.getFields()["+i+"]="+board.getFields()[i]);
-		}
-		//END TO DELETE
 		entityManager.getTransaction().begin();
 		try {
 			entityManager.persist(board.clone());
@@ -53,13 +45,6 @@ public class HibernateGameDAO extends GameDAO {
 			e.printStackTrace();
 		}
 		entityManager.getTransaction().commit();
-		//TO DELETE
-		System.out.println("Inside HibernateGameDao loadGame:");
-		System.out.println("board.getName()="+board.getName());
-		for (int i=0; i<9; i++){
-			System.out.println("board.getFields()["+i+"]="+board.getFields()[i]);
-		}
-		//END TO DELETE		
 		return board;
 	}
 }

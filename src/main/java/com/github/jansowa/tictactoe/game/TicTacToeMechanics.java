@@ -3,13 +3,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 
 import com.github.jansowa.boardGame.mechanics.BoardMechanics;
 import com.github.jansowa.boardGame.domain.GameBoard;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 
 @Component
+@Scope(
+		value=WebApplicationContext.SCOPE_SESSION)
 public class TicTacToeMechanics extends BoardMechanics {
 	public TicTacToeMechanics(){
 		super();
