@@ -1,0 +1,302 @@
+$fieldMultiplier : 0.306;
+$borderMultiplier : 0.04;
+
+body {
+	background-color: black;
+	text-align: center;
+}
+
+.mainWrapper{
+	display: inline-block;
+	position: absolute;
+	top:50%;
+  left:50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.boardWrapper{
+	display: block;
+	height: 700px;
+	width: 700px;
+}
+.field{
+	display: inline-block;
+	height: 700px * $fieldMultiplier;
+	width: 700px * $fieldMultiplier;
+	float: left;
+	position: relative;
+}
+
+.field:hover{
+	background-color: grey;
+}
+
+.field:nth-of-type(3n+2){
+	border-left: 700px * $borderMultiplier solid white;
+	border-right: 700px * $borderMultiplier solid white;
+}
+
+.field:nth-of-type(4){
+	border-top: 700px * $borderMultiplier solid white;
+	border-bottom: 700px * $borderMultiplier solid white;
+}
+.field:nth-of-type(5){
+	border-top: 700px * $borderMultiplier solid white;
+	border-bottom: 700px * $borderMultiplier solid white;
+}
+.field:nth-of-type(6){
+	border-top: 700px * $borderMultiplier solid white;
+	border-bottom: 700px * $borderMultiplier solid white;
+}
+
+.circleOuter{
+	height: 80%;
+	width: 80%;
+	background-color: white;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.circleInner{
+	height: 70%;
+	width: 70%;
+	background-color: black;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.cross1{
+	height:18%;
+	width:90%;
+	background-color: white;
+	position: absolute;
+	top: 41%; /* 2top+2height=100%*/
+	left: 5%; /* 2left+2width=100%*/
+	transform: rotate(45deg);
+}
+
+.cross2{
+	height: 18%;
+	width: 90%;
+	background-color: white;
+	position: absolute;
+	top: 41%; /* 2top+2height=100%*/
+	left: 5%; /* 2left+2width=100%*/
+	transform: rotate(-45deg);
+}
+
+.menu {
+	display: block;
+}
+
+.saveInput {
+	display:none;
+}
+
+.loadInput {
+	display:none;
+}
+
+.saveButton{
+	display: none;
+}
+
+.loadButton{
+	display: none;
+}
+
+footer{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:link{
+	color:white;
+}
+
+a:visited{
+	color:white;
+}
+
+a:hover{
+	color: grey;
+}
+
+@media only screen and (max-width: 1366px){
+	.boardWrapper{
+		height: 550px;
+		width: 550px;
+	}
+	.field{
+		width: 550px*$fieldMultiplier;
+		height: 550px*$fieldMultiplier;
+	}
+	.field:nth-of-type(3n+2){
+		border-left: 550px * $borderMultiplier solid white;
+		border-right: 550px * $borderMultiplier solid white;
+	}
+
+	.field:nth-of-type(4){
+		border-top: 550px * $borderMultiplier solid white;
+		border-bottom: 550px * $borderMultiplier solid white;
+	}
+	.field:nth-of-type(5){
+		border-top: 550px * $borderMultiplier solid white;
+		border-bottom: 550px * $borderMultiplier solid white;
+	}
+	.field:nth-of-type(6){
+		border-top: 550px * $borderMultiplier solid white;
+		border-bottom: 550px * $borderMultiplier solid white;
+	}
+}
+
+@media only screen and (max-width: 800px){
+	.boardWrapper{
+		height: 550px;
+		width: 550px;
+	}
+	.field{
+		width: 550px*$fieldMultiplier;
+		height: 550px*$fieldMultiplier;
+	}
+	.field:nth-of-type(3n+2){
+		border-left: 550px * $borderMultiplier solid white;
+		border-right: 550px * $borderMultiplier solid white;
+	}
+
+	.field:nth-of-type(4){
+		border-top: 550px * $borderMultiplier solid white;
+		border-bottom: 550px * $borderMultiplier solid white;
+	}
+	.field:nth-of-type(5){
+		border-top: 550px * $borderMultiplier solid white;
+		border-bottom: 550px * $borderMultiplier solid white;
+	}
+	.field:nth-of-type(6){
+		border-top: 550px * $borderMultiplier solid white;
+		border-bottom: 550px * $borderMultiplier solid white;
+	}
+}
+
+@media only screen and (max-width: 768px){
+	.boardWrapper{
+		height: 550px;
+		width: 550px;
+	}
+	.field{
+		width: 550px*$fieldMultiplier;
+		height: 550px*$fieldMultiplier;
+	}
+	.field:nth-of-type(3n+2){
+		border-left: 550px * $borderMultiplier solid white;
+		border-right: 550px * $borderMultiplier solid white;
+	}
+
+	.field:nth-of-type(4){
+		border-top: 550px * $borderMultiplier solid white;
+		border-bottom: 550px * $borderMultiplier solid white;
+	}
+	.field:nth-of-type(5){
+		border-top: 550px * $borderMultiplier solid white;
+		border-bottom: 550px * $borderMultiplier solid white;
+	}
+	.field:nth-of-type(6){
+		border-top: 550px * $borderMultiplier solid white;
+		border-bottom: 550px * $borderMultiplier solid white;
+	}
+}
+
+@media only screen and (max-width: 620px){
+	.boardWrapper{
+		height: 500px;
+		width: 500px;
+	}
+	.field{
+		width: 500px*$fieldMultiplier;
+		height: 500px*$fieldMultiplier;
+	}
+	.field:nth-of-type(3n+2){
+		border-left: 500px * $borderMultiplier solid white;
+		border-right: 500px * $borderMultiplier solid white;
+	}
+
+	.field:nth-of-type(4){
+		border-top: 500px * $borderMultiplier solid white;
+		border-bottom: 500px * $borderMultiplier solid white;
+	}
+	.field:nth-of-type(5){
+		border-top: 500px * $borderMultiplier solid white;
+		border-bottom: 500px * $borderMultiplier solid white;
+	}
+	.field:nth-of-type(6){
+		border-top: 500px * $borderMultiplier solid white;
+		border-bottom: 500px * $borderMultiplier solid white;
+	}
+}
+
+@media only screen and (max-width: 480px){
+	.boardWrapper{
+		height: 400px;
+		width: 400px;
+	}
+	.field{
+		width: 400px*$fieldMultiplier;
+		height: 400px*$fieldMultiplier;
+	}
+	.field:nth-of-type(3n+2){
+		border-left: 400px * $borderMultiplier solid white;
+		border-right: 400px * $borderMultiplier solid white;
+	}
+
+	.field:nth-of-type(4){
+		border-top: 400px * $borderMultiplier solid white;
+		border-bottom: 400px * $borderMultiplier solid white;
+	}
+	.field:nth-of-type(5){
+		border-top: 400px * $borderMultiplier solid white;
+		border-bottom: 400px * $borderMultiplier solid white;
+	}
+	.field:nth-of-type(6){
+		border-top: 400px * $borderMultiplier solid white;
+		border-bottom: 400px * $borderMultiplier solid white;
+	}
+}
+
+@media only screen and (max-width: 320px){
+	.boardWrapper{
+		height: 250px;
+		width: 250px;
+	}
+	.field{
+		width: 250px*$fieldMultiplier;
+		height: 250px*$fieldMultiplier;
+	}
+	.field:nth-of-type(3n+2){
+		border-left: 250px * $borderMultiplier solid white;
+		border-right: 250px * $borderMultiplier solid white;
+	}
+
+	.field:nth-of-type(4){
+		border-top: 250px * $borderMultiplier solid white;
+		border-bottom: 250px * $borderMultiplier solid white;
+	}
+	.field:nth-of-type(5){
+		border-top: 250px * $borderMultiplier solid white;
+		border-bottom: 250px * $borderMultiplier solid white;
+	}
+	.field:nth-of-type(6){
+		border-top: 250px * $borderMultiplier solid white;
+		border-bottom: 250px * $borderMultiplier solid white;
+	}
+}
