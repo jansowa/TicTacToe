@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.web.context.WebApplicationContext;
 
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.game.AppConfiguration;
@@ -20,8 +21,8 @@ public class TicTacToeMechanicsTest {
 	@Before
 	public final void setUp(){
 		//board with empty fields for 2 players, actual player 0
-		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
-		mechanics = context.getBean("ticTacToeMechanics", com.github.jansowa.tictactoe.game.TicTacToeMechanics.class);
+		TicTacToeBoard board = new TicTacToeBoard();
+		mechanics = new TicTacToeMechanics(board);
 		int[][] exampleFieldsCreate = {
 				{-1, -1, 1, 1, -1, 0, 0, -1, 0}, //game in progress, now player 1
 				{1, 1, -1, -1, 0, 0, 0, -1, 1}, //game in progress, now player 0
