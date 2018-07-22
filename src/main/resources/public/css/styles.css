@@ -26,10 +26,21 @@ body {
 	height: 48px;
 	width: 48px;
 	float: left;
+	position: relative;
 }
 
 .field:hover{
 	background-color: grey;
+}
+
+.circle{
+	height: 80%;
+	width: 80%;
+	background-color: black;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .menu {
