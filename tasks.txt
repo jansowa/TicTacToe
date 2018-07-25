@@ -1,0 +1,5 @@
+1. Translate and update README.md
+2. Export functions to BoardGame library
+3. Change color of text
+4. End fixing sonar advices
+5. Refactorize code using SOLID principles
