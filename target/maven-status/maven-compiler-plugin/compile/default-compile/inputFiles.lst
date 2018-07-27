@@ -1,9 +1,8 @@
-/home/sufka/workspace/TicTacToeChangeTextColor/src/main/java/com/github/jansowa/tictactoe/game/TicTacToeMechanics.java
-/home/sufka/workspace/TicTacToeChangeTextColor/src/main/java/com/github/jansowa/tictactoe/controllers/TicTacToeController.java
-/home/sufka/workspace/TicTacToeChangeTextColor/src/main/java/com/github/jansowa/tictactoe/game/TicTacToeApplication.java
-/home/sufka/workspace/TicTacToeChangeTextColor/src/main/java/com/github/jansowa/tictactoe/controllers/DAOController.java
-/home/sufka/workspace/TicTacToeChangeTextColor/src/main/java/com/github/jansowa/tictactoe/game/HibernateGameDAO.java
-/home/sufka/workspace/TicTacToeChangeTextColor/src/main/java/com/github/jansowa/tictactoe/game/AppConfiguration.java
-/home/sufka/workspace/TicTacToeChangeTextColor/src/main/java/com/github/jansowa/tictactoe/game/AlphaBetaAI.java
-/home/sufka/workspace/TicTacToeChangeTextColor/src/main/java/com/github/jansowa/tictactoe/domain/TicTacToeBoard.java
-/home/sufka/workspace/TicTacToeChangeTextColor/src/main/java/com/github/jansowa/tictactoe/game/MinimaxAI.java
+/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/game/AlphaBetaAI.java
+/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/game/TicTacToeMechanics.java
+/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/domain/TicTacToeBoard.java
+/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/game/HibernateGameDAO.java
+/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/game/AppConfiguration.java
+/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/controllers/TicTacToeController.java
+/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/controllers/DAOController.java
+/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/game/TicTacToeApplication.java
