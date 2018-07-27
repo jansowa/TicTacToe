@@ -1,5 +1,5 @@
-/home/sufka/workspace/TicTacToeShapes/src/test/java/game/MinimaxAITest.java
-/home/sufka/workspace/TicTacToeShapes/src/test/java/controllers/DAOControllerTest.java
-/home/sufka/workspace/TicTacToeShapes/src/test/java/game/AlphaBetaAITest.java
-/home/sufka/workspace/TicTacToeShapes/src/test/java/game/OldHibernateGameDaoTest.java
-/home/sufka/workspace/TicTacToeShapes/src/test/java/game/TicTacToeMechanicsTest.java
+/home/sufka/workspace/TicTacToeChangeTextColor/src/test/java/game/AlphaBetaAITest.java
+/home/sufka/workspace/TicTacToeChangeTextColor/src/test/java/controllers/DAOControllerTest.java
+/home/sufka/workspace/TicTacToeChangeTextColor/src/test/java/game/TicTacToeMechanicsTest.java
+/home/sufka/workspace/TicTacToeChangeTextColor/src/test/java/game/MinimaxAITest.java
+/home/sufka/workspace/TicTacToeChangeTextColor/src/test/java/game/OldHibernateGameDaoTest.java

@@ -1,5 +1,6 @@
 $fieldMultiplier : 0.306;
 $borderMultiplier : 0.04;
+$boardSize: 700px;
 
 body {
 	background-color: black;
@@ -16,15 +17,19 @@ body {
   transform: translate(-50%,-50%);
 }
 
+.gameState{
+	font-size: 100px;
+}
+
 .boardWrapper{
 	display: block;
-	height: 700px;
-	width: 700px;
+	height: $boardSize;
+	width: $boardSize;
 }
 .field{
 	display: inline-block;
-	height: 700px * $fieldMultiplier;
-	width: 700px * $fieldMultiplier;
+	height: $boardSize * $fieldMultiplier;
+	width: $boardSize * $fieldMultiplier;
 	float: left;
 	position: relative;
 }
@@ -34,21 +39,21 @@ body {
 }
 
 .field:nth-of-type(3n+2){
-	border-left: 700px * $borderMultiplier solid white;
-	border-right: 700px * $borderMultiplier solid white;
+	border-left: $boardSize * $borderMultiplier solid white;
+	border-right: $boardSize * $borderMultiplier solid white;
 }
 
 .field:nth-of-type(4){
-	border-top: 700px * $borderMultiplier solid white;
-	border-bottom: 700px * $borderMultiplier solid white;
+	border-top: $boardSize * $borderMultiplier solid white;
+	border-bottom: $boardSize * $borderMultiplier solid white;
 }
 .field:nth-of-type(5){
-	border-top: 700px * $borderMultiplier solid white;
-	border-bottom: 700px * $borderMultiplier solid white;
+	border-top: $boardSize * $borderMultiplier solid white;
+	border-bottom: $boardSize * $borderMultiplier solid white;
 }
 .field:nth-of-type(6){
-	border-top: 700px * $borderMultiplier solid white;
-	border-bottom: 700px * $borderMultiplier solid white;
+	border-top: $boardSize * $borderMultiplier solid white;
+	border-bottom: $boardSize * $borderMultiplier solid white;
 }
 
 .circleOuter{
@@ -93,6 +98,7 @@ body {
 
 .menu {
 	display: block;
+	color: white;
 }
 
 .saveInput {
@@ -134,169 +140,178 @@ a:hover{
 }
 
 @media only screen and (max-width: 1366px){
+	$boardSize: 480px;
 	.boardWrapper{
-		height: 550px;
-		width: 550px;
+		height: $boardSize;
+		width: $boardSize;
 	}
 	.field{
-		width: 550px*$fieldMultiplier;
-		height: 550px*$fieldMultiplier;
+		width: $boardSize*$fieldMultiplier;
+		height: $boardSize*$fieldMultiplier;
 	}
 	.field:nth-of-type(3n+2){
-		border-left: 550px * $borderMultiplier solid white;
-		border-right: 550px * $borderMultiplier solid white;
+		border-left: $boardSize * $borderMultiplier solid white;
+		border-right: $boardSize * $borderMultiplier solid white;
 	}
 
 	.field:nth-of-type(4){
-		border-top: 550px * $borderMultiplier solid white;
-		border-bottom: 550px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 	.field:nth-of-type(5){
-		border-top: 550px * $borderMultiplier solid white;
-		border-bottom: 550px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 	.field:nth-of-type(6){
-		border-top: 550px * $borderMultiplier solid white;
-		border-bottom: 550px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
+	}
+	.gameState{
+		font-size: 50px;
 	}
 }
 
 @media only screen and (max-width: 800px){
+	$boardSize: 550px;
 	.boardWrapper{
-		height: 550px;
-		width: 550px;
+		height: $boardSize;
+		width: $boardSize;
 	}
 	.field{
-		width: 550px*$fieldMultiplier;
-		height: 550px*$fieldMultiplier;
+		width: $boardSize*$fieldMultiplier;
+		height: $boardSize*$fieldMultiplier;
 	}
 	.field:nth-of-type(3n+2){
-		border-left: 550px * $borderMultiplier solid white;
-		border-right: 550px * $borderMultiplier solid white;
+		border-left: $boardSize * $borderMultiplier solid white;
+		border-right: $boardSize * $borderMultiplier solid white;
 	}
 
 	.field:nth-of-type(4){
-		border-top: 550px * $borderMultiplier solid white;
-		border-bottom: 550px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 	.field:nth-of-type(5){
-		border-top: 550px * $borderMultiplier solid white;
-		border-bottom: 550px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 	.field:nth-of-type(6){
-		border-top: 550px * $borderMultiplier solid white;
-		border-bottom: 550px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 }
 
 @media only screen and (max-width: 768px){
+$boardSize: 550px;
 	.boardWrapper{
-		height: 550px;
-		width: 550px;
+		height: $boardSize;
+		width: $boardSize;
 	}
 	.field{
-		width: 550px*$fieldMultiplier;
-		height: 550px*$fieldMultiplier;
+		width: $boardSize*$fieldMultiplier;
+		height: $boardSize*$fieldMultiplier;
 	}
 	.field:nth-of-type(3n+2){
-		border-left: 550px * $borderMultiplier solid white;
-		border-right: 550px * $borderMultiplier solid white;
+		border-left: $boardSize * $borderMultiplier solid white;
+		border-right: $boardSize * $borderMultiplier solid white;
 	}
 
 	.field:nth-of-type(4){
-		border-top: 550px * $borderMultiplier solid white;
-		border-bottom: 550px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 	.field:nth-of-type(5){
-		border-top: 550px * $borderMultiplier solid white;
-		border-bottom: 550px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 	.field:nth-of-type(6){
-		border-top: 550px * $borderMultiplier solid white;
-		border-bottom: 550px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 }
 
 @media only screen and (max-width: 620px){
+	$boardSize: 500px;
 	.boardWrapper{
-		height: 500px;
-		width: 500px;
+		height: $boardSize;
+		width: $boardSize;
 	}
 	.field{
-		width: 500px*$fieldMultiplier;
-		height: 500px*$fieldMultiplier;
+		width: $boardSize*$fieldMultiplier;
+		height: $boardSize*$fieldMultiplier;
 	}
 	.field:nth-of-type(3n+2){
-		border-left: 500px * $borderMultiplier solid white;
-		border-right: 500px * $borderMultiplier solid white;
+		border-left: $boardSize * $borderMultiplier solid white;
+		border-right: $boardSize * $borderMultiplier solid white;
 	}
 
 	.field:nth-of-type(4){
-		border-top: 500px * $borderMultiplier solid white;
-		border-bottom: 500px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 	.field:nth-of-type(5){
-		border-top: 500px * $borderMultiplier solid white;
-		border-bottom: 500px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 	.field:nth-of-type(6){
-		border-top: 500px * $borderMultiplier solid white;
-		border-bottom: 500px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 }
 
 @media only screen and (max-width: 480px){
+	$boardSize: 400px;
 	.boardWrapper{
-		height: 400px;
-		width: 400px;
+		height: $boardSize;
+		width: $boardSize;
 	}
 	.field{
-		width: 400px*$fieldMultiplier;
-		height: 400px*$fieldMultiplier;
+		width: $boardSize*$fieldMultiplier;
+		height: $boardSize*$fieldMultiplier;
 	}
 	.field:nth-of-type(3n+2){
-		border-left: 400px * $borderMultiplier solid white;
-		border-right: 400px * $borderMultiplier solid white;
+		border-left: $boardSize * $borderMultiplier solid white;
+		border-right: $boardSize * $borderMultiplier solid white;
 	}
 
 	.field:nth-of-type(4){
-		border-top: 400px * $borderMultiplier solid white;
-		border-bottom: 400px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 	.field:nth-of-type(5){
-		border-top: 400px * $borderMultiplier solid white;
-		border-bottom: 400px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 	.field:nth-of-type(6){
-		border-top: 400px * $borderMultiplier solid white;
-		border-bottom: 400px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 }
 
 @media only screen and (max-width: 320px){
+	$boardSize: 250px;
 	.boardWrapper{
-		height: 250px;
-		width: 250px;
+		height: $boardSize;
+		width: $boardSize;
 	}
 	.field{
-		width: 250px*$fieldMultiplier;
-		height: 250px*$fieldMultiplier;
+		width: $boardSize*$fieldMultiplier;
+		height: $boardSize*$fieldMultiplier;
 	}
 	.field:nth-of-type(3n+2){
-		border-left: 250px * $borderMultiplier solid white;
-		border-right: 250px * $borderMultiplier solid white;
+		border-left: $boardSize * $borderMultiplier solid white;
+		border-right: $boardSize * $borderMultiplier solid white;
 	}
 
 	.field:nth-of-type(4){
-		border-top: 250px * $borderMultiplier solid white;
-		border-bottom: 250px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 	.field:nth-of-type(5){
-		border-top: 250px * $borderMultiplier solid white;
-		border-bottom: 250px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 	.field:nth-of-type(6){
-		border-top: 250px * $borderMultiplier solid white;
-		border-bottom: 250px * $borderMultiplier solid white;
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
 	}
 }
