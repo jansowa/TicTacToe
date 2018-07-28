@@ -3,4 +3,5 @@
 3. DONE Change color of text
 4. End fixing sonar advices
 5. Refactorize code using SOLID principles
-6. Fix elements sizes for all resolutions
+6. Fix RWD in portrait orientation
+7. Fix RWD in landscape orientation
