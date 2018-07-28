@@ -80,42 +80,7 @@ function printResult(result, player){
 	}
 }
 
-function saveGame(name){
-	$.post("/saveGame", {gameName: name})
-	.done(function(){
-		alert("Game "+name+" saved.");
-	});
-}
-
-function loadGame(name){
-	$.get("/loadGame", {gameName: name})
-	.done(function(boardJSON){
-		printBoard(boardJSON);
-		printResult(-1, boardJSON.player);
-	});
-}
-
 $(document).ready(()=>{
-
-	$('.loadGame').click( () => {
-		$('.loadInput').slideToggle();
-		$('.loadButton').slideToggle();
-	});
-
-	$(".loadButton").click( () => {
-		var gameName = $('.loadInput').val();
-		loadGame(gameName);
-	})
-
-	$('.saveGame').click( () => {
-		$('.saveInput').slideToggle();
-		$('.saveButton').slideToggle();
-	});
-
-	$(".saveButton").click( event => {
-		var gameName = $('.saveInput').val();
-		saveGame(gameName);
-	})
 
 	$('.singlePlayer').click( () => {
 		singlePlayer();
