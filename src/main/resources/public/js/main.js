@@ -123,8 +123,8 @@ $(document).ready(()=>{
 	})
 
 	$('.loadGame').click( () => {
-		$('.loadInput').toggle();
-		$('.loadButton').toggle();
+		$('.loadInput').slideToggle();
+		$('.loadButton').slideToggle();
 	});
 
 	$(".loadButton").click( () => {
@@ -133,8 +133,8 @@ $(document).ready(()=>{
 	})
 
 	$('.saveGame').click( () => {
-		$('.saveInput').toggle();
-		$('.saveButton').toggle();
+		$('.saveInput').slideToggle();
+		$('.saveButton').slideToggle();
 	});
 
 	$(".saveButton").click( event => {
