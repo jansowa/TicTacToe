@@ -146,7 +146,7 @@ a:hover{
 	color: grey;
 }
 
-/*one of laptop resolutions*/
+/*one of laptop resolutions 1920x1080*/
 @media only screen and (max-width: 1920px){
 	$boardSize: 690px;
 	.menu.gameState{
@@ -195,7 +195,7 @@ a:hover{
 	}
 }
 
-/*one of laptop resolutions*/
+/*one of laptop resolutions 1366x768*/
 @media only screen and (max-width: 1366px) {
 	$boardSize: 480px;
 	.menu.gameState{
@@ -242,7 +242,7 @@ a:hover{
 	}
 }
 
-/*tablet*/
+/*tablet 1366x768*/
 @media only screen and (max-width: 768px) and (orientation: portrait){
 	$boardSize: 740px;
 	.menu.gameState{
@@ -290,7 +290,7 @@ footer{
 	}
 }
 
-/*most popular netbook resolution*/
+/*popular tablet resolution 1280x720*/
 @media only screen and (max-width: 720px) and (orientation: portrait){
 	$boardSize: 700px;
 	.menu.gameState{
@@ -338,7 +338,7 @@ footer{
 	}
 }
 
-/*Most popular phone resolution*/
+/*Most popular phone resolution 360x640*/
 @media only screen and (max-width: 360px) and (orientation:portrait){
 	$boardSize: 340px;
 	.menu.gameState{
