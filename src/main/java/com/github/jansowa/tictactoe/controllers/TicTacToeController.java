@@ -22,13 +22,13 @@ public class TicTacToeController {
 	private class BoardState{
 		public int state;
 		public TicTacToeBoard board;
-		
+
 		BoardState(int state, TicTacToeBoard board){
 			this.state = state;
 			this.board = board;
 		}
 	}
-	
+
 	@Autowired
 	TicTacToeBoard board;
 	@Autowired
@@ -40,11 +40,6 @@ public class TicTacToeController {
 
 	public void setBoard(TicTacToeBoard board) {
 		this.board = board;
-	}
-
-	@GetMapping("/getBoard")
-	TicTacToeBoard getBoard(){
-		return this.board;
 	}
 
 	@PostMapping("/singleMove")
@@ -59,7 +54,7 @@ public class TicTacToeController {
 		BoardState boardState = new BoardState(state, this.board);
 		return boardState;
 	}
-	
+
 	@GetMapping("/singlePlayer")
 	TicTacToeBoard singlePlayer(){
 		mechanics.restartBoard();
@@ -67,7 +62,7 @@ public class TicTacToeController {
 		mechanics.singleMove(ai.nextAIMove());
 		return this.board;
 	}
-	
+
 	@GetMapping("/multiPlayer")
 	TicTacToeBoard multiPlayer(){
 		mechanics.restartBoard();
