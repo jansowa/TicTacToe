@@ -41,23 +41,12 @@ public class TicTacToeController {
 	public void setBoard(TicTacToeBoard board) {
 		this.board = board;
 	}
-	
+
 	@GetMapping("/getBoard")
 	TicTacToeBoard getBoard(){
 		return this.board;
 	}
-	
-	@GetMapping("/restartBoard")
-	TicTacToeBoard restartBoard(){
-		mechanics.restartBoard();
-		
-		//If mode is single player, AI makes first move there:
-		if(this.board.getNumberOfPlayers()==1){
-			mechanics.singleMove(ai.nextAIMove());
-		}
-		return this.board;
-	}
-	
+
 	@PostMapping("/singleMove")
 	BoardState singleMove(
 		@RequestParam String field

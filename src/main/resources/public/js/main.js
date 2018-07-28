@@ -19,28 +19,6 @@ function drawSign(sign, field){
 	}
 }
 
-function restart(){
-	$.ajax({
-		url: "/restartBoard"
-	}).done(function(boardJSON) {
-		printBoard(boardJSON);
-		printResult(-1, boardJSON.player); //prints information about current player
-
-		$('.field').off('click');
-		$('.field').click( event => {
-			singleMove($(event.currentTarget).attr('id'));
-		})
-	});
-}
-
-function getBoard(){
-	$.ajax({
-		url: "/getBoard"
-	}).done(function(boardJSON) {
-		printBoard(boardJSON);
-	});
-}
-
 function printBoard(boardJSON){
 	for(var i=0; i<9; i++){
 		drawSign(boardJSON.fields[i], i);
@@ -118,9 +96,6 @@ function loadGame(name){
 }
 
 $(document).ready(()=>{
-	$('.restart').click( () => {
-		restart();
-	})
 
 	$('.loadGame').click( () => {
 		$('.loadInput').slideToggle();
