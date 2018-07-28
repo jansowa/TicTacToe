@@ -1,6 +1,10 @@
 $fieldMultiplier : 0.306;
 $borderMultiplier : 0.04;
 $boardSize: 700px;
+$footerFontDivider: 21;
+$menuFontDivider: 15;
+$gameStateFontDivider: 7;
+$inputDivider: 15;
 
 body {
 	background-color: black;
@@ -25,6 +29,8 @@ body {
 	display: block;
 	height: $boardSize;
 	width: $boardSize;
+	margin-top: 5px;
+	margin-bottom: 10px;
 }
 .field{
 	display: inline-block;
@@ -121,6 +127,7 @@ footer{
 	position: absolute;
 	bottom: 0;
 	right: 0;
+	text-align: right;
 }
 
 a{
@@ -139,69 +146,75 @@ a:hover{
 	color: grey;
 }
 
-@media only screen and (max-width: 1366px){
+/*one of laptop resolutions*/
+@media only screen and (max-width: 1920px){
+	$boardSize: 690px;
+	.menu.gameState{
+		font-size: $boardSize/$gameStateFontDivider;
+	}
+	.menu{
+		font-size: $boardSize/$menuFontDivider;
+	}
+	input{
+		height: $boardSize/$inputDivider;
+		font-size: $boardSize/$inputDivider;
+	}
+	button{
+		height: $boardSize/$inputDivider;
+		font-size: $boardSize/$inputDivider;
+	}
+	footer{
+		font-size: $boardSize/$footerFontDivider;
+	}
+	.boardWrapper{
+		margin-top: 10px;
+		margin-bottom: 20px;
+		height: $boardSize;
+		width: $boardSize;
+	}
+	.field{
+		width: $boardSize*$fieldMultiplier;
+		height: $boardSize*$fieldMultiplier;
+	}
+	.field:nth-of-type(3n+2){
+		border-left: $boardSize * $borderMultiplier solid white;
+		border-right: $boardSize * $borderMultiplier solid white;
+	}
+
+	.field:nth-of-type(4){
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
+	}
+	.field:nth-of-type(5){
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
+	}
+	.field:nth-of-type(6){
+		border-top: $boardSize * $borderMultiplier solid white;
+		border-bottom: $boardSize * $borderMultiplier solid white;
+	}
+}
+
+/*one of laptop resolutions*/
+@media only screen and (max-width: 1366px) {
 	$boardSize: 480px;
-	.boardWrapper{
-		height: $boardSize;
-		width: $boardSize;
+	.menu.gameState{
+		font-size: $boardSize/$gameStateFontDivider;
 	}
-	.field{
-		width: $boardSize*$fieldMultiplier;
-		height: $boardSize*$fieldMultiplier;
+	.menu{
+		font-size: $boardSize/$menuFontDivider;
 	}
-	.field:nth-of-type(3n+2){
-		border-left: $boardSize * $borderMultiplier solid white;
-		border-right: $boardSize * $borderMultiplier solid white;
+	input{
+		height: $boardSize/$inputDivider;
+		font-size: $boardSize/$inputDivider;
 	}
-
-	.field:nth-of-type(4){
-		border-top: $boardSize * $borderMultiplier solid white;
-		border-bottom: $boardSize * $borderMultiplier solid white;
+	button{
+		height: $boardSize/$inputDivider;
+		font-size: $boardSize/$inputDivider;
 	}
-	.field:nth-of-type(5){
-		border-top: $boardSize * $borderMultiplier solid white;
-		border-bottom: $boardSize * $borderMultiplier solid white;
+	footer{
+		font-size: $boardSize/$footerFontDivider;
 	}
-	.field:nth-of-type(6){
-		border-top: $boardSize * $borderMultiplier solid white;
-		border-bottom: $boardSize * $borderMultiplier solid white;
-	}
-	.gameState{
-		font-size: 50px;
-	}
-}
-
-@media only screen and (max-width: 800px){
-	$boardSize: 550px;
-	.boardWrapper{
-		height: $boardSize;
-		width: $boardSize;
-	}
-	.field{
-		width: $boardSize*$fieldMultiplier;
-		height: $boardSize*$fieldMultiplier;
-	}
-	.field:nth-of-type(3n+2){
-		border-left: $boardSize * $borderMultiplier solid white;
-		border-right: $boardSize * $borderMultiplier solid white;
-	}
-
-	.field:nth-of-type(4){
-		border-top: $boardSize * $borderMultiplier solid white;
-		border-bottom: $boardSize * $borderMultiplier solid white;
-	}
-	.field:nth-of-type(5){
-		border-top: $boardSize * $borderMultiplier solid white;
-		border-bottom: $boardSize * $borderMultiplier solid white;
-	}
-	.field:nth-of-type(6){
-		border-top: $boardSize * $borderMultiplier solid white;
-		border-bottom: $boardSize * $borderMultiplier solid white;
-	}
-}
-
-@media only screen and (max-width: 768px){
-$boardSize: 550px;
 	.boardWrapper{
 		height: $boardSize;
 		width: $boardSize;
@@ -229,8 +242,27 @@ $boardSize: 550px;
 	}
 }
 
-@media only screen and (max-width: 620px){
-	$boardSize: 500px;
+/*tablet*/
+@media only screen and (max-width: 768px) and (orientation: portrait){
+	$boardSize: 740px;
+	.menu.gameState{
+		font-size: $boardSize/($gameStateFontDivider+1);
+	}
+	.menu{
+		font-size: $boardSize/($menuFontDivider+1);
+	}
+input{
+	height: $boardSize/$inputDivider;
+	font-size: $boardSize/$inputDivider;
+}
+button{
+	height: $boardSize/$inputDivider;
+	font-size: $boardSize/$inputDivider;
+}
+footer{
+	font-size: $boardSize/$footerFontDivider;
+}
+
 	.boardWrapper{
 		height: $boardSize;
 		width: $boardSize;
@@ -258,8 +290,27 @@ $boardSize: 550px;
 	}
 }
 
-@media only screen and (max-width: 480px){
-	$boardSize: 400px;
+/*most popular netbook resolution*/
+@media only screen and (max-width: 720px) and (orientation: portrait){
+	$boardSize: 700px;
+	.menu.gameState{
+		font-size: $boardSize/$gameStateFontDivider;
+	}
+	.menu{
+		font-size: $boardSize/$menuFontDivider;
+	}
+input{
+	height: $boardSize/$inputDivider;
+	font-size: $boardSize/$inputDivider;
+}
+button{
+	height: $boardSize/$inputDivider;
+	font-size: $boardSize/$inputDivider;
+}
+footer{
+	font-size: $boardSize/$footerFontDivider;
+}
+
 	.boardWrapper{
 		height: $boardSize;
 		width: $boardSize;
@@ -287,8 +338,26 @@ $boardSize: 550px;
 	}
 }
 
-@media only screen and (max-width: 320px){
-	$boardSize: 250px;
+/*Most popular phone resolution*/
+@media only screen and (max-width: 360px) and (orientation:portrait){
+	$boardSize: 340px;
+	.menu.gameState{
+		font-size: $boardSize/$gameStateFontDivider;
+	}
+	.menu{
+		font-size: $boardSize/$menuFontDivider;
+	}
+	input{
+		height: $boardSize/$inputDivider;
+		font-size: $boardSize/$inputDivider;
+	}
+	button{
+		height: $boardSize/$inputDivider;
+		font-size: $boardSize/$inputDivider;
+	}
+	footer{
+		font-size: $boardSize/$footerFontDivider;
+	}
 	.boardWrapper{
 		height: $boardSize;
 		width: $boardSize;
