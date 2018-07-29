@@ -4,7 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import com.github.jansowa.boardGame.domain.GameBoard;
@@ -16,6 +17,7 @@ import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 public class HibernateGameDAO extends GameDAO {
 	private EntityManagerFactory entityManagerFactory;
 	private EntityManager entityManager;
+	private static final Logger log = LoggerFactory.getLogger(HibernateGameDAO.class);
 	
 	public HibernateGameDAO(){
 		this.entityManagerFactory = Persistence.createEntityManagerFactory("myDatabase");
@@ -28,8 +30,7 @@ public class HibernateGameDAO extends GameDAO {
 		try {
 			entityManager.persist(board.clone());
 		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.error("saveGame function: ", e);
 		}
 		entityManager.getTransaction().commit();
 	}
@@ -41,8 +42,7 @@ public class HibernateGameDAO extends GameDAO {
 		try {
 			board = (TicTacToeBoard) entityManager.find(TicTacToeBoard.class, name).clone();
 		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.error("loadGame function: ", e);
 		}
 		entityManager.getTransaction().commit();
 		return board;
