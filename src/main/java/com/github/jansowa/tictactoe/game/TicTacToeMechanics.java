@@ -28,31 +28,32 @@ public class TicTacToeMechanics extends BoardMechanics {
 	public int isGameOver() {
 		//-1 not over, 0 player O wins, 1 player X wins, 2 draw game
 		int[] fields = this.getBoard().getFields();
-		if(fields[0]!=-1){
-			if(fields[0]==fields[1] && fields[1]==fields[2]){
+		//checks first horizontal line, first vertical line and first diagonal line
+		if((fields[0]!=-1) &&
+			((fields[0]==fields[1] && fields[1]==fields[2]) ||
+			(fields[0]==fields[4] && fields[4]==fields[8]) ||
+			(fields[0]==fields[3] && fields[3]==fields[6]))){
 				return fields[0];
-			}
-			else if(fields[0]==fields[4] && fields[4]==fields[8]){
-				return fields[0];
-			}
-			else if(fields[0]==fields[3] && fields[3]==fields[6]){
-				return fields[0];
-			}
 		}
+		
+		//checks second vertical line
 		if(fields[1]!=-1 && fields[1]==fields[4] && fields[4]==fields[7]){
 			return fields[1];
 		}
-		if(fields[2]!=-1){
-			if(fields[2]==fields[5] && fields[5]==fields[8]){
+		
+		//checks third vertical line and one diagonal line
+		if((fields[2]!=-1) &&
+			((fields[2]==fields[5] && fields[5]==fields[8])||
+			(fields[2]==fields[4] && fields[4]==fields[6]))){
 				return fields[2];
-			}
-			else if(fields[2]==fields[4] && fields[4]==fields[6]){
-				return fields[2];
-			}
 		}
+		
+		//checks second horizontal line
 		if(fields[3]!=-1 && fields[3]==fields[4] && fields[4]==fields[5]){
 			return fields[3];
 		}
+		
+		//checks third horizontal line
 		if(fields[6]!=-1 && fields[6]==fields[7] && fields[7]==fields[8]){
 			return fields[6];
 		}

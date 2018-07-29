@@ -1,7 +1,7 @@
 1. Translate and update README.md
 2. Export functions to BoardGame library
 3. DONE Change color of text
-4. End fixing sonar advices
+4. DONE End fixing sonar advices
 5. Refactorize code using SOLID principles
 6. Fix RWD in portrait orientation
 7. Fix RWD in landscape orientation
