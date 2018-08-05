@@ -1,4 +1,4 @@
-package controllers;
+package com.github.jansowa.ticTacToe.controllers;
 
 import static org.junit.Assert.*;
 

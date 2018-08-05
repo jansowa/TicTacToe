@@ -1,4 +1,4 @@
-package game;
+package com.github.jansowa.ticTacToe.mechanics;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
