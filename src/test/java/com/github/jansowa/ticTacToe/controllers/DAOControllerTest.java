@@ -38,13 +38,25 @@ public class DAOControllerTest {
 	public final void setUp(){
 		MockitoAnnotations.initMocks(this);
 		testBoard1 = new TicTacToeBoard();
-		int[] fields1 =	{-1, 0, 1,1, 0, -1,-1, 0, 1};
+		int[][] fields1 =	{
+				{-1, 0, 1},
+				{1, 0, -1},
+				{-1, 0, 1}
+			};
 		testBoard1.setFields(fields1);
 		testBoard2 = new TicTacToeBoard();
-		int[] fields2 =	{1, 1, 1,0, -1, 0,-1, 0, -1};
+		int[][] fields2 =	{
+				{1, 1, 1},
+				{0, -1, 0},
+				{-1, 0, -1}
+		};
 		testBoard2.setFields(fields2);
 		testBoard3 = new TicTacToeBoard();
-		int[] fields3 =	{-1, 0, -1,	-1, 1, -1, 0, 1, 0};
+		int[][] fields3 =	{
+				{-1, 0, -1},
+				{-1, 1, -1},
+				{0, 1, 0}
+		};
 		testBoard3.setFields(fields3);
 		Mockito.when(hibernateDAOMock.loadGame("testBoard1")).thenReturn(testBoard1);
 		Mockito.when(hibernateDAOMock.loadGame("testBoard2")).thenReturn(testBoard2);

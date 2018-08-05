@@ -17,19 +17,39 @@ import com.github.jansowa.tictactoe.game.TicTacToeMechanics;
 
 public class TicTacToeMechanicsTest {
 	private TicTacToeMechanics mechanics;
-	int[][] exampleFields;
+	int[][][] exampleFields;
 	@Before
 	public final void setUp(){
 		//board with empty fields for 2 players, actual player 0
 		TicTacToeBoard board = new TicTacToeBoard();
 		mechanics = new TicTacToeMechanics(board);
-		int[][] exampleFieldsCreate = {
-				{-1, -1, 1, 1, -1, 0, 0, -1, 0}, //game in progress, now player 1
-				{1, 1, -1, -1, 0, 0, 0, -1, 1}, //game in progress, now player 0
-				{0, 0, 1, 1, 1, 0, 0, 1, 0}, //draw game
-				{0, 1, -1, -1, 0, 1, -1, -1, 0}, //player 0 wins
-				{0, -1, 1, -1, 0, 1, -1, 0, 1} //player 1 wins
-		};
+		int[][][] exampleFieldsCreate = {
+				{
+				{-1, -1, 1}, 
+				{1, -1, 0}, 
+				{0, -1, 0}
+				}, //game in progress, now player 1
+				{
+				{1, 1, -1}, 
+				{-1, 0, 0}, 
+				{0, -1, 1}
+				}, //game in progress, now player 0
+				{
+				{0, 0, 1}, 
+				{1, 1, 0}, 
+				{0, 1, 0}
+				}, //draw game
+				{
+				{0, 1, -1}, 
+				{-1, 0, 1}, 
+				{-1, -1, 0}
+				}, //player 0 wins
+				{
+				{0, -1, 1}, 
+				{-1, 0, 1}, 
+				{-1, 0, 1}
+				} //player 1 wins
+			};
 		this.exampleFields = exampleFieldsCreate;
 	}
 	
@@ -55,7 +75,11 @@ public class TicTacToeMechanicsTest {
 	public final void testRestartBoard() {
 		mechanics.getBoard().setFields(exampleFields[0]);
 		mechanics.restartBoard();
-		int[] empty = {-1, -1, -1, -1, -1, -1, -1, -1, -1};
+		int[][] empty = {
+				{-1, -1, -1}, 
+				{-1, -1, -1}, 
+				{-1, -1, -1}
+				};
 		assertArrayEquals(empty, mechanics.getBoard().getFields());
 	}
 
@@ -89,7 +113,11 @@ public class TicTacToeMechanicsTest {
 		mechanics.changeBoard("B2");
 		mechanics.changeBoard("A2");
 		mechanics.changeBoard("B3");
-		int[] expected1 = {0, 0, -1, -1, 1, 1, -1, -1, -1};
+		int[][] expected1 = {
+				{0, 0, -1}, 
+				{-1, 1, 1}, 
+				{-1, -1, -1}
+		};
 		assertArrayEquals(expected1, mechanics.getBoard().getFields());
 		
 		setFieldsSetup(0);
@@ -98,7 +126,11 @@ public class TicTacToeMechanicsTest {
 		mechanics.changeBoard("A1");
 		mechanics.changeBoard("C2");
 		mechanics.changeBoard("A2");
-		int[] expected2 = {0, 0, 1, 1, 1, 0, 0, 1, 0};
+		int[][] expected2 = {
+				{0, 0, 1}, 
+				{1, 1, 0}, 
+				{0, 1, 0}
+		};
 		assertArrayEquals(expected2, mechanics.getBoard().getFields());
 	}
 
