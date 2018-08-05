@@ -21,13 +21,21 @@ public class TicTacToeBoard extends GameBoard implements Serializable {
 	//0 for player 0, 1 for player X, -1 for empty field
 	public TicTacToeBoard(){
 		super();
-		int[] empty = {-1, -1, -1, -1, -1, -1, -1, -1, -1};
+		int[][] empty = {
+				{-1, -1, -1}, 
+				{-1, -1, -1}, 
+				{-1, -1, -1}
+		};
 		this.setFields(empty);
 	}
 	
 	public TicTacToeBoard(String name, int numberOfPlayers, int player){
 		super(name, numberOfPlayers, player);
-		int[] empty = {-1, -1, -1, -1, -1, -1, -1, -1, -1};
+		int[][] empty = {
+				{-1, -1, -1}, 
+				{-1, -1, -1}, 
+				{-1, -1, -1}
+		};
 		this.setFields(empty);
 	}
 	
