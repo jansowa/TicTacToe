@@ -13,6 +13,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.game.AppConfiguration;
+import com.github.jansowa.boardGame.mechanics.Move;
 import com.github.jansowa.tictactoe.game.TicTacToeMechanics;
 
 public class TicTacToeMechanicsTest {
@@ -102,17 +103,17 @@ public class TicTacToeMechanicsTest {
 		setFieldsSetup(1);
 		mechanics.getBoard().setPlayer(0);
 		//C2, B1, A3
-		assertEquals(-1, mechanics.singleMove("C2"));
-		assertEquals(-1, mechanics.singleMove("B1"));
-		assertEquals(0, mechanics.singleMove("A3"));
+		assertEquals(-1, mechanics.singleMove(new Move(2,1)));
+		assertEquals(-1, mechanics.singleMove(new Move(1,0)));
+		assertEquals(0, mechanics.singleMove(new Move(0,2)));
 	}
 
 	@Test
-	public final void testChangeBoardString() {
-		mechanics.changeBoard("A1");
-		mechanics.changeBoard("B2");
-		mechanics.changeBoard("A2");
-		mechanics.changeBoard("B3");
+	public final void testChangeBoard() {
+		mechanics.changeBoard(new Move(0,0));
+		mechanics.changeBoard(new Move(1,1));
+		mechanics.changeBoard(new Move(0,1));
+		mechanics.changeBoard(new Move(1,2));
 		int[][] expected1 = {
 				{0, 0, -1}, 
 				{-1, 1, 1}, 
@@ -122,10 +123,10 @@ public class TicTacToeMechanicsTest {
 		
 		setFieldsSetup(0);
 		mechanics.getBoard().setPlayer(1);
-		mechanics.changeBoard("B2");
-		mechanics.changeBoard("A1");
-		mechanics.changeBoard("C2");
-		mechanics.changeBoard("A2");
+		mechanics.changeBoard(new Move(1,1));
+		mechanics.changeBoard(new Move(0,0));
+		mechanics.changeBoard(new Move(2,1));
+		mechanics.changeBoard(new Move(0,1));
 		int[][] expected2 = {
 				{0, 0, 1}, 
 				{1, 1, 0}, 
@@ -136,42 +137,42 @@ public class TicTacToeMechanicsTest {
 
 	@Test
 	public final void testIsMovePossible() {
-		assertTrue(mechanics.isMovePossible("A1"));
-		assertTrue(mechanics.isMovePossible("C2"));
+		assertTrue(mechanics.isMovePossible(new Move(0,0)));
+		assertTrue(mechanics.isMovePossible(new Move(2,1)));
 		setFieldsSetup(0);
-		assertTrue(mechanics.isMovePossible("A2"));
-		assertTrue(mechanics.isMovePossible("C2"));
-		assertFalse(mechanics.isMovePossible("A3"));
-		assertFalse(mechanics.isMovePossible("C1"));
+		assertTrue(mechanics.isMovePossible(new Move(0,1)));
+		assertTrue(mechanics.isMovePossible(new Move(2,1)));
+		assertFalse(mechanics.isMovePossible(new Move(0,2)));
+		assertFalse(mechanics.isMovePossible(new Move(2,0)));
 		setFieldsSetup(2);
-		assertFalse(mechanics.isMovePossible("B2"));
-		assertFalse(mechanics.isMovePossible("C3"));
+		assertFalse(mechanics.isMovePossible(new Move(1,1)));
+		assertFalse(mechanics.isMovePossible(new Move(2,2)));
 	}
 
 	@Test
-	public final void testStrFieldToIntField() {
-		assertEquals(0, TicTacToeMechanics.strFieldToIntField("A1"));
-		assertEquals(1, TicTacToeMechanics.strFieldToIntField("A2"));
-		assertEquals(2, TicTacToeMechanics.strFieldToIntField("A3"));
-		assertEquals(3, TicTacToeMechanics.strFieldToIntField("B1"));
-		assertEquals(4, TicTacToeMechanics.strFieldToIntField("B2"));
-		assertEquals(5, TicTacToeMechanics.strFieldToIntField("B3"));
-		assertEquals(6, TicTacToeMechanics.strFieldToIntField("C1"));
-		assertEquals(7, TicTacToeMechanics.strFieldToIntField("C2"));
-		assertEquals(8, TicTacToeMechanics.strFieldToIntField("C3"));
+	public final void teststringFieldToMove() {
+		assertEquals(new Move(0, 0), TicTacToeMechanics.stringFieldToMove("A1"));
+		assertEquals(new Move(0, 1), TicTacToeMechanics.stringFieldToMove("A2"));
+		assertEquals(new Move(0, 2), TicTacToeMechanics.stringFieldToMove("A3"));
+		assertEquals(new Move(1, 0), TicTacToeMechanics.stringFieldToMove("B1"));
+		assertEquals(new Move(1, 1), TicTacToeMechanics.stringFieldToMove("B2"));
+		assertEquals(new Move(1, 2), TicTacToeMechanics.stringFieldToMove("B3"));
+		assertEquals(new Move(2, 0), TicTacToeMechanics.stringFieldToMove("C1"));
+		assertEquals(new Move(2, 1), TicTacToeMechanics.stringFieldToMove("C2"));
+		assertEquals(new Move(2, 2), TicTacToeMechanics.stringFieldToMove("C3"));
 	}
 	
 	@Test
-	public final void testIntFieldToStringField() {
-		assertEquals("A1", TicTacToeMechanics.intFieldToStringField(0));
-		assertEquals("A2", TicTacToeMechanics.intFieldToStringField(1));
-		assertEquals("A3", TicTacToeMechanics.intFieldToStringField(2));
-		assertEquals("B1", TicTacToeMechanics.intFieldToStringField(3));
-		assertEquals("B2", TicTacToeMechanics.intFieldToStringField(4));
-		assertEquals("B3", TicTacToeMechanics.intFieldToStringField(5));
-		assertEquals("C1", TicTacToeMechanics.intFieldToStringField(6));
-		assertEquals("C2", TicTacToeMechanics.intFieldToStringField(7));
-		assertEquals("C3", TicTacToeMechanics.intFieldToStringField(8));
+	public final void testMoveToStringField() {
+		assertEquals("A1", TicTacToeMechanics.moveToStringField(new Move(0, 0)));
+		assertEquals("A2", TicTacToeMechanics.moveToStringField(new Move(0, 1)));
+		assertEquals("A3", TicTacToeMechanics.moveToStringField(new Move(0, 2)));
+		assertEquals("B1", TicTacToeMechanics.moveToStringField(new Move(1, 0)));
+		assertEquals("B2", TicTacToeMechanics.moveToStringField(new Move(1, 1)));
+		assertEquals("B3", TicTacToeMechanics.moveToStringField(new Move(1, 2)));
+		assertEquals("C1", TicTacToeMechanics.moveToStringField(new Move(2, 0)));
+		assertEquals("C2", TicTacToeMechanics.moveToStringField(new Move(2, 1)));
+		assertEquals("C3", TicTacToeMechanics.moveToStringField(new Move(2, 2)));
 	}
 
 }
