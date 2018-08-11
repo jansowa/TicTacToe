@@ -1,4 +1,4 @@
-package com.github.jansowa.tictactoe.game;
+package com.github.jansowa.tictactoe.mechanics;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

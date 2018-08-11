@@ -11,8 +11,8 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.github.jansowa.boardGame.mechanics.AI;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
-import com.github.jansowa.tictactoe.game.HibernateGameDAO;
-import com.github.jansowa.tictactoe.game.TicTacToeMechanics;
+import com.github.jansowa.tictactoe.mechanics.HibernateGameDAO;
+import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
 
 
 @RestController

@@ -1,4 +1,4 @@
-package com.github.jansowa.tictactoe.game;
+package com.github.jansowa.tictactoe.mechanics;
 
 import java.util.ArrayList;
 
