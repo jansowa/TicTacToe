@@ -12,9 +12,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.web.context.WebApplicationContext;
 
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
-import com.github.jansowa.tictactoe.game.AppConfiguration;
 import com.github.jansowa.boardGame.mechanics.Move;
-import com.github.jansowa.tictactoe.game.TicTacToeMechanics;
+import com.github.jansowa.tictactoe.mechanics.AppConfiguration;
+import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
 
 public class TicTacToeMechanicsTest {
 	private TicTacToeMechanics mechanics;

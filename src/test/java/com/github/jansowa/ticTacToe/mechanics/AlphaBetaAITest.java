@@ -8,8 +8,9 @@ import java.util.Collections;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.github.jansowa.boardGame.mechanics.Move;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
-import com.github.jansowa.tictactoe.game.AlphaBetaAI;
+import com.github.jansowa.tictactoe.mechanics.AlphaBetaAI;
 
 public class AlphaBetaAITest {
 	TicTacToeBoard board;
@@ -25,15 +26,16 @@ public class AlphaBetaAITest {
 	@Test
 	public final void testNextAIMove() {
 		ai.getBoard().setNumberOfPlayers(1);
-		String move = ai.nextAIMove();
-		assertEquals("B2", move);
+		Move move = ai.nextAIMove();
+		assertEquals(new Move(1,1), move);
 		
 		this.board.getFields()[1][1]=0;
 		this.board.getFields()[0][1]=1;
 		move = ai.nextAIMove();
-		assertTrue(move.equals("A1") || move.equals("A3"));
+		assertTrue(move.equals(new Move(0, 0))
+				|| move.equals(new Move(0, 2)));
 	}
-
+	
 	@Test
 	public final void testEmptyIndexes() {
 		int[][] fields1 = {
@@ -42,9 +44,14 @@ public class AlphaBetaAITest {
 				{-1, 1, -1}
 			};
 		this.board.setFields(fields1);
-		ArrayList<Integer> arList = ai.emptyIndexes(this.board);
-		ArrayList<Integer> expectedList = new ArrayList<Integer>();
-		Collections.addAll(expectedList, 0, 2, 4, 6, 8);
+		ArrayList<Move> arList = ai.emptyIndexes(this.board);
+		ArrayList<Move> expectedList = new ArrayList<Move>();
+		Collections.addAll(expectedList, 
+				new Move(0, 0),
+				new Move(0, 2),
+				new Move(1, 1),
+				new Move(2, 0),
+				new Move(2, 2));
 		assertEquals(arList, expectedList);
 		
 		int[][] fields2 = {
@@ -55,7 +62,13 @@ public class AlphaBetaAITest {
 		this.board.setFields(fields2);
 		arList = ai.emptyIndexes(this.board);
 		expectedList.clear();
-		Collections.addAll(expectedList, 0, 1, 2, 6, 7, 8);
+		Collections.addAll(expectedList,
+				new Move(0, 0),
+				new Move(0, 1),
+				new Move(0, 2),
+				new Move(2, 0),
+				new Move(2, 1),
+				new Move(2, 2));
 		assertEquals(arList, expectedList);
 	}
 
@@ -162,34 +175,36 @@ public class AlphaBetaAITest {
 			{-1, -1, -1}
 		};
 		this.board.setFields(fields1);
-		assertEquals(8, ai.findBestMove(this.board)); //works
+		assertEquals(new Move(2, 2), ai.findBestMove(this.board));
 		int[][] fields2 = {
 			{-1, -1, -1},
 			{-1, -1, -1},
 			{-1, -1, -1}
 		};
 		this.board.setFields(fields2);
-		assertEquals(4, ai.findBestMove(this.board));
+		assertEquals(new Move(1,1), ai.findBestMove(this.board));
 		int[][] fields3 = {
 			{-1, 1, -1},
 			{-1, 0, -1},
 			{-1, -1, -1}
 		};
 		this.board.setFields(fields3);
-		assertTrue(ai.findBestMove(this.board)==0 || ai.findBestMove(this.board)==2); //works
+		assertTrue(ai.findBestMove(this.board).equals(new Move(0,0))
+				|| ai.findBestMove(this.board).equals(new Move(0, 2)));
 		int[][] fields4 ={
 			{0, 1, -1},
 			{-1, 0, -1},
 			{-1, -1, 1}
 		};
 		this.board.setFields(fields4);
-		assertEquals(3, ai.findBestMove(this.board)); //WORKS
+		assertEquals(new Move(1,0), ai.findBestMove(this.board));
 		int[][] fields5 = {
 			{-1, 1, -1},
 			{-1, 0, -1},
 			{-1, -1, -1}
 		};
 		this.board.setFields(fields5);
-		assertTrue(ai.findBestMove(this.board)==0 || ai.findBestMove(this.board)==2); //WORKS
+		assertTrue(ai.findBestMove(this.board).equals(new Move(0,0))
+		|| ai.findBestMove(this.board).equals(new Move(0, 2)));
 	}
 }
