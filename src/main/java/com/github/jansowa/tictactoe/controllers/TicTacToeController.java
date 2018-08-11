@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.github.jansowa.boardGame.mechanics.AI;
+import com.github.jansowa.boardGame.mechanics.Move;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.mechanics.HibernateGameDAO;
 import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
@@ -46,7 +47,8 @@ public class TicTacToeController {
 	BoardState singleMove(
 		@RequestParam String field
 		){
-		int state = mechanics.singleMove(field);
+		Move move = TicTacToeMechanics.stringFieldToMove(field);
+		int state = mechanics.singleMove(move);
 		//If mode is single player, AI makes his move there:
 		if(this.board.getNumberOfPlayers()==1 && state==-1){
 			state = mechanics.singleMove(ai.nextAIMove());
