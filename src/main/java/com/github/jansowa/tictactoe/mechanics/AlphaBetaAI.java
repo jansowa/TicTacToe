@@ -9,6 +9,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.github.jansowa.boardGame.domain.GameBoard;
 import com.github.jansowa.boardGame.mechanics.AI;
+import com.github.jansowa.boardGame.mechanics.Move;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 
 @Controller
@@ -23,11 +24,13 @@ public class AlphaBetaAI extends AI {
 		super(board);
 	}
 
-	public ArrayList<Integer> emptyIndexes(TicTacToeBoard board){
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		for(int i=0; i<9; i++){
-			if(board.getFields()[i]==(-1)){
-				list.add(i);
+	public ArrayList<Move> emptyIndexes(TicTacToeBoard board){
+		ArrayList<Move> list = new ArrayList<Move>();
+		for(int i=0; i<3; i++){
+			for(int j=0; j<3; j++){
+				if(board.getFields()[i][j]==-1){
+					list.add(new Move(i, j));
+				}
 			}
 		}
 		return list;
@@ -52,9 +55,8 @@ public class AlphaBetaAI extends AI {
 	}
 	
 	@Override
-	public String nextAIMove() {
-		int bestMove = findBestMove((TicTacToeBoard) this.getBoard());
-		return TicTacToeMechanics.intFieldToStringField(bestMove);
+	public Move nextAIMove() {
+		return findBestMove((TicTacToeBoard) this.getBoard());
 	}
 	
 	public int minimaxAlphaBeta(TicTacToeBoard newBoard, int depth, int player, int alpha, int beta){
@@ -73,7 +75,7 @@ public class AlphaBetaAI extends AI {
 			return score+depth;
 		}
 		
-		ArrayList<Integer> emptyFields = emptyIndexes(newBoard);
+		ArrayList<Move> emptyFields = emptyIndexes(newBoard);
 
 		//No fields left and nobody won -> draw game
 		if(emptyFields.size()==0){
@@ -87,7 +89,8 @@ public class AlphaBetaAI extends AI {
 			//Try moves in every empty fields
 			for(int i=0; i<emptyFields.size(); i++){
 				//Single Move
-				newBoard.getFields()[emptyFields.get(i)]=player;
+				newBoard.getFields()[emptyFields.get(i).getCoordinates().getY()]
+						[emptyFields.get(i).getCoordinates().getX()]=player;
 				
 				//Call alphaBetaMinimax and choose max value
 				best = Math.max(
@@ -95,7 +98,8 @@ public class AlphaBetaAI extends AI {
 						minimaxAlphaBeta(newBoard, depth+1, huPlayer, alpha, beta));
 				
 				//Undo move
-				newBoard.getFields()[emptyFields.get(i)]=-1;
+				newBoard.getFields()[emptyFields.get(i).getCoordinates().getY()]
+						[emptyFields.get(i).getCoordinates().getX()]=-1;
 				
 				alpha = Math.max(alpha, best);
 				if(beta<=alpha){
@@ -112,13 +116,15 @@ public class AlphaBetaAI extends AI {
 			//Try moves in every empty fields
 			for(int i=0; i<emptyFields.size(); i++){
 				//Single Move
-				newBoard.getFields()[emptyFields.get(i)]=player;
+				newBoard.getFields()[emptyFields.get(i).getCoordinates().getY()]
+						[emptyFields.get(i).getCoordinates().getX()]=player;
 				
 				best = Math.min(
 						best,
 						minimaxAlphaBeta(newBoard, depth+1, aiPlayer, alpha, beta));
 				//Undo move
-				newBoard.getFields()[emptyFields.get(i)]=-1;
+				newBoard.getFields()[emptyFields.get(i).getCoordinates().getY()]
+						[emptyFields.get(i).getCoordinates().getX()]=-1;
 				
 				beta = Math.min(beta, best);
 				if(beta<=alpha){
@@ -130,24 +136,28 @@ public class AlphaBetaAI extends AI {
 	}
 	
 	//Returns best move for AI (maximizer)
-	public int findBestMove(TicTacToeBoard board){
+	public Move findBestMove(TicTacToeBoard board){
+		//TODO FIX
 		int bestScores = -1000;
-		int bestMove=-1;
-		ArrayList<Integer> emptyFields = emptyIndexes(board);
+		//int bestMove=-1;
+		Move bestMove = null;
+		ArrayList<Move> emptyFields = emptyIndexes(board);
 		int size = emptyFields.size();
 		//IMPROVE OF MINIMAX
 		//returns "B2" - if opponent makes mistake, AI can win		
 		if(size==9){
-			return 4;
+			return new Move(1, 1);
 		}
 		//Try all possible moves
 		for(int i=0; i<size; i++){
 			//Single move
-			board.getFields()[emptyFields.get(i)]=0;
+			board.getFields()[emptyFields.get(i).getCoordinates().getY()]
+					[emptyFields.get(i).getCoordinates().getX()]=0;
 			//Calculate scores for this move:
 			int moveScores = minimaxAlphaBeta(board, 0, 1, -10000, 10000);
 			//Undo move
-			board.getFields()[emptyFields.get(i)]=-1;
+			board.getFields()[emptyFields.get(i).getCoordinates().getY()]
+					[emptyFields.get(i).getCoordinates().getX()]=-1;
 			//Check if move was better then others
 			if(moveScores>bestScores){
 				bestScores=moveScores;
