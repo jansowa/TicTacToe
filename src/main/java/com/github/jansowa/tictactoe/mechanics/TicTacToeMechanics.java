@@ -1,4 +1,4 @@
-package com.github.jansowa.tictactoe.game;
+package com.github.jansowa.tictactoe.mechanics;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -97,7 +97,6 @@ public class TicTacToeMechanics extends BoardMechanics {
 	public void changeBoard(Move move){
 		int fields[][] = this.getBoard().getFields();
 		int currentPlayer = this.getBoard().getPlayer();
-		//TODO TO FIX!!
 		int y = move.getCoordinates().getY();
 		int x = move.getCoordinates().getX();
 		fields[y][x]=currentPlayer;
