@@ -3,14 +3,13 @@ package com.github.jansowa.tictactoe.domain;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.github.jansowa.boardGame.domain.GameBoard;
 
 @Component
@@ -19,6 +18,10 @@ import com.github.jansowa.boardGame.domain.GameBoard;
 		value=WebApplicationContext.SCOPE_SESSION)
 public class TicTacToeBoard extends GameBoard implements Serializable {
 	//0 for player 0, 1 for player X, -1 for empty field
+	@Id
+	@GeneratedValue
+	private long id;
+	
 	public TicTacToeBoard(){
 		super();
 		int[][] empty = {
@@ -39,4 +42,11 @@ public class TicTacToeBoard extends GameBoard implements Serializable {
 		this.setFields(empty);
 	}
 	
+	public long getId(){
+		return this.id;
+	}
+	
+	public void setId(long id){
+		this.id = id;
+	}
 }

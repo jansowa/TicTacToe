@@ -4,6 +4,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.query.criteria.internal.CriteriaBuilderImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -40,7 +43,10 @@ public class HibernateGameDAO extends GameDAO {
 		TicTacToeBoard board = null;
 		entityManager.getTransaction().begin();
 		try {
-			board = (TicTacToeBoard) entityManager.find(TicTacToeBoard.class, name).clone();
+			board = (TicTacToeBoard) entityManager.createQuery(
+					"SELECT u from TicTacToeBoard u WHERE u.name = :name", TicTacToeBoard.class).
+					setParameter("name", name).getSingleResult().clone();
+			//board = (TicTacToeBoard) entityManager.find(TicTacToeBoard.class, name).clone();
 		} catch (CloneNotSupportedException e) {
 			log.error("loadGame function: ", e);
 		}
