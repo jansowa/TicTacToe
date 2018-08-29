@@ -18,10 +18,12 @@ import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 public class AlphaBetaAI extends AI {
 	public static final int aiPlayer = 0; //"O", maximizer
 	public static final int huPlayer = 1; //"X", minimizer
+	Evaluate evaluate;
 	
 	@Autowired
-	public AlphaBetaAI(GameBoard board) {
+	public AlphaBetaAI(GameBoard board, Evaluate evaluate) {
 		super(board);
+		this.evaluate=evaluate;
 	}
 
 	public ArrayList<Move> emptyIndexes(TicTacToeBoard board){
@@ -36,24 +38,6 @@ public class AlphaBetaAI extends AI {
 		return list;
 	}
 	
-	public boolean winning(TicTacToeBoard board, int player){
-		TicTacToeMechanics mechanics = new TicTacToeMechanics(board);
-		if(mechanics.isGameOver()==player){
-			return true;
-		}
-		return false;
-	}
-	
-	public int evaluate(TicTacToeBoard board, int player){
-		if(winning(board, player)){
-			return 10;
-		}
-		else if(winning (board, (player+1)%2)){
-			return -10;
-		}
-		return 0;
-	}
-	
 	@Override
 	public Move nextAIMove() {
 		return findBestMove((TicTacToeBoard) this.getBoard());
@@ -61,7 +45,7 @@ public class AlphaBetaAI extends AI {
 	
 	public int minimaxAlphaBeta(TicTacToeBoard newBoard, int depth, int player, int alpha, int beta){
 		//player 0  (O) is "maximizer", player 1 (X) is "minimizer"
-		int score = evaluate(newBoard, 0);
+		int score = evaluate.calculateEvaluation(newBoard, 0);
 
 				//Terminal state - Maximizer won the game
 				if(score == 10){

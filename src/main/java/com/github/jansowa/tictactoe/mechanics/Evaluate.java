@@ -12,12 +12,20 @@ import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 public class Evaluate {
 	
 	private boolean winning(TicTacToeBoard board, int player){
-		//TODO
+		TicTacToeMechanics mechanics = new TicTacToeMechanics(board);
+		if(mechanics.isGameOver()==player){
+			return true;
+		}
 		return false;
 	}
 	
 	public int calculateEvaluation(TicTacToeBoard board, int player){
-		//TODO
+		if(winning(board, player)){
+			return 10;
+		}
+		else if(winning (board, (player+1)%2)){
+			return -10;
+		}
 		return 0;
 	}
 }
