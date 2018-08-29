@@ -16,8 +16,8 @@ import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 @Scope(
 		value=WebApplicationContext.SCOPE_SESSION)
 public class AlphaBetaAI extends AI {
-	static int aiPlayer = 0; //"O", maximizer
-	static int huPlayer = 1; //"X", minimizer
+	public static final int aiPlayer = 0; //"O", maximizer
+	public static final int huPlayer = 1; //"X", minimizer
 	
 	@Autowired
 	public AlphaBetaAI(GameBoard board) {
@@ -61,85 +61,70 @@ public class AlphaBetaAI extends AI {
 	
 	public int minimaxAlphaBeta(TicTacToeBoard newBoard, int depth, int player, int alpha, int beta){
 		//player 0  (O) is "maximizer", player 1 (X) is "minimizer"
-		
-		
 		int score = evaluate(newBoard, 0);
-		
-		//Maximizer won game
-		if(score == 10){
-			return score-depth;
-		}
-		
-		//Minimizer won game
-		if(score == -10){
-			return score+depth;
-		}
-		
-		ArrayList<Move> emptyFields = emptyIndexes(newBoard);
 
-		//No fields left and nobody won -> draw game
-		if(emptyFields.size()==0){
-			return 0;
-		}
-		
-		//Maximizer's move
-		if(player==aiPlayer){
-			int best = -10000;
-			
-			//Try moves in every empty fields
-			for(int i=0; i<emptyFields.size(); i++){
-				//Single Move
-				newBoard.getFields()[emptyFields.get(i).getCoordinates().getY()]
-						[emptyFields.get(i).getCoordinates().getX()]=player;
-				
-				//Call alphaBetaMinimax and choose max value
-				best = Math.max(
-						best,
-						minimaxAlphaBeta(newBoard, depth+1, huPlayer, alpha, beta));
-				
-				//Undo move
-				newBoard.getFields()[emptyFields.get(i).getCoordinates().getY()]
-						[emptyFields.get(i).getCoordinates().getX()]=-1;
-				
-				alpha = Math.max(alpha, best);
-				if(beta<=alpha){
-					break;
+				//Terminal state - Maximizer won the game
+				if(score == 10){
+					return score-depth;
 				}
-			}
-			return best;
-		} //ready block
-		
-		//Minimizer's move
-		else{ //player==huPlayer
-			int best = 10000;
-			
-			//Try moves in every empty fields
-			for(int i=0; i<emptyFields.size(); i++){
-				//Single Move
-				newBoard.getFields()[emptyFields.get(i).getCoordinates().getY()]
-						[emptyFields.get(i).getCoordinates().getX()]=player;
 				
-				best = Math.min(
-						best,
-						minimaxAlphaBeta(newBoard, depth+1, aiPlayer, alpha, beta));
-				//Undo move
-				newBoard.getFields()[emptyFields.get(i).getCoordinates().getY()]
-						[emptyFields.get(i).getCoordinates().getX()]=-1;
-				
-				beta = Math.min(beta, best);
-				if(beta<=alpha){
-					break;
+				//Terminal state - Minimizer won the game
+				if(score == -10){
+					return score+depth;
 				}
-			}
-			return best;
-		}//ready block
+				
+				ArrayList<Move> emptyFields = emptyIndexes(newBoard);
+
+				//Terminal state - no fields left and nobody won -> draw game
+				if(emptyFields.size()==0){
+					return 0;
+				}
+				
+				int best=0;
+				//maximizer move
+				if (player == aiPlayer){
+					best = -10000;
+				}
+				else if(player == huPlayer){
+					best = 10000;
+				}
+				
+				//Try every possible moves
+				for(int i=0; i<emptyFields.size(); i++){
+					//Single Move
+					newBoard.getFields()[emptyFields.get(i).getCoordinates().getY()]
+							[emptyFields.get(i).getCoordinates().getX()]=player;
+					//Call minimax for proper player
+					if(player==aiPlayer){
+						best = Math.max(best,
+								minimaxAlphaBeta(newBoard, depth+1, huPlayer, alpha, beta));
+					}
+					else{//player==huPlayer
+						best = Math.min(best, 
+								minimaxAlphaBeta(newBoard, depth+1, aiPlayer, alpha, beta));
+					}
+					//Undo move
+					newBoard.getFields()[emptyFields.get(i).getCoordinates().getY()]
+							[emptyFields.get(i).getCoordinates().getX()]=-1;		
+					if(player==aiPlayer){
+						alpha = Math.max(alpha, best);
+						if(beta<=alpha){
+							break;
+						}
+					}
+					else{//player==huPlayer
+						beta = Math.min(beta, best);
+						if(beta<=alpha){
+							break;
+						}
+					}
+				}
+				return best;
 	}
 	
 	//Returns best move for AI (maximizer)
 	public Move findBestMove(TicTacToeBoard board){
-		//TODO FIX
 		int bestScores = -1000;
-		//int bestMove=-1;
 		Move bestMove = null;
 		ArrayList<Move> emptyFields = emptyIndexes(board);
 		int size = emptyFields.size();
