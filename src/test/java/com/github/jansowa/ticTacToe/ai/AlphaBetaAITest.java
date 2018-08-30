@@ -1,4 +1,4 @@
-package com.github.jansowa.ticTacToe.mechanics;
+package com.github.jansowa.ticTacToe.ai;
 
 import static org.junit.Assert.*;
 
@@ -9,32 +9,32 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.github.jansowa.boardGame.mechanics.Move;
+import com.github.jansowa.tictactoe.ai.AlphaBetaPruningBot;
+import com.github.jansowa.tictactoe.ai.Evaluate;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
-import com.github.jansowa.tictactoe.mechanics.AlphaBetaAI;
-import com.github.jansowa.tictactoe.mechanics.Evaluate;
 
 public class AlphaBetaAITest {
 	TicTacToeBoard board;
-	AlphaBetaAI ai;
+	AlphaBetaPruningBot ai;
 	Evaluate evaluate;
 	
 	@Before
 	public final void setup(){
 		board = new TicTacToeBoard();
 		evaluate = new Evaluate();
-		ai = new AlphaBetaAI(board, evaluate);
+		ai = new AlphaBetaPruningBot(board, evaluate);
 	}
 	
 	
 	@Test
 	public final void testNextAIMove() {
 		ai.getBoard().setNumberOfPlayers(1);
-		Move move = ai.nextAIMove();
+		Move move = ai.nextBotMove();
 		assertEquals(new Move(1,1), move);
 		
 		this.board.getFields()[1][1]=0;
 		this.board.getFields()[0][1]=1;
-		move = ai.nextAIMove();
+		move = ai.nextBotMove();
 		assertTrue(move.equals(new Move(0, 0))
 				|| move.equals(new Move(0, 2)));
 	}

@@ -1,4 +1,4 @@
-package com.github.jansowa.tictactoe.mechanics;
+package com.github.jansowa.tictactoe.ai;
 
 import java.util.ArrayList;
 
@@ -7,21 +7,21 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.github.jansowa.boardGame.ai.Bot;
 import com.github.jansowa.boardGame.domain.GameBoard;
-import com.github.jansowa.boardGame.mechanics.AI;
 import com.github.jansowa.boardGame.mechanics.Move;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 
 @Controller
 @Scope(
 		value=WebApplicationContext.SCOPE_SESSION)
-public class AlphaBetaAI extends AI {
-	public static final int aiPlayer = 0; //"O", maximizer
+public class AlphaBetaPruningBot extends Bot {
+	public static final int bot = 0; //"O", maximizer
 	public static final int huPlayer = 1; //"X", minimizer
 	Evaluate evaluate;
 	
 	@Autowired
-	public AlphaBetaAI(GameBoard board, Evaluate evaluate) {
+	public AlphaBetaPruningBot(GameBoard board, Evaluate evaluate) {
 		super(board);
 		this.evaluate=evaluate;
 	}
@@ -39,7 +39,7 @@ public class AlphaBetaAI extends AI {
 	}
 	
 	@Override
-	public Move nextAIMove() {
+	public Move nextBotMove() {
 		return findBestMove((TicTacToeBoard) this.getBoard());
 	}
 	
@@ -66,7 +66,7 @@ public class AlphaBetaAI extends AI {
 				
 				int best=0;
 				//maximizer move
-				if (player == aiPlayer){
+				if (player == bot){
 					best = -10000;
 				}
 				else if(player == huPlayer){
@@ -79,18 +79,18 @@ public class AlphaBetaAI extends AI {
 					newBoard.getFields()[emptyFields.get(i).getCoordinates().getY()]
 							[emptyFields.get(i).getCoordinates().getX()]=player;
 					//Call minimax for proper player
-					if(player==aiPlayer){
+					if(player==bot){
 						best = Math.max(best,
 								minimaxAlphaBeta(newBoard, depth+1, huPlayer, alpha, beta));
 					}
 					else{//player==huPlayer
 						best = Math.min(best, 
-								minimaxAlphaBeta(newBoard, depth+1, aiPlayer, alpha, beta));
+								minimaxAlphaBeta(newBoard, depth+1, bot, alpha, beta));
 					}
 					//Undo move
 					newBoard.getFields()[emptyFields.get(i).getCoordinates().getY()]
 							[emptyFields.get(i).getCoordinates().getX()]=-1;		
-					if(player==aiPlayer){
+					if(player==bot){
 						alpha = Math.max(alpha, best);
 						if(beta<=alpha){
 							break;
@@ -106,14 +106,14 @@ public class AlphaBetaAI extends AI {
 				return best;
 	}
 	
-	//Returns best move for AI (maximizer)
+	//Returns best move for Bot (maximizer)
 	public Move findBestMove(TicTacToeBoard board){
 		int bestScores = -1000;
 		Move bestMove = null;
 		ArrayList<Move> emptyFields = emptyIndexes(board);
 		int size = emptyFields.size();
 		//IMPROVE OF MINIMAX
-		//returns "B2" - if opponent makes mistake, AI can win		
+		//returns "B2" - if opponent makes mistake, bot can win		
 		if(size==9){
 			return new Move(1, 1);
 		}

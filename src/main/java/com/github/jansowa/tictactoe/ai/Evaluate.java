@@ -1,10 +1,11 @@
-package com.github.jansowa.tictactoe.mechanics;
+package com.github.jansowa.tictactoe.ai;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
+import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
 
 @Controller
 @Scope(

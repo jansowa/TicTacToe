@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.github.jansowa.boardGame.mechanics.AI;
+import com.github.jansowa.boardGame.ai.Bot;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.mechanics.HibernateGameDAO;
 import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
@@ -29,7 +29,7 @@ public class DAOController {
 	@Autowired
 	TicTacToeMechanics mechanics;
 	@Autowired
-	AI ai;
+	Bot ai;
 	
 	@GetMapping("/loadGame")
 	public TicTacToeBoard loadGame(

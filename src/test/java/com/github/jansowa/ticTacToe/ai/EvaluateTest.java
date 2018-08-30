@@ -1,12 +1,12 @@
-package com.github.jansowa.ticTacToe.mechanics;
+package com.github.jansowa.ticTacToe.ai;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import com.github.jansowa.tictactoe.ai.Evaluate;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
-import com.github.jansowa.tictactoe.mechanics.Evaluate;
 
 public class EvaluateTest {
 	TicTacToeBoard board;

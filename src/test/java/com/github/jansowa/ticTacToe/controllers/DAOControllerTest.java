@@ -12,7 +12,7 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.stereotype.Component;
 
-import com.github.jansowa.boardGame.mechanics.AI;
+import com.github.jansowa.boardGame.ai.Bot;
 import com.github.jansowa.tictactoe.controllers.DAOController;
 import com.github.jansowa.tictactoe.controllers.TicTacToeController;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
@@ -32,7 +32,7 @@ public class DAOControllerTest {
 	@Mock
 	private TicTacToeMechanics mechanics;
 	@Mock
-	private AI ai;
+	private Bot ai;
 	
 	@Before
 	public final void setUp(){
