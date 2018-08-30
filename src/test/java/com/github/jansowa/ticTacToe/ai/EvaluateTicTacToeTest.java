@@ -5,17 +5,17 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.github.jansowa.tictactoe.ai.Evaluate;
+import com.github.jansowa.tictactoe.ai.EvaluateTicTacToe;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 
-public class EvaluateTest {
+public class EvaluateTicTacToeTest {
 	TicTacToeBoard board;
-	Evaluate evaluate;
+	EvaluateTicTacToe evaluate;
 	
 	@Before
 	public final void setUp(){
 		board = new TicTacToeBoard();
-		evaluate = new Evaluate();
+		evaluate = new EvaluateTicTacToe();
 	}
 	
 	@Test

@@ -10,18 +10,18 @@ import org.junit.Test;
 
 import com.github.jansowa.boardGame.mechanics.Move;
 import com.github.jansowa.tictactoe.ai.AlphaBetaPruningBot;
-import com.github.jansowa.tictactoe.ai.Evaluate;
+import com.github.jansowa.tictactoe.ai.EvaluateTicTacToe;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 
 public class AlphaBetaAITest {
 	TicTacToeBoard board;
 	AlphaBetaPruningBot ai;
-	Evaluate evaluate;
+	EvaluateTicTacToe evaluate;
 	
 	@Before
 	public final void setup(){
 		board = new TicTacToeBoard();
-		evaluate = new Evaluate();
+		evaluate = new EvaluateTicTacToe();
 		ai = new AlphaBetaPruningBot(board, evaluate);
 	}
 	

@@ -18,10 +18,10 @@ import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 public class AlphaBetaPruningBot extends Bot {
 	public static final int bot = 0; //"O", maximizer
 	public static final int huPlayer = 1; //"X", minimizer
-	Evaluate evaluate;
+	EvaluateTicTacToe evaluate;
 	
 	@Autowired
-	public AlphaBetaPruningBot(GameBoard board, Evaluate evaluate) {
+	public AlphaBetaPruningBot(GameBoard board, EvaluateTicTacToe evaluate) {
 		super(board);
 		this.evaluate=evaluate;
 	}
