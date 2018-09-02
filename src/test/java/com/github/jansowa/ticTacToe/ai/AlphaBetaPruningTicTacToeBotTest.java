@@ -9,25 +9,26 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.github.jansowa.boardGame.mechanics.Move;
-import com.github.jansowa.tictactoe.ai.AlphaBetaPruningBot;
+import com.github.jansowa.tictactoe.ai.AlphaBetaPruningTicTacToeBot;
 import com.github.jansowa.tictactoe.ai.EvaluateTicTacToe;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
+import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
 
-public class AlphaBetaAITest {
+public class AlphaBetaPruningTicTacToeBotTest {
 	TicTacToeBoard board;
-	AlphaBetaPruningBot ai;
+	AlphaBetaPruningTicTacToeBot ai;
 	EvaluateTicTacToe evaluate;
 	
 	@Before
 	public final void setup(){
 		board = new TicTacToeBoard();
 		evaluate = new EvaluateTicTacToe();
-		ai = new AlphaBetaPruningBot(board, evaluate);
+		ai = new AlphaBetaPruningTicTacToeBot(board, evaluate, new TicTacToeMechanics(board));
 	}
 	
 	
 	@Test
-	public final void testNextAIMove() {
+	public final void testNextBotMove() {
 		ai.getBoard().setNumberOfPlayers(1);
 		Move move = ai.nextBotMove();
 		assertEquals(new Move(1,1), move);
@@ -36,7 +37,9 @@ public class AlphaBetaAITest {
 		this.board.getFields()[0][1]=1;
 		move = ai.nextBotMove();
 		assertTrue(move.equals(new Move(0, 0))
-				|| move.equals(new Move(0, 2)));
+				|| move.equals(new Move(0, 2))
+				|| move.equals(new Move(1, 0))
+				|| move.equals(new Move(1, 2)));
 	}
 	
 	@Test
@@ -94,12 +97,15 @@ public class AlphaBetaAITest {
 			{0, 1, 0}
 			};
 		this.board.setFields(fields1);
+		this.board.setPlayer(1);
 		assertEquals(-10, ai.minimaxAlphaBeta(this.board, 0, 1, -10000, 1000));
 		
 		this.board.setFields(fields2);
+		this.board.setPlayer(0);
 		assertEquals(10, ai.minimaxAlphaBeta(this.board, 0, 0, -10000, 1000));
 		
 		this.board.setFields(fields3);
+		this.board.setPlayer(1);
 		assertEquals(0, ai.minimaxAlphaBeta(this.board, 0, 1, -10000, 1000));
 		
 		//Now calculate scores for all posible moves in this board:
@@ -110,14 +116,17 @@ public class AlphaBetaAITest {
 		};
 		this.board.setFields(fields4);
 		this.board.getFields()[2][0]=0;
+		this.board.setPlayer(1);
 		assertEquals(-9, ai.minimaxAlphaBeta(this.board, 0, 1, -10000, 10000));
 		
 		this.board.setFields(fields4);
 		this.board.getFields()[2][1]=0;
+		this.board.setPlayer(1);
 		assertEquals(0, ai.minimaxAlphaBeta(this.board, 0, 1, -10000, 10000));
 		
 		this.board.setFields(fields4);
 		this.board.getFields()[2][2]=0;
+		this.board.setPlayer(1);
 		assertEquals(10, ai.minimaxAlphaBeta(this.board, 0, 1, -10000, 10000));
 	}
 
@@ -129,6 +138,7 @@ public class AlphaBetaAITest {
 			{-1, -1, -1}
 		};
 		this.board.setFields(fields1);
+		this.board.setPlayer(0);
 		assertEquals(new Move(2, 2), ai.findBestMove(this.board));
 		int[][] fields2 = {
 			{-1, -1, -1},
@@ -143,22 +153,19 @@ public class AlphaBetaAITest {
 			{-1, -1, -1}
 		};
 		this.board.setFields(fields3);
+		this.board.setPlayer(0);
 		assertTrue(ai.findBestMove(this.board).equals(new Move(0,0))
-				|| ai.findBestMove(this.board).equals(new Move(0, 2)));
+				|| ai.findBestMove(this.board).equals(new Move(0, 2))
+				|| ai.findBestMove(this.board).equals(new Move(1, 2))
+				|| ai.findBestMove(this.board).equals(new Move(1, 0)));
 		int[][] fields4 ={
 			{0, 1, -1},
 			{-1, 0, -1},
 			{-1, -1, 1}
 		};
 		this.board.setFields(fields4);
-		assertEquals(new Move(1,0), ai.findBestMove(this.board));
-		int[][] fields5 = {
-			{-1, 1, -1},
-			{-1, 0, -1},
-			{-1, -1, -1}
-		};
-		this.board.setFields(fields5);
-		assertTrue(ai.findBestMove(this.board).equals(new Move(0,0))
-		|| ai.findBestMove(this.board).equals(new Move(0, 2)));
+		this.board.setPlayer(0);
+		assertTrue(ai.findBestMove(this.board).equals(new Move(1, 0))
+				||ai.findBestMove(this.board).equals(new Move(2, 0)));
 	}
 }
