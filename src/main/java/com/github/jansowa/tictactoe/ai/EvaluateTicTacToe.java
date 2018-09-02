@@ -30,6 +30,6 @@ public class EvaluateTicTacToe extends Evaluate {
 		else if(winning (board, (player+1)%2)){
 			return -10;
 		}
-		return 0;
+		return 0; //a tie
 	}
 }
