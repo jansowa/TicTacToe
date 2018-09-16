@@ -1,7 +1,11 @@
 1. Translate and update README.md
-2. Export functions to BoardGame library
+2. DONE Export AI functions to BoardGame library
 3. DONE Change color of text
 4. DONE End fixing sonar advices
 5. Refactorize code using SOLID principles
-6. Fix RWD in portrait orientation
-7. Fix RWD in landscape orientation
+6. Remove unnecessary code
+7. Fix RWD in portrait orientation
+8. Fix RWD in landscape orientation
+9. Fix bug with moves in single player after clicking on occupied field
+10. Fix bug with 'X' not removing in the center of the board after starting single player game
+11. Export controllers to BoardGame library
