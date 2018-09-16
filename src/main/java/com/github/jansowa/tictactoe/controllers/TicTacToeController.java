@@ -69,7 +69,6 @@ public class TicTacToeController {
 	TicTacToeBoard multiPlayer(){
 		mechanics.restartBoard();
 		this.board.setNumberOfPlayers(2);
-		this.board.setPlayer(0);
 		return this.board;
 	}
 }
