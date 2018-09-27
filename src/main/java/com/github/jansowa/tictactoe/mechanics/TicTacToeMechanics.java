@@ -1,15 +1,13 @@
 package com.github.jansowa.tictactoe.mechanics;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.github.jansowa.boardGame.mechanics.BoardMechanics;
-import com.github.jansowa.boardGame.mechanics.Move;
-import com.github.jansowa.boardGame.domain.GameBoard;
+import com.github.jansowa.boardgame.mechanics.BoardMechanics;
+import com.github.jansowa.boardgame.mechanics.Move;
+import com.github.jansowa.boardgame.domain.GameBoard;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 
 @Component
@@ -95,23 +93,20 @@ public class TicTacToeMechanics extends BoardMechanics {
 	
 	@Override
 	public void changeBoard(Move move){
-		int fields[][] = this.getBoard().getFields();
+		int[][] fields = this.getBoard().getFields();
 		int currentPlayer = this.getBoard().getPlayer();
 		int y = move.getCoordinates().getY();
 		int x = move.getCoordinates().getX();
 		fields[y][x]=currentPlayer;
 		this.getBoard().setPlayer((currentPlayer+1)%2);
-	};
+	}
 
 	@Override
 	public boolean isMovePossible(Move move) {
 		int[][] fields = this.getBoard().getFields();
 		int y = move.getCoordinates().getY();
 		int x = move.getCoordinates().getX();
-		if(fields[y][x]!=-1){
-			return false;
-		}
-		return true;
+		return fields[y][x]==-1;
 	}
 
 	public static Move stringFieldToMove(String field){

@@ -8,7 +8,7 @@ import java.util.Collections;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.github.jansowa.boardGame.mechanics.Move;
+import com.github.jansowa.boardgame.mechanics.Move;
 import com.github.jansowa.tictactoe.ai.AlphaBetaPruningTicTacToeBot;
 import com.github.jansowa.tictactoe.ai.EvaluateTicTacToe;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
@@ -50,7 +50,7 @@ public class AlphaBetaPruningTicTacToeBotTest {
 				{-1, 1, -1}
 			};
 		this.board.setFields(fields1);
-		ArrayList<Move> arList = ai.emptyIndexes(this.board);
+		ArrayList<Move> arList = (ArrayList<Move>) ai.emptyIndexes(this.board);
 		ArrayList<Move> expectedList = new ArrayList<Move>();
 		Collections.addAll(expectedList, 
 				new Move(0, 0),
@@ -66,7 +66,7 @@ public class AlphaBetaPruningTicTacToeBotTest {
 				{-1, -1, -1}
 			};
 		this.board.setFields(fields2);
-		arList = ai.emptyIndexes(this.board);
+		arList = (ArrayList<Move>) ai.emptyIndexes(this.board);
 		expectedList.clear();
 		Collections.addAll(expectedList,
 				new Move(0, 0),

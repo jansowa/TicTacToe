@@ -10,13 +10,18 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.github.jansowa.boardGame.domain.GameBoard;
+import com.github.jansowa.boardgame.domain.GameBoard;
 
 @Component
 @Entity
 @Scope(
 		value=WebApplicationContext.SCOPE_SESSION)
 public class TicTacToeBoard extends GameBoard implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8700039785267460848L;
 	//0 for player 0, 1 for player X, -1 for empty field
 	@Id
 	@GeneratedValue

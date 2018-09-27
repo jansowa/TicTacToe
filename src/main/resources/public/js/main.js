@@ -7,7 +7,7 @@ function singleMove(singleField){
 }
 
 function drawSign(sign, field){
-	$jqueryField = $('.field:nth-child('+(field+1)+')');
+	let $jqueryField = $('.field:nth-child('+(field+1)+')');
 	if(sign==0){
 		$jqueryField.append("<div class='circleOuter'><div class='circleInner'></div></div>");
 	}
@@ -58,7 +58,7 @@ function printResult(result, player){
 	//argument result: 0 O wins, 1 X wins, 2 draw game, -1 game in progress
 	//argument "player" represents currentPlayer (important when game in progress)
 
-	$gameState = $('.gameState');
+	const $gameState = $('.gameState');
 	if(result==0){
 		$gameState.text("Player O wins!");
 	}
@@ -83,10 +83,7 @@ function printResult(result, player){
 }
 
 function saveGame(name){
-	$.post("/saveGame", {gameName: name})
-	.done(function(){
-		alert("Game "+name+" saved.");
-	});
+	$.post("/saveGame", {gameName: name});
 }
 
 function loadGame(name){

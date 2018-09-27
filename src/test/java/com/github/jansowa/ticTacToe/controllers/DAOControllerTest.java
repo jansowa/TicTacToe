@@ -4,15 +4,11 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
-import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.springframework.stereotype.Component;
-
-import com.github.jansowa.boardGame.ai.Bot;
+import com.github.jansowa.boardgame.ai.Bot;
 import com.github.jansowa.tictactoe.controllers.DAOController;
 import com.github.jansowa.tictactoe.controllers.TicTacToeController;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
