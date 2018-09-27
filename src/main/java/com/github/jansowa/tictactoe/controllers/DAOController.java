@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.github.jansowa.boardGame.ai.Bot;
+import com.github.jansowa.boardgame.ai.Bot;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.mechanics.HibernateGameDAO;
 import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;

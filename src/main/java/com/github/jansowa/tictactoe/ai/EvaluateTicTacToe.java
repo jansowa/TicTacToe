@@ -4,8 +4,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.github.jansowa.boardGame.ai.Evaluate;
-import com.github.jansowa.boardGame.domain.GameBoard;
+import com.github.jansowa.boardgame.ai.Evaluate;
+import com.github.jansowa.boardgame.domain.GameBoard;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
 
@@ -16,10 +16,7 @@ public class EvaluateTicTacToe extends Evaluate {
 	
 	private boolean winning(GameBoard board, int player){
 		TicTacToeMechanics mechanics = new TicTacToeMechanics((TicTacToeBoard) board);
-		if(mechanics.isGameOver()==player){
-			return true;
-		}
-		return false;
+		return mechanics.isGameOver()==player;
 	}
 
 	@Override

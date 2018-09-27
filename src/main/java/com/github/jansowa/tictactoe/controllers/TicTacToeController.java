@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.github.jansowa.boardGame.ai.Bot;
-import com.github.jansowa.boardGame.mechanics.Move;
+import com.github.jansowa.boardgame.ai.Bot;
+import com.github.jansowa.boardgame.mechanics.Move;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.mechanics.HibernateGameDAO;
 import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
@@ -21,11 +21,27 @@ import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
 		value=WebApplicationContext.SCOPE_SESSION)
 public class TicTacToeController {
 	private class BoardState{
-		public int state;
-		public TicTacToeBoard board;
+		private int state;
+		private TicTacToeBoard board;
 
 		BoardState(int state, TicTacToeBoard board){
 			this.state = state;
+			this.board = board;
+		}
+
+		public int getState() {
+			return state;
+		}
+
+		public void setState(int state) {
+			this.state = state;
+		}
+
+		public TicTacToeBoard getBoard() {
+			return board;
+		}
+
+		public void setBoard(TicTacToeBoard board) {
 			this.board = board;
 		}
 	}
@@ -53,8 +69,7 @@ public class TicTacToeController {
 		if(this.board.getNumberOfPlayers()==1 && state==-1){
 			state = mechanics.singleMove(ai.nextBotMove());
 		}
-		BoardState boardState = new BoardState(state, this.board);
-		return boardState;
+		return new BoardState(state, this.board);
 	}
 
 	@GetMapping("/singlePlayer")

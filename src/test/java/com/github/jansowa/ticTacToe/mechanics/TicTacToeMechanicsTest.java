@@ -7,13 +7,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.web.context.WebApplicationContext;
-
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
-import com.github.jansowa.boardGame.mechanics.Move;
-import com.github.jansowa.tictactoe.mechanics.AppConfiguration;
+import com.github.jansowa.boardgame.mechanics.Move;
 import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
 
 public class TicTacToeMechanicsTest {

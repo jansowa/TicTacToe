@@ -2,18 +2,17 @@ package com.github.jansowa.tictactoe.ai;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.github.jansowa.boardGame.ai.AlphaBetaPruningBot;
-import com.github.jansowa.boardGame.ai.Bot;
-import com.github.jansowa.boardGame.ai.Evaluate;
-import com.github.jansowa.boardGame.domain.GameBoard;
-import com.github.jansowa.boardGame.mechanics.Move;
-import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
+import com.github.jansowa.boardgame.ai.AlphaBetaPruningBot;
+import com.github.jansowa.boardgame.ai.Evaluate;
+import com.github.jansowa.boardgame.domain.GameBoard;
+import com.github.jansowa.boardgame.mechanics.Move;
 import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
 
 @Controller
@@ -29,7 +28,7 @@ public class AlphaBetaPruningTicTacToeBot extends AlphaBetaPruningBot {
 	}
 
 	@Override
-	public ArrayList<Move> emptyIndexes(GameBoard board){
+	public List<Move> emptyIndexes(GameBoard board){
 		ArrayList<Move> list = new ArrayList<Move>();
 		for(int i=0; i<3; i++){
 			for(int j=0; j<3; j++){
