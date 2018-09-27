@@ -1,4 +1,4 @@
-game/TicTacToeMechanicsTest.class
-game/OldHibernateGameDaoTest.class
-game/AlphaBetaAITest.class
-controllers/DAOControllerTest.class
+com/github/jansowa/ticTacToe/ai/EvaluateTicTacToeTest.class
+com/github/jansowa/ticTacToe/controllers/DAOControllerTest.class
+com/github/jansowa/ticTacToe/mechanics/TicTacToeMechanicsTest.class
+com/github/jansowa/ticTacToe/ai/AlphaBetaPruningTicTacToeBotTest.class
