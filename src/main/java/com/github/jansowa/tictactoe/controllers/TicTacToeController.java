@@ -66,7 +66,7 @@ public class TicTacToeController {
 		Move move = TicTacToeMechanics.stringFieldToMove(field);
 		int state = mechanics.singleMove(move);
 		//If mode is single player, AI makes his move there:
-		if(this.board.getNumberOfPlayers()==1 && state==-1){
+		if(this.board.getNumberOfPlayers()==1 && state==-1 && this.board.getPlayer()==0){
 			state = mechanics.singleMove(ai.nextBotMove());
 		}
 		return new BoardState(state, this.board);
