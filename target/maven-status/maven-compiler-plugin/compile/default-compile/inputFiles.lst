@@ -1,8 +1,9 @@
-/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/game/AlphaBetaAI.java
-/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/game/TicTacToeMechanics.java
-/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/domain/TicTacToeBoard.java
-/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/game/HibernateGameDAO.java
-/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/game/AppConfiguration.java
-/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/controllers/TicTacToeController.java
-/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/controllers/DAOController.java
-/home/sufka/workspace/TicTacToeSonarIssues/src/main/java/com/github/jansowa/tictactoe/game/TicTacToeApplication.java
+/home/sufka/workspace/TicTacToeOccupiedField/src/main/java/com/github/jansowa/tictactoe/mechanics/TicTacToeMechanics.java
+/home/sufka/workspace/TicTacToeOccupiedField/src/main/java/com/github/jansowa/tictactoe/controllers/TicTacToeController.java
+/home/sufka/workspace/TicTacToeOccupiedField/src/main/java/com/github/jansowa/tictactoe/controllers/DAOController.java
+/home/sufka/workspace/TicTacToeOccupiedField/src/main/java/com/github/jansowa/tictactoe/ai/EvaluateTicTacToe.java
+/home/sufka/workspace/TicTacToeOccupiedField/src/main/java/com/github/jansowa/tictactoe/mechanics/TicTacToeApplication.java
+/home/sufka/workspace/TicTacToeOccupiedField/src/main/java/com/github/jansowa/tictactoe/ai/AlphaBetaPruningTicTacToeBot.java
+/home/sufka/workspace/TicTacToeOccupiedField/src/main/java/com/github/jansowa/tictactoe/domain/TicTacToeBoard.java
+/home/sufka/workspace/TicTacToeOccupiedField/src/main/java/com/github/jansowa/tictactoe/mechanics/HibernateGameDAO.java
+/home/sufka/workspace/TicTacToeOccupiedField/src/main/java/com/github/jansowa/tictactoe/mechanics/AppConfiguration.java

@@ -9,10 +9,10 @@ function singleMove(singleField){
 function drawSign(sign, field){
 	let $jqueryField = $('.field:nth-child('+(field+1)+')');
 	if(sign==0){
-		$jqueryField.append("<div class='circleOuter'><div class='circleInner'></div></div>");
+		$jqueryField.html("<div class='circleOuter'><div class='circleInner'></div></div>");
 	}
 	else if(sign==1){
-		$jqueryField.append("<div class='cross1'></div><div class='cross2'></div>");
+		$jqueryField.html("<div class='cross1'></div><div class='cross2'></div>");
 	}
 	else{
 		$jqueryField.text("");
