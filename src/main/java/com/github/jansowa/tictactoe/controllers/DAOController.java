@@ -21,15 +21,15 @@ import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
 		value=WebApplicationContext.SCOPE_SESSION)
 public class DAOController {
 	@Autowired
-	TicTacToeBoard board;
+	private TicTacToeBoard board;
 	@Autowired
-	HibernateGameDAO dao;
+	private HibernateGameDAO dao;
 	@Autowired
-	TicTacToeController ticTacToeController;
+	private TicTacToeController ticTacToeController;
 	@Autowired
-	TicTacToeMechanics mechanics;
+	private TicTacToeMechanics mechanics;
 	@Autowired
-	Bot ai;
+	private Bot ai;
 	
 	@GetMapping("/loadGame")
 	public TicTacToeBoard loadGame(

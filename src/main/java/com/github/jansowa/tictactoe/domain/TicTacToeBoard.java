@@ -6,21 +6,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import lombok.Data;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.github.jansowa.boardgame.domain.GameBoard;
 
+@Data
 @Component
 @Entity
 @Scope(
 		value=WebApplicationContext.SCOPE_SESSION)
 public class TicTacToeBoard extends GameBoard implements Serializable {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8700039785267460848L;
 	//0 for player 0, 1 for player X, -1 for empty field
 	@Id
@@ -45,13 +44,5 @@ public class TicTacToeBoard extends GameBoard implements Serializable {
 				{-1, -1, -1}
 		};
 		this.setFields(empty);
-	}
-	
-	public long getId(){
-		return this.id;
-	}
-	
-	public void setId(long id){
-		this.id = id;
 	}
 }

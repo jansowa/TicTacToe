@@ -1,5 +1,8 @@
 package com.github.jansowa.tictactoe.controllers;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -15,49 +18,27 @@ import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.mechanics.HibernateGameDAO;
 import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
 
+@Data
 @RestController
 @Component
 @Scope(
 		value=WebApplicationContext.SCOPE_SESSION)
 public class TicTacToeController {
+	@Data
+	@AllArgsConstructor
 	private class BoardState{
 		private int state;
 		private TicTacToeBoard board;
-
-		BoardState(int state, TicTacToeBoard board){
-			this.state = state;
-			this.board = board;
-		}
-
-		public int getState() {
-			return state;
-		}
-
-		public void setState(int state) {
-			this.state = state;
-		}
-
-		public TicTacToeBoard getBoard() {
-			return board;
-		}
-
-		public void setBoard(TicTacToeBoard board) {
-			this.board = board;
-		}
 	}
 
 	@Autowired
-	TicTacToeBoard board;
+	private TicTacToeBoard board;
 	@Autowired
-	TicTacToeMechanics mechanics;
+	private TicTacToeMechanics mechanics;
 	@Autowired
-	Bot ai;
+	private Bot ai;
 	@Autowired
-	HibernateGameDAO dao;
-
-	public void setBoard(TicTacToeBoard board) {
-		this.board = board;
-	}
+	private HibernateGameDAO dao;
 
 	@PostMapping("/singleMove")
 	BoardState singleMove(
