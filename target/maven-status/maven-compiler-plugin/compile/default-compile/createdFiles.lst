@@ -1,6 +1,5 @@
 com/github/jansowa/tictactoe/mechanics/HibernateGameDAO.class
 com/github/jansowa/tictactoe/ai/EvaluateTicTacToe.class
-com/github/jansowa/tictactoe/controllers/TicTacToeController$BoardState.class
 com/github/jansowa/tictactoe/mechanics/TicTacToeApplication.class
 com/github/jansowa/tictactoe/controllers/DAOController.class
 com/github/jansowa/tictactoe/mechanics/AppConfiguration.class

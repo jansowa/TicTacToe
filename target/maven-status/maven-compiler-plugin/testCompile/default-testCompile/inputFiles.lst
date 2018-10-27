@@ -1,4 +1,4 @@
-/home/sufka/workspace/TicTacToeOccupiedField/src/test/java/com/github/jansowa/ticTacToe/mechanics/TicTacToeMechanicsTest.java
-/home/sufka/workspace/TicTacToeOccupiedField/src/test/java/com/github/jansowa/ticTacToe/ai/AlphaBetaPruningTicTacToeBotTest.java
-/home/sufka/workspace/TicTacToeOccupiedField/src/test/java/com/github/jansowa/ticTacToe/ai/EvaluateTicTacToeTest.java
-/home/sufka/workspace/TicTacToeOccupiedField/src/test/java/com/github/jansowa/ticTacToe/controllers/DAOControllerTest.java
+/home/sufka/workspace/TicTacToeExtractLogic/src/test/java/com/github/jansowa/ticTacToe/ai/AlphaBetaPruningTicTacToeBotTest.java
+/home/sufka/workspace/TicTacToeExtractLogic/src/test/java/com/github/jansowa/ticTacToe/mechanics/TicTacToeMechanicsTest.java
+/home/sufka/workspace/TicTacToeExtractLogic/src/test/java/com/github/jansowa/ticTacToe/controllers/DAOControllerTest.java
+/home/sufka/workspace/TicTacToeExtractLogic/src/test/java/com/github/jansowa/ticTacToe/ai/EvaluateTicTacToeTest.java

@@ -13,6 +13,7 @@ import com.github.jansowa.boardgame.ai.Bot;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.mechanics.HibernateGameDAO;
 import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
+import com.github.jansowa.tictactoe.mechanics.TicTacToeUI;
 
 
 @RestController
@@ -25,7 +26,7 @@ public class DAOController {
 	@Autowired
 	private HibernateGameDAO dao;
 	@Autowired
-	private TicTacToeController ticTacToeController;
+	private TicTacToeUI ticTacToeUI;
 	@Autowired
 	private TicTacToeMechanics mechanics;
 	@Autowired
@@ -35,7 +36,7 @@ public class DAOController {
 	public TicTacToeBoard loadGame(
 			@RequestParam String gameName){
 		this.board = dao.loadGame(gameName);
-		this.ticTacToeController.setBoard(this.board);
+		this.ticTacToeUI.setBoard(this.board);
 		this.mechanics.setBoard(this.board);
 		this.ai.setBoard(this.board);
 		return this.board;
