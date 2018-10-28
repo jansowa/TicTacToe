@@ -1,4 +1,5 @@
 /home/sufka/workspace/TicTacToeExtractLogic/src/main/java/com/github/jansowa/tictactoe/mechanics/AppConfiguration.java
+/home/sufka/workspace/TicTacToeExtractLogic/src/main/java/com/github/jansowa/tictactoe/mechanics/TicTacToeDAOUI.java
 /home/sufka/workspace/TicTacToeExtractLogic/src/main/java/com/github/jansowa/tictactoe/ai/AlphaBetaPruningTicTacToeBot.java
 /home/sufka/workspace/TicTacToeExtractLogic/src/main/java/com/github/jansowa/tictactoe/mechanics/TicTacToeApplication.java
 /home/sufka/workspace/TicTacToeExtractLogic/src/main/java/com/github/jansowa/tictactoe/ai/EvaluateTicTacToe.java

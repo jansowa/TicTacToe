@@ -8,11 +8,13 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+
 import com.github.jansowa.boardgame.ai.Bot;
 import com.github.jansowa.tictactoe.controllers.DAOController;
 import com.github.jansowa.tictactoe.controllers.TicTacToeController;
 import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 import com.github.jansowa.tictactoe.mechanics.HibernateGameDAO;
+import com.github.jansowa.tictactoe.mechanics.TicTacToeDAOUI;
 import com.github.jansowa.tictactoe.mechanics.TicTacToeMechanics;
 
 public class DAOControllerTest {
@@ -20,15 +22,9 @@ public class DAOControllerTest {
 	
 	@InjectMocks
 	private DAOController daoController = new DAOController();
-	
+
 	@Mock
-	private HibernateGameDAO hibernateDAOMock;
-	@Mock
-	private TicTacToeController ticTacToeController;
-	@Mock
-	private TicTacToeMechanics mechanics;
-	@Mock
-	private Bot ai;
+	private TicTacToeDAOUI ticTacToeDAOUI;
 	
 	@Before
 	public final void setUp(){
@@ -54,9 +50,9 @@ public class DAOControllerTest {
 				{0, 1, 0}
 		};
 		testBoard3.setFields(fields3);
-		Mockito.when(hibernateDAOMock.loadGame("testBoard1")).thenReturn(testBoard1);
-		Mockito.when(hibernateDAOMock.loadGame("testBoard2")).thenReturn(testBoard2);
-		Mockito.when(hibernateDAOMock.loadGame("testBoard3")).thenReturn(testBoard3);
+		Mockito.when(ticTacToeDAOUI.loadGame("testBoard1")).thenReturn(testBoard1);
+		Mockito.when(ticTacToeDAOUI.loadGame("testBoard2")).thenReturn(testBoard2);
+		Mockito.when(ticTacToeDAOUI.loadGame("testBoard3")).thenReturn(testBoard3);
 	}
 	
 	@Test
