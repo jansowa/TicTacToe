@@ -28,7 +28,7 @@ public class HibernateGameDAO extends GameDAO {
 	public void saveGame(GameBoard board) {
 		entityManager.getTransaction().begin();
 		try {
-			entityManager.persist(board.clone());
+			entityManager.merge(board.clone());
 		} catch (CloneNotSupportedException e) {
 			log.error("saveGame function: ", e);
 		}
