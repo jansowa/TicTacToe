@@ -18,12 +18,6 @@ import com.github.jansowa.tictactoe.domain.TicTacToeBoard;
 @Scope(
 		value=WebApplicationContext.SCOPE_SESSION)
 public class TicTacToeUI extends GameUI {
-	/*@Autowired
-	private TicTacToeMechanics mechanics;
-	@Autowired
-	private TicTacToeBoard board;
-	@Autowired
-	private Bot ai;*/
 	@Autowired
 	public TicTacToeUI(TicTacToeMechanics mechanics, TicTacToeBoard board, Bot ai){
 		super(mechanics, board, ai);
@@ -42,11 +36,13 @@ public class TicTacToeUI extends GameUI {
 		}
 		return new BoardState(this.getBoard(), state);
 	}
-	
+
+	@Override
 	public TicTacToeBoard singlePlayer(){
 		return (TicTacToeBoard) super.singlePlayer();
 	}
 	
+	@Override
 	public TicTacToeBoard multiPlayer(){
 		return (TicTacToeBoard) super.multiPlayer();
 	}
