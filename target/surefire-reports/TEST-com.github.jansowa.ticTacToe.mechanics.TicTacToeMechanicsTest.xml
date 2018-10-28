@@ -61,12 +61,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.github.jansowa.ticTacToe.mechanics.TicTacToeMechanicsTest" name="testIsMovePossible" time="0.006"/>
+  <testcase classname="com.github.jansowa.ticTacToe.mechanics.TicTacToeMechanicsTest" name="testIsMovePossible" time="0.009"/>
   <testcase classname="com.github.jansowa.ticTacToe.mechanics.TicTacToeMechanicsTest" name="teststringFieldToMove" time="0"/>
   <testcase classname="com.github.jansowa.ticTacToe.mechanics.TicTacToeMechanicsTest" name="testMoveToStringField" time="0"/>
   <testcase classname="com.github.jansowa.ticTacToe.mechanics.TicTacToeMechanicsTest" name="testSingleMoveGameBoard" time="0"/>
   <testcase classname="com.github.jansowa.ticTacToe.mechanics.TicTacToeMechanicsTest" name="testEmptyFields" time="0"/>
-  <testcase classname="com.github.jansowa.ticTacToe.mechanics.TicTacToeMechanicsTest" name="testRestartBoard" time="0.003"/>
+  <testcase classname="com.github.jansowa.ticTacToe.mechanics.TicTacToeMechanicsTest" name="testRestartBoard" time="0"/>
   <testcase classname="com.github.jansowa.ticTacToe.mechanics.TicTacToeMechanicsTest" name="testIsGameOver" time="0"/>
   <testcase classname="com.github.jansowa.ticTacToe.mechanics.TicTacToeMechanicsTest" name="testChangeBoard" time="0"/>
 </testsuite>

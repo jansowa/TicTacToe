@@ -1,0 +1,339 @@
+body {
+  background-color: black;
+  text-align: center; }
+
+.mainWrapper {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.gameState {
+  font-size: 100px; }
+
+.boardWrapper {
+  display: block;
+  height: 650px;
+  width: 650px;
+  margin-top: 5px;
+  margin-bottom: 10px; }
+
+.field {
+  display: inline-block;
+  height: 198.9px;
+  width: 198.9px;
+  float: left;
+  position: relative; }
+
+.field:hover {
+  background-color: grey; }
+
+.field:nth-of-type(3n+2) {
+  border-left: 26px solid white;
+  border-right: 26px solid white; }
+
+.field:nth-of-type(4) {
+  border-top: 26px solid white;
+  border-bottom: 26px solid white; }
+
+.field:nth-of-type(5) {
+  border-top: 26px solid white;
+  border-bottom: 26px solid white; }
+
+.field:nth-of-type(6) {
+  border-top: 26px solid white;
+  border-bottom: 26px solid white; }
+
+.circleOuter {
+  height: 80%;
+  width: 80%;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.circleInner {
+  height: 70%;
+  width: 70%;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.cross1 {
+  height: 18%;
+  width: 90%;
+  background-color: white;
+  position: absolute;
+  top: 41%;
+  /* 2top+2height=100%*/
+  left: 5%;
+  /* 2left+2width=100%*/
+  transform: rotate(45deg); }
+
+.cross2 {
+  height: 18%;
+  width: 90%;
+  background-color: white;
+  position: absolute;
+  top: 41%;
+  /* 2top+2height=100%*/
+  left: 5%;
+  /* 2left+2width=100%*/
+  transform: rotate(-45deg); }
+
+.menu {
+  display: block;
+  color: white; }
+
+.saveInput {
+  display: none; }
+
+.loadInput {
+  display: none; }
+
+.saveButton {
+  display: none; }
+
+.loadButton {
+  display: none; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: right; }
+
+a {
+  text-decoration: none; }
+
+a:link {
+  color: white; }
+
+a:visited {
+  color: white; }
+
+a:hover {
+  color: grey; }
+
+/*one of laptop resolutions 1920x1080*/
+@media only screen and (max-width: 1920px) {
+  .menu.gameState {
+    font-size: 85.71429px; }
+
+  .menu {
+    font-size: 40px; }
+
+  input {
+    height: 40px;
+    font-size: 40px; }
+
+  button {
+    height: 40px;
+    font-size: 40px; }
+
+  footer {
+    font-size: 28.57143px; }
+
+  .boardWrapper {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 600px;
+    width: 600px; }
+
+  .field {
+    width: 183.6px;
+    height: 183.6px; }
+
+  .field:nth-of-type(3n+2) {
+    border-left: 24px solid white;
+    border-right: 24px solid white; }
+
+  .field:nth-of-type(4) {
+    border-top: 24px solid white;
+    border-bottom: 24px solid white; }
+
+  .field:nth-of-type(5) {
+    border-top: 24px solid white;
+    border-bottom: 24px solid white; }
+
+  .field:nth-of-type(6) {
+    border-top: 24px solid white;
+    border-bottom: 24px solid white; } }
+/*one of laptop resolutions 1366x768*/
+@media only screen and (max-width: 1366px) {
+  .menu.gameState {
+    font-size: 57.14286px; }
+
+  .menu {
+    font-size: 26.66667px; }
+
+  input {
+    height: 26.66667px;
+    font-size: 26.66667px; }
+
+  button {
+    height: 26.66667px;
+    font-size: 26.66667px; }
+
+  footer {
+    font-size: 19.04762px; }
+
+  .boardWrapper {
+    height: 400px;
+    width: 400px; }
+
+  .field {
+    width: 122.4px;
+    height: 122.4px; }
+
+  .field:nth-of-type(3n+2) {
+    border-left: 16px solid white;
+    border-right: 16px solid white; }
+
+  .field:nth-of-type(4) {
+    border-top: 16px solid white;
+    border-bottom: 16px solid white; }
+
+  .field:nth-of-type(5) {
+    border-top: 16px solid white;
+    border-bottom: 16px solid white; }
+
+  .field:nth-of-type(6) {
+    border-top: 16px solid white;
+    border-bottom: 16px solid white; } }
+/*tablet 1366x768*/
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .menu.gameState {
+    font-size: 62.5px; }
+
+  .menu {
+    font-size: 31.25px; }
+
+  input {
+    height: 33.33333px;
+    font-size: 33.33333px; }
+
+  button {
+    height: 33.33333px;
+    font-size: 33.33333px; }
+
+  footer {
+    font-size: 23.80952px; }
+
+  .boardWrapper {
+    height: 500px;
+    width: 500px; }
+
+  .field {
+    width: 153px;
+    height: 153px; }
+
+  .field:nth-of-type(3n+2) {
+    border-left: 20px solid white;
+    border-right: 20px solid white; }
+
+  .field:nth-of-type(4) {
+    border-top: 20px solid white;
+    border-bottom: 20px solid white; }
+
+  .field:nth-of-type(5) {
+    border-top: 20px solid white;
+    border-bottom: 20px solid white; }
+
+  .field:nth-of-type(6) {
+    border-top: 20px solid white;
+    border-bottom: 20px solid white; } }
+/*popular tablet resolution 1280x720*/
+@media only screen and (max-width: 720px) and (orientation: portrait) {
+  .menu.gameState {
+    font-size: 85.71429px; }
+
+  .menu {
+    font-size: 40px; }
+
+  input {
+    height: 40px;
+    font-size: 40px; }
+
+  button {
+    height: 40px;
+    font-size: 40px; }
+
+  footer {
+    font-size: 28.57143px; }
+
+  .boardWrapper {
+    height: 600px;
+    width: 600px; }
+
+  .field {
+    width: 183.6px;
+    height: 183.6px; }
+
+  .field:nth-of-type(3n+2) {
+    border-left: 24px solid white;
+    border-right: 24px solid white; }
+
+  .field:nth-of-type(4) {
+    border-top: 24px solid white;
+    border-bottom: 24px solid white; }
+
+  .field:nth-of-type(5) {
+    border-top: 24px solid white;
+    border-bottom: 24px solid white; }
+
+  .field:nth-of-type(6) {
+    border-top: 24px solid white;
+    border-bottom: 24px solid white; } }
+/*Most popular phone resolution 360x640*/
+@media only screen and (max-width: 360px) and (orientation: portrait) {
+  .menu.gameState {
+    font-size: 42.85714px; }
+
+  .menu {
+    font-size: 20px; }
+
+  input {
+    height: 20px;
+    font-size: 20px; }
+
+  button {
+    height: 20px;
+    font-size: 20px; }
+
+  footer {
+    font-size: 14.28571px; }
+
+  .boardWrapper {
+    height: 300px;
+    width: 300px; }
+
+  .field {
+    width: 91.8px;
+    height: 91.8px; }
+
+  .field:nth-of-type(3n+2) {
+    border-left: 12px solid white;
+    border-right: 12px solid white; }
+
+  .field:nth-of-type(4) {
+    border-top: 12px solid white;
+    border-bottom: 12px solid white; }
+
+  .field:nth-of-type(5) {
+    border-top: 12px solid white;
+    border-bottom: 12px solid white; }
+
+  .field:nth-of-type(6) {
+    border-top: 12px solid white;
+    border-bottom: 12px solid white; } }
+
+/*# sourceMappingURL=styles.css.map */

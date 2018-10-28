@@ -1,6 +1,6 @@
 $fieldMultiplier : 0.306;
 $borderMultiplier : 0.04;
-$boardSize: 700px;
+$boardSize: 650px;
 $footerFontDivider: 21;
 $menuFontDivider: 15;
 $gameStateFontDivider: 7;
@@ -148,7 +148,7 @@ a:hover{
 
 /*one of laptop resolutions 1920x1080*/
 @media only screen and (max-width: 1920px){
-	$boardSize: 690px;
+	$boardSize: 600px;
 	.menu.gameState{
 		font-size: $boardSize/$gameStateFontDivider;
 	}
@@ -197,7 +197,7 @@ a:hover{
 
 /*one of laptop resolutions 1366x768*/
 @media only screen and (max-width: 1366px) {
-	$boardSize: 480px;
+	$boardSize: 400px;
 	.menu.gameState{
 		font-size: $boardSize/$gameStateFontDivider;
 	}
@@ -244,7 +244,7 @@ a:hover{
 
 /*tablet 1366x768*/
 @media only screen and (max-width: 768px) and (orientation: portrait){
-	$boardSize: 740px;
+	$boardSize: 500px;
 	.menu.gameState{
 		font-size: $boardSize/($gameStateFontDivider+1);
 	}
@@ -292,7 +292,7 @@ footer{
 
 /*popular tablet resolution 1280x720*/
 @media only screen and (max-width: 720px) and (orientation: portrait){
-	$boardSize: 700px;
+	$boardSize: 600px;
 	.menu.gameState{
 		font-size: $boardSize/$gameStateFontDivider;
 	}
@@ -340,7 +340,7 @@ footer{
 
 /*Most popular phone resolution 360x640*/
 @media only screen and (max-width: 360px) and (orientation:portrait){
-	$boardSize: 340px;
+	$boardSize: 300px;
 	.menu.gameState{
 		font-size: $boardSize/$gameStateFontDivider;
 	}
