@@ -6,7 +6,10 @@ Main purpopose of project is learning Spring Dependency Injenction, Spring Boot,
 
 Second purpose of project is coding library for board games with bot based on Alpha Beta Pruning algorithm: https://github.com/jansowa/BoardGame.
 
-Final purpose is coding Alpha Beta Pruning bot for more complicated game Quixo using BoardGame library. This project will be developed on site: https://github.com/jansowa/Quixo
+WHAT WOULD I CHANGE IN THID PROJECT WITH CURRENT KNOWLEDGE?
+1. I would use Clean Code principles - first of all I would choose better names for variables, functions, classes, write shorter functions and use "Autowired" annotations at the constructors.
+2. I would use a simpler database which would not require so much configuration before running an application.
+3. I would write tests of classes independent of other objects from project. I would use more Mocks.
 
 HOW TO RUN APPLICATION?
 1. Install Java 8 or newer version.
@@ -29,7 +32,10 @@ Głównym celem tego projektu jest nauka Spring Dependency Injection, Spring Boo
 
 Drugim celem projektu jest napisanie biblioteki dla gier planszowych z botem opartym o algorytm Alpha Beta Pruning: https://github.com/jansowa/BoardGame
 
-Końcowym celem jest napisanie bota za pomocą algorytmu Alpha Beta Pruning używając biblioteki BoardGame dla bardziej skomplikowanej gry Quixo. Projekt będzie rozwijany pod adresem: https://github.com/jansowa/Quixo.
+CO ZMIENIŁBYM W PROJEKCIE Z OBECNĄ WIEDZĄ?
+1. Kierowałbym się zasadami Clean Code - przede wszystkim właściwie dobierał nazwy zmiennych, funkcji, klas, pisał krótsze funkcje i stosował adnotację "Autowired" przy konstruktorze
+2. Zastosowałbym prostszą bazę danych, która nie wymagałaby tylu ustawień przed włączeniem projektu
+3. Pisałbym testy klas niezależne od innych obiektów z projektu - używałbym częściej Mockowania.
 
 JAK URUCHOMIĆ APLIKACJĘ?
 1. Zainstalują Java 8 lub nowszę wersję
