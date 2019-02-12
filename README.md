@@ -1,4 +1,6 @@
-ENG
+<h1>TicTacToe project</h1>
+
+<h3>ENG</h3>
 Project contains Tic Tac Toe game and bot for the game on Alpha Beta Pruning algorithm. AI choose always best move.
 It's my first little bigger project, so it contains a lot of really bad code in old commits.
 
@@ -6,12 +8,12 @@ Main purpopose of project is learning Spring Dependency Injenction, Spring Boot,
 
 Second purpose of project is coding library for board games with bot based on Alpha Beta Pruning algorithm: https://github.com/jansowa/BoardGame.
 
-WHAT WOULD I CHANGE IN THID PROJECT WITH CURRENT KNOWLEDGE?
+<h4>WHAT WOULD I CHANGE IN THID PROJECT WITH CURRENT KNOWLEDGE?</h4>
 1. I would use Clean Code principles - first of all I would choose better names for variables, functions, classes, write shorter functions and use "Autowired" annotations at the constructors.
 2. I would use a simpler database which would not require so much configuration before running an application.
 3. I would write tests of classes independent of other objects from project. I would use more Mocks.
 
-HOW TO RUN APPLICATION?
+<h4>HOW TO RUN APPLICATION?</h4>
 1. Install Java 8 or newer version.
 2. Install MySQL
 3. Add schema 'ticTacToeDB'
@@ -24,7 +26,7 @@ Author: Jan Sowa
 
 ****************************************
 
-PL
+<h3>PL</h3>
 Projekt zawiera grę Kółko i Krzyżyk i bota do niej opartego na algorytmie Alpha Beta Pruning. AI wybiera zawsze optymalny ruch.
 To mój pierwszy nieco większy projekt, więc zawiera dużo naprawdę złego kodu w starych commitach.
 
@@ -32,12 +34,12 @@ Głównym celem tego projektu jest nauka Spring Dependency Injection, Spring Boo
 
 Drugim celem projektu jest napisanie biblioteki dla gier planszowych z botem opartym o algorytm Alpha Beta Pruning: https://github.com/jansowa/BoardGame
 
-CO ZMIENIŁBYM W PROJEKCIE Z OBECNĄ WIEDZĄ?
+<h4>CO ZMIENIŁBYM W PROJEKCIE Z OBECNĄ WIEDZĄ?</h4>
 1. Kierowałbym się zasadami Clean Code - przede wszystkim właściwie dobierał nazwy zmiennych, funkcji, klas, pisał krótsze funkcje i stosował adnotację "Autowired" przy konstruktorze
 2. Zastosowałbym prostszą bazę danych, która nie wymagałaby tylu ustawień przed włączeniem projektu
 3. Pisałbym testy klas niezależne od innych obiektów z projektu - używałbym częściej Mockowania.
 
-JAK URUCHOMIĆ APLIKACJĘ?
+<h4>JAK URUCHOMIĆ APLIKACJĘ?</h4>
 1. Zainstalują Java 8 lub nowszę wersję
 2. Zainstaluj MySQL
 3. Dodaj schemat 'ticTacToeDB'
