@@ -1,0 +1,8 @@
+.project
+.settings
+.idea
+.classpath
+target/*
+!target/ticTacToe-0.0.1-SNAPSHOT.jar
+*.iml
+.springBeans
